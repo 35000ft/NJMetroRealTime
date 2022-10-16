@@ -139,8 +139,7 @@
             },
             setStationStyle(station, index) {
                 this.resetStationStyle();
-                this.stationInfo.id = index;
-                this.stationInfo.name = this.names[index];
+
                 let s = station.firstChild.firstChild;
                 s.setAttribute("fill", "#EA7600");
             },
@@ -149,6 +148,8 @@
                 //设置样式
                 console.log(event.currentTarget.id);
                 this.setStationStyle(event.currentTarget, index);
+                this.stationInfo.id = index;
+                this.stationInfo.name = this.names[index];
                 this.setTrainTime(index);
             },
 
@@ -170,8 +171,10 @@
                 //加载时刻表
                 let fileName = './assets/timetable/' + this.line + stationId + '.json';
                 this.loadTimeTable(fileName).then(res => {
-                    //获取最近的班次 res为该站时刻表 1s刷新一次
-                    this.getLatestTrainTime(res, false, 3);
+                    //获取最近的班次 res为该站时刻表 2s刷新一次
+                    let si;
+                    si = setInterval(this.getLatestTrainTime(res, false, 3), 2000);
+                    clearInterval(si);
                 });
                 // const isWorkDay = this.isWorkDay(nowtime);
             },
@@ -186,41 +189,38 @@
                     _timetable = isUp ? timetable.up_weekend : timetable.down_weekend;
                 }
 
-                setInterval(() => {
-                    this.stationInfo.trains = [];
-                    let nowtime = new Date();
-                    let _now = nowtime.getHours() + ':' + nowtime.getMinutes();
-                    let currentIndex = _timetable.indexOf(_now);
-                    if (currentIndex == -1) {
-                        //当前时间(13:32)不在时刻表
-                        _timetable.push(_now);
-                        _timetable.sort();
-                        currentIndex = _timetable.indexOf(_now);
-                        console.log(_timetable[currentIndex])
-                        _timetable.splice(currentIndex, 1);
-                    }
+                this.stationInfo.trains = [];
+                let nowtime = new Date();
+                let _now = nowtime.getHours() + ':' + nowtime.getMinutes();
+                let currentIndex = _timetable.indexOf(_now);
+                if (currentIndex == -1) {
+                    //当前时间(13:32)不在时刻表
+                    _timetable.push(_now);
+                    _timetable.sort();
+                    currentIndex = _timetable.indexOf(_now);
+                    console.log(_timetable[currentIndex])
+                    _timetable.splice(currentIndex, 1);
+                }
 
-                    for (i = 0; i < trainNumber; i++) {
-                        // console.log(_timetable)
-                        _t = _timetable[currentIndex + i];
+                for (i = 0; i < trainNumber; i++) {
+                    // console.log(_timetable)
+                    _t = _timetable[currentIndex + i];
 
-                        console.log(i + ':' + _t);
-                        let train = {}
-                        train['eta'] = _t;
+                    console.log(i + ':' + _t);
+                    let train = {}
+                    train['eta'] = _t;
 
-                        let remainMin = this.calcRemainMins(_now, _timetable[currentIndex + i]);
-                        if (remainMin == 0) {
-                            if (nowtime.getSeconds() < 15) {
-                                train['status'] = "即将到达";
-                            } else {
-                                train['status'] = "车已到站";
-                            }
-                        } else train['status'] = this.calcRemainMins(_now, train['eta']) + '分钟';
+                    let remainMin = this.calcRemainMins(_now, _timetable[currentIndex + i]);
+                    if (remainMin == 0) {
+                        if (nowtime.getSeconds() < 15) {
+                            train['status'] = "即将到达";
+                        } else {
+                            train['status'] = "车已到站";
+                        }
+                    } else train['status'] = this.calcRemainMins(_now, train['eta']) + '分钟';
 
-                        this.stationInfo.trains.push(train);
-                    }
-                }, 3000);
-
+                    this.stationInfo.trains.push(train);
+                }
             },
 
             //pre 15:36 pre 15:48 return 12
