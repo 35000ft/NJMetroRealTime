@@ -22,7 +22,7 @@
                     <b>{{stationInfo.name}}</b> 最近列车:
                 </h3>
                 <ul>
-                    <li v-for="train in stationInfo.trains">
+                    <li v-for="train in stationInfo.trains" v-if="train.status">
                         <span class="train-time"><b>{{train.status}}</b> / {{train.eta}}</span>
                     </li>
                 </ul>

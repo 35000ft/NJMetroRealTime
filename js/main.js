@@ -1,4 +1,3 @@
-
 var app = new Vue({
     el: '#app',
     data: {
@@ -24,7 +23,6 @@ var app = new Vue({
         },
         setStationStyle(station, index) {
             this.resetStationStyle();
-
             let s = station.firstChild.firstChild;
             s.setAttribute("fill", "#EA7600");
         },
@@ -36,13 +34,15 @@ var app = new Vue({
             console.log(160);
             this.stationInfo.id = index;
             this.stationInfo.name = this.names[index];
+            this.stationInfo.trains = [];
+            this.stationInfo.trains.push({ 'status': '加载中...', 'eta': 'Loading...' });
             this.setTrainTime(index);
         },
 
         async loadTimeTable(url) {
             let data = await axios.get(url).then(res => {
                 return res.data;
-            }, res => {
+            }, () => {
                 console.log('Load ' + url + ' Error!');
             })
             return data;
@@ -61,7 +61,6 @@ var app = new Vue({
                     if (stationId < 10) {
                         stationId = '0' + stationId//5 -> 05
                     }
-                    // this.stationInfo.trains.push({ 'status': '加载中......' });
                     console.log("loading " + this.line + stationId + '.json')
                     let fileName = '../assets/timetable/' + this.line + stationId + '.json';
 
@@ -105,7 +104,6 @@ var app = new Vue({
             }
 
             for (i = 0; i < trainNumber; i++) {
-                // console.log(_timetable)
                 _t = _timetable[currentIndex + i];
 
                 console.log(i + ':' + _t);
