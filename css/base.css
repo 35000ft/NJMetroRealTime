@@ -1,0 +1,50 @@
+span {
+    float: left;
+}
+
+.line {
+    width: 70px;
+    height: 30px;
+    display: inline-block;
+}
+
+.station {
+    width: 30px;
+    height: 40px;
+    display: inline-block;
+
+}
+
+.train {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+.train path {
+    fill: #EA7600;
+}
+
+.station-name {
+    text-align: center;
+    font-weight: bold;
+    color: #EA7600;
+}
+
+.info {
+    height: 70px;
+}
+
+.info h3 {
+    font-weight: 500;
+}
+
+.train-time {
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+ul {
+    list-style: none;
+}

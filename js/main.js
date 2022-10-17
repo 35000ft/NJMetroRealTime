@@ -1,0 +1,186 @@
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        line: "S8",
+        firstStation: 28,
+        lastStation: 1828,
+        perSegment: 100,    //每站移动100px
+        names: ["金牛湖", "八百桥", "沈桥", "方州广场", "凤凰山公园", "雄州", "龙池", "六合开发区", "化工园", "长芦", "葛塘", "大厂", "卸甲甸", "信息工程大学", "高新开发区", "泰冯路", "泰山新村", "毛纺厂路", "长江大桥北"],
+        stationInfo: {
+            id: "",
+            name: "",   //站名
+            trains: []
+        }   //最近的n辆车
+    },
+    methods: {
+        resetStationStyle(station) {
+            if (this.stationInfo.id == "") {
+                return;
+            }
+            this.stationInfo.name = "";
+            let s = document.getElementById(this.stationInfo.id).firstChild.firstChild;
+            s.setAttribute("fill", "none");
+        },
+        setStationStyle(station, index) {
+            this.resetStationStyle();
+
+            let s = station.firstChild.firstChild;
+            s.setAttribute("fill", "#EA7600");
+        },
+
+        getStationInfo(event, index) {
+            //设置样式
+            console.log(150);
+            this.setStationStyle(event.currentTarget, index);
+            console.log(160);
+            this.stationInfo.id = index;
+            this.stationInfo.name = this.names[index];
+            this.setTrainTime(index);
+        },
+
+        async loadTimeTable(url) {
+            let data = await axios.get(url).then(res => {
+                return res.data;
+            }, res => {
+                console.log('Load ' + url + ' Error!');
+            })
+            return data;
+        },
+
+        setTrainTime() {
+            //res为该站时刻表 3s刷新一次
+            let stationId = "";
+            let data;
+            setInterval(() => {
+                //如果站点发生改变则重新加载时刻表
+                console.log(165);
+                if (stationId != this.stationInfo.id) {
+                    stationId = parseInt(this.stationInfo.id);
+                    stationId += 1;//0 -> 1 
+                    if (stationId < 10) {
+                        stationId = '0' + stationId//5 -> 05
+                    }
+                    // this.stationInfo.trains.push({ 'status': '加载中......' });
+                    console.log("loading " + this.line + stationId + '.json')
+                    let fileName = '../assets/timetable/' + this.line + stationId + '.json';
+
+                    //由于stationId发生了改变，要赋回原来的值，否则回一直重新加载时刻表
+                    stationId = this.stationInfo.id;
+
+                    this.loadTimeTable(fileName).then(res => {
+                        data = res;
+                        this.getLatestTrainTime(data, false, 3);
+                    });
+                }
+
+                //如果时刻表已加载才会获取列车时间
+                if (typeof (data) != "undefined") {
+                    this.getLatestTrainTime(data, false, 3);
+                }
+            }, 3000);
+        },
+
+        getLatestTrainTime(timetable, isUp, trainNumber) {
+            let _timetable;
+            if (this.isWorkDay()) {
+                //工作日 上/下行
+                _timetable = isUp ? timetable.up_workday : timetable.down_workday;
+            } else {
+                //休息日 上/下行
+                _timetable = isUp ? timetable.up_weekend : timetable.down_weekend;
+            }
+
+            this.stationInfo.trains = [];
+            let nowtime = new Date();
+            let _now = nowtime.getHours() + ':' + nowtime.getMinutes();
+            let currentIndex = _timetable.indexOf(_now);
+            if (currentIndex == -1) {
+                //当前时间(13:32)不在时刻表
+                _timetable.push(_now);
+                _timetable.sort();
+                currentIndex = _timetable.indexOf(_now);
+                console.log(_timetable[currentIndex])
+                _timetable.splice(currentIndex, 1);
+            }
+
+            for (i = 0; i < trainNumber; i++) {
+                // console.log(_timetable)
+                _t = _timetable[currentIndex + i];
+
+                console.log(i + ':' + _t);
+                let train = {}
+                if (typeof (_t) == "undefined") {
+                    return;
+                }
+                train['eta'] = _t;
+
+                let remainMin = this.calcRemainMins(_now, _timetable[currentIndex + i]);
+                if (remainMin == 0) {
+                    if (nowtime.getSeconds() < 15) {
+                        train['status'] = "即将到达";
+                    } else {
+                        train['status'] = "车已到站";
+                    }
+                } else train['status'] = this.calcRemainMins(_now, train['eta']) + '分钟';
+
+                this.stationInfo.trains.push(train);
+            }
+        },
+
+        //pre 15:36 pre 15:48 return 12
+        calcRemainMins(pre, late) {
+            if (typeof (pre) == "undefined" || typeof (late) == "undefined") {
+                return;
+            }
+            h1 = parseInt(pre.split(':')[0]);
+            m1 = parseInt(pre.split(':')[1]);
+            h2 = parseInt(late.split(':')[0]);
+            m2 = parseInt(late.split(':')[1]);
+            if (h1 == h2) {
+                return m2 - m1;
+            } else {
+                return m2 + 60 * (h2 - h1) - m1;
+            }
+        },
+
+        //判断是否为工作日
+        isWorkDay() {
+            let nowtime = new Date();
+            if (nowtime.getDay() === 0 || nowtime.getDay() === 6) {
+                return false;
+            }
+            return true;
+        },
+
+        //移动列车
+        //@Param step: 移动像素数
+        //@Param trainId :移动的列车id
+        // move(step, trainId) {
+        //     let train = document.getElementById(trainId);
+        //     let o_left = parseInt(train.style.left);
+        //     if (o_left >= this.lastStation) {
+        //         return;
+        //     }
+        //     let next_left = o_left + step;
+        //     train.style.left = next_left + "px";
+        // },
+
+        // calcStep(preStation, nestStation) {
+
+        // },
+
+        // moveTrain() {
+        //     setInterval(() => {
+        //         this.move(1, "S8-001");
+        //     }, 25);
+        // },
+
+        // setTrain() {
+
+        // }
+    },
+    created() {
+        // this.moveTrain();
+    }
+})
