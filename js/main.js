@@ -62,7 +62,7 @@ var app = new Vue({
                         stationId = '0' + stationId//5 -> 05
                     }
                     console.log("loading " + this.line + stationId + '.json')
-                    let fileName = '../assets/timetable/' + this.line + stationId + '.json';
+                    let fileName = './assets/timetable/' + this.line + stationId + '.json';
 
                     //由于stationId发生了改变，要赋回原来的值，否则回一直重新加载时刻表
                     stationId = this.stationInfo.id;
