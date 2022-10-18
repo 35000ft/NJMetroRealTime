@@ -13,7 +13,7 @@ var app = new Vue({
         }   //最近的n辆车
     },
     methods: {
-        resetStationStyle(station) {
+        resetStationStyle() {
             if (this.stationInfo.id == "") {
                 return;
             }
@@ -21,7 +21,7 @@ var app = new Vue({
             let s = document.getElementById(this.stationInfo.id).firstChild.firstChild;
             s.setAttribute("fill", "none");
         },
-        setStationStyle(station, index) {
+        setStationStyle(station) {
             this.resetStationStyle();
             let s = station.firstChild.firstChild;
             s.setAttribute("fill", "#EA7600");
@@ -29,9 +29,7 @@ var app = new Vue({
 
         getStationInfo(event, index) {
             //设置样式
-            console.log(150);
             this.setStationStyle(event.currentTarget, index);
-            console.log(160);
             this.stationInfo.id = index;
             this.stationInfo.name = this.names[index];
             this.stationInfo.trains = [];
@@ -54,7 +52,6 @@ var app = new Vue({
             let data;
             setInterval(() => {
                 //如果站点发生改变则重新加载时刻表
-                console.log(165);
                 if (stationId != this.stationInfo.id) {
                     stationId = parseInt(this.stationInfo.id);
                     stationId += 1;//0 -> 1 
@@ -80,6 +77,40 @@ var app = new Vue({
             }, 3000);
         },
 
+        getCurrentIndex(_timetable, _t) {
+            let start = 0;
+            let end = _timetable.length
+            mid = parseInt((start + end) / 2);
+            while (mid > start) {
+                if (_t == _timetable[mid]) {
+                    return mid;
+                }
+                else if (_t > _timetable[mid]) {
+                    start = mid;
+                }
+                else {
+                    //15:36 < 16:00
+                    end = mid;
+                }
+                mid = parseInt((start + end) / 2);
+            }
+            //没有找到，返回_t以后的时间(较大的一个)
+            return end;
+        },
+
+        getFormatTime() {
+            let nowtime = new Date();
+            let _h = nowtime.getHours()
+            let _m = nowtime.getMinutes();
+            if (_h < 10) {
+                _h = '0' + _h;
+            }
+            if (_m < 10) {
+                _m = '0' + _m;
+            }
+            return _h + ':' + _m;
+        },
+
         getLatestTrainTime(timetable, isUp, trainNumber) {
             let _timetable;
             if (this.isWorkDay()) {
@@ -91,17 +122,9 @@ var app = new Vue({
             }
 
             this.stationInfo.trains = [];
-            let nowtime = new Date();
-            let _now = nowtime.getHours() + ':' + nowtime.getMinutes();
-            let currentIndex = _timetable.indexOf(_now);
-            if (currentIndex == -1) {
-                //当前时间(13:32)不在时刻表
-                _timetable.push(_now);
-                _timetable.sort();
-                currentIndex = _timetable.indexOf(_now);
-                console.log(_timetable[currentIndex])
-                _timetable.splice(currentIndex, 1);
-            }
+            let _now = this.getFormatTime();
+            //获取当前时间在时刻表的位置
+            let currentIndex = this.getCurrentIndex(_timetable, _now);
 
             for (i = 0; i < trainNumber; i++) {
                 _t = _timetable[currentIndex + i];
@@ -113,6 +136,7 @@ var app = new Vue({
                 }
                 train['eta'] = _t;
 
+                let nowtime = new Date();
                 let remainMin = this.calcRemainMins(_now, _timetable[currentIndex + i]);
                 if (remainMin == 0) {
                     if (nowtime.getSeconds() < 15) {
