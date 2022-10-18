@@ -19,9 +19,8 @@
             <div class="head-info">
 
                 <img src="./assets/icon/S8_icon.svg" alt="" style="width: 80px; margin-left: 30px; margin-right: 20px;">
-                <h1 style="display: inline-block;">S8号线</h1>
-
-                <h2 style="color: #EA7600; margin-left: 30px;">
+                <h1 style="display: inline-block; height: 30px;">S8号线</h1>
+                <h2 style="color: #EA7600; margin-left: 30px; ">
                     <span>开往 {{direction}}</span>
                     <span style="color: #B3B3B3;" @click="reverseDirection">
                         <img src="./assets/icon/reversing.svg" style="width: 36px; margin-left: 20px;" alt="">
@@ -35,7 +34,7 @@
                 <h3 style="color: #EA7600; margin-left: 45px;" v-show="stationInfo.name">
                     <b>{{stationInfo.name}}</b> 最近列车:
                 </h3>
-                <ul>
+                <ul style="margin-left: 25px;">
                     <li v-for="train in stationInfo.trains" v-if="train.status">
                         <span class="train-time"><b>{{train.status}}</b> / {{train.eta}}</span>
                     </li>
