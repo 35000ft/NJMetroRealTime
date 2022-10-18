@@ -5,12 +5,13 @@ var app = new Vue({
         firstStation: 28,
         lastStation: 1828,
         perSegment: 100,    //每站移动100px
-        names: ["金牛湖", "八百桥", "沈桥", "方州广场", "凤凰山公园", "雄州", "龙池", "六合开发区", "化工园", "长芦", "葛塘", "大厂", "卸甲甸", "信息工程大学", "高新开发区", "泰冯路", "泰山新村", "毛纺厂路", "长江大桥北"],
+        lastStationId: -1,
+        names: [],
         stationInfo: {
             id: "",
             name: "",   //站名
             trains: []
-        }   //最近的n辆车
+        }
     },
     methods: {
         resetStationStyle() {
@@ -29,12 +30,23 @@ var app = new Vue({
 
         getStationInfo(event, index) {
             //设置样式
+            this.lastStationId = this.stationInfo.id;
             this.setStationStyle(event.currentTarget, index);
             this.stationInfo.id = index;
             this.stationInfo.name = this.names[index];
             this.stationInfo.trains = [];
             this.stationInfo.trains.push({ 'status': '加载中...', 'eta': 'Loading...' });
-            this.setTrainTime();
+
+        },
+
+        async loadStationNames() {
+            const url = './assets/lineInfo/' + this.line + '.json';
+            console.log("loading " + url);
+            this.names = await axios.get(url).then(res => {
+                return res.data.names;
+            }, () => {
+                console.log('Load ' + url + ' Error!');
+            })
         },
 
         async loadTimeTable(url) {
@@ -48,22 +60,26 @@ var app = new Vue({
 
         setTrainTime() {
             //res为该站时刻表 3s刷新一次
-            let stationId = -1;
+            // let stationId;
             let data;
+            let flag = true;//判断是否要执行第二个getLatestTrainTime ,如果重新加载时刻表，第二个就不用执行
             setInterval(() => {
+                if (this.stationInfo.id == "") {
+                    return;
+                }
                 //如果站点发生改变则重新加载时刻表
-                if (stationId != this.stationInfo.id) {
-                    stationId = parseInt(this.stationInfo.id);
-                    stationId += 1;//0 -> 1 
+                if (this.lastStationId != parseInt(this.stationInfo.id)) {
+                    this.lastStationId = parseInt(this.stationInfo.id);
+                    let stationId = this.lastStationId + 1
                     if (stationId < 10) {
                         stationId = '0' + stationId//5 -> 05
                     }
                     console.log("loading " + this.line + stationId + '.json')
-                    let fileName = '../assets/timetable/' + this.line + stationId + '.json';
+                    let fileName = './assets/timetable/' + this.line + stationId + '.json';
 
-                    //由于stationId发生了改变，要赋回原来的值，否则回一直重新加载时刻表
-                    stationId = this.stationInfo.id;
-
+                    //由于stationId发生了改变，要赋回原来的值，否则会一直重新加载时刻表
+                    // stationId = this.stationInfo.id;
+                    flag = false;
                     this.loadTimeTable(fileName).then(res => {
                         data = res;
                         this.getLatestTrainTime(data, false, 3);
@@ -71,8 +87,10 @@ var app = new Vue({
                 }
 
                 //如果时刻表已加载才会获取列车时间
-                if (typeof (data) != "undefined") {
+                if (flag && typeof (data) != "undefined") {
                     this.getLatestTrainTime(data, false, 3);
+                } else {
+                    flag = true;
                 }
             }, 3000);
         },
@@ -203,6 +221,7 @@ var app = new Vue({
         // }
     },
     created() {
-        // this.moveTrain();
+        this.loadStationNames();
+        this.setTrainTime();
     }
 })
