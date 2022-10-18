@@ -15,9 +15,9 @@ var app = new Vue({
     methods: {
         resetStationStyle() {
             if (this.stationInfo.id == "") {
-                return;
+                this.stationInfo.id = 0;
             }
-            this.stationInfo.name = "";
+            console.log('last sid:' + this.stationInfo.id);
             let s = document.getElementById(this.stationInfo.id).firstChild.firstChild;
             s.setAttribute("fill", "none");
         },
@@ -34,7 +34,7 @@ var app = new Vue({
             this.stationInfo.name = this.names[index];
             this.stationInfo.trains = [];
             this.stationInfo.trains.push({ 'status': '加载中...', 'eta': 'Loading...' });
-            this.setTrainTime(index);
+            this.setTrainTime();
         },
 
         async loadTimeTable(url) {
@@ -48,7 +48,7 @@ var app = new Vue({
 
         setTrainTime() {
             //res为该站时刻表 3s刷新一次
-            let stationId = "";
+            let stationId = -1;
             let data;
             setInterval(() => {
                 //如果站点发生改变则重新加载时刻表
@@ -59,7 +59,7 @@ var app = new Vue({
                         stationId = '0' + stationId//5 -> 05
                     }
                     console.log("loading " + this.line + stationId + '.json')
-                    let fileName = './assets/timetable/' + this.line + stationId + '.json';
+                    let fileName = '../assets/timetable/' + this.line + stationId + '.json';
 
                     //由于stationId发生了改变，要赋回原来的值，否则回一直重新加载时刻表
                     stationId = this.stationInfo.id;
