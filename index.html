@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    <div id="app" style="width: 1920px;">
+    <!-- <div id="app" style="width: 1900px;"> -->
+    <div id="app" style="width: 100%;">
         <div style="background-clip:content-box; padding: 10px 5px;">
             <div class="head-info">
 
@@ -26,15 +27,14 @@
                         <img src="./assets/icon/reversing.svg" style="width: 36px; margin-left: 20px;" alt="">
                         换向
                     </span>
-
                 </h2>
 
             </div>
             <div class="info">
-                <h3 style="color: #EA7600; margin-left: 45px;" v-show="stationInfo.name">
+                <h3 style="color: #EA7600; margin-left: 30px;" v-show="stationInfo.name">
                     <b>{{stationInfo.name}}</b> 最近列车:
                 </h3>
-                <ul style="margin-left: 25px;">
+                <ul>
                     <li v-for="train in stationInfo.trains" v-if="train.status">
                         <span class="train-time"><b>{{train.status}}</b> / {{train.eta}}</span>
                     </li>
@@ -54,22 +54,9 @@
                         p-id="6028"></path>
                 </svg>
             </span><br><br>
-
-            <ul>
-                <li v-for="(name,index) in names">
-                    <span class="station" @click="getStationInfo($event, index)" :id="index">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-                            <circle cx="15" cy="20" r="12" stroke="#EA7600" stroke-width="5" fill="none" />
-                        </svg>
-                        <span class="station-name">{{name}}</span>
-                    </span>
-                    <span class="line" v-show="index!=names.length-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-                            <line x1="0" y1="20" x2="70" y2="20" stroke="#EA7600" stroke-width="4" />
-                        </svg>
-                    </span>
-                </li>
-            </ul>
+            <template>
+                <iframe ref="stationIframe" src="./stations.html" frameborder="0" width="100%" height="280"></iframe>
+            </template>
 
         </div>
     </div>

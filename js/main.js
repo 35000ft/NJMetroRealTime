@@ -29,7 +29,6 @@ var app = new Vue({
             if (this.stationInfo.id == "") {
                 this.stationInfo.id = 0;
             }
-            console.log('last sid:' + this.stationInfo.id);
             let s = document.getElementById(this.stationInfo.id).firstChild.firstChild;
             s.setAttribute("fill", "none");
         },
@@ -39,9 +38,10 @@ var app = new Vue({
             s.setAttribute("fill", "#EA7600");
         },
 
-        getStationInfo(event, index) {
-            this.lastStationId = this.stationInfo.id;
-            this.setStationStyle(event.currentTarget, index);
+        getStationInfo(index, lastStationId) {
+            this.lastStationId = lastStationId;
+            // this.setStationStyle(event.currentTarget);
+            // this.stationInfo.id = index;
             this.stationInfo.id = index;
             this.stationInfo.name = this.names[index];
             this.stationInfo.trains = [];
@@ -49,7 +49,7 @@ var app = new Vue({
         },
 
         async loadStationNames() {
-            const url = './assets/lineInfo/' + this.line + '.json';
+            const url = '../assets/lineInfo/' + this.line + '.json';
             console.log("loading " + url);
             this.names = await axios.get(url).then(res => {
                 return res.data.names;
@@ -73,7 +73,7 @@ var app = new Vue({
             let flag = true;//判断是否要执行第二个getLatestTrainTime ,如果重新加载时刻表，第二个就不用执行
             setInterval(() => {
 
-                if (parseInt(this.stationInfo.id) < 0) {
+                if (this.stationInfo.id === "" || parseInt(this.stationInfo.id) < 0) {
                     return;
                 }
 
@@ -86,7 +86,7 @@ var app = new Vue({
                         stationId = '0' + stationId//5 -> 05
                     }
                     console.log("loading " + this.line + stationId + '.json')
-                    let fileName = './assets/timetable/' + this.line + stationId + '.json';
+                    let fileName = '../assets/timetable/' + this.line + stationId + '.json';
 
                     //由于stationId发生了改变，要赋回原来的值，否则会一直重新加载时刻表
                     // stationId = this.stationInfo.id;
@@ -231,7 +231,7 @@ var app = new Vue({
 
         // }
         init() {
-            const url = './assets/lineInfo/' + this.line + '.json';
+            const url = '../assets/lineInfo/' + this.line + '.json';
             console.log("loading " + url);
             axios.get(url).then(res => {
                 this.names = res.data.names;
@@ -239,14 +239,22 @@ var app = new Vue({
                 this.down = res.data.direction.down;
                 //设置默认为下行
                 this.direction = this.down;
+
+                const mapFrame = this.$refs['stationIframe'];
+                mapFrame.onload = (function () {
+                    const iframeWin = mapFrame.contentWindow;
+                    iframeWin.postMessage(res.data.names, '*');
+                })
             }, () => {
                 console.log('Load ' + url + ' Error!');
             })
         }
     },
     created() {
-        // this.loadStationNames();
         this.init();
         this.setTrainTime();
+    },
+    mounted() {
+        window.getStationInfo = this.getStationInfo;
     }
 })
