@@ -49,7 +49,7 @@ var app = new Vue({
         },
 
         async loadStationNames() {
-            const url = '../assets/lineInfo/' + this.line + '.json';
+            const url = './assets/lineInfo/' + this.line + '.json';
             console.log("loading " + url);
             this.names = await axios.get(url).then(res => {
                 return res.data.names;
@@ -86,7 +86,7 @@ var app = new Vue({
                         stationId = '0' + stationId//5 -> 05
                     }
                     console.log("loading " + this.line + stationId + '.json')
-                    let fileName = '../assets/timetable/' + this.line + stationId + '.json';
+                    let fileName = './assets/timetable/' + this.line + stationId + '.json';
 
                     //由于stationId发生了改变，要赋回原来的值，否则会一直重新加载时刻表
                     // stationId = this.stationInfo.id;
@@ -231,7 +231,7 @@ var app = new Vue({
 
         // }
         init() {
-            const url = '../assets/lineInfo/' + this.line + '.json';
+            const url = './assets/lineInfo/' + this.line + '.json';
             console.log("loading " + url);
             axios.get(url).then(res => {
                 this.names = res.data.names;
