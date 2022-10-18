@@ -7,6 +7,9 @@ var app = new Vue({
         perSegment: 100,    //每站移动100px
         lastStationId: -1,
         names: [],
+        up: "",
+        down: "",
+        direction: "",
         stationInfo: {
             id: "",
             name: "",   //站名
@@ -14,6 +17,14 @@ var app = new Vue({
         }
     },
     methods: {
+        reverseDirection() {
+            if (this.direction == this.down) {
+                this.direction = this.up;
+            } else {
+                this.direction = this.down;
+            }
+        },
+
         resetStationStyle() {
             if (this.stationInfo.id == "") {
                 this.stationInfo.id = 0;
@@ -29,18 +40,16 @@ var app = new Vue({
         },
 
         getStationInfo(event, index) {
-            //设置样式
             this.lastStationId = this.stationInfo.id;
             this.setStationStyle(event.currentTarget, index);
             this.stationInfo.id = index;
             this.stationInfo.name = this.names[index];
             this.stationInfo.trains = [];
             this.stationInfo.trains.push({ 'status': '加载中...', 'eta': 'Loading...' });
-
         },
 
         async loadStationNames() {
-            const url = './assets/lineInfo/' + this.line + '.json';
+            const url = '../assets/lineInfo/' + this.line + '.json';
             console.log("loading " + url);
             this.names = await axios.get(url).then(res => {
                 return res.data.names;
@@ -60,35 +69,37 @@ var app = new Vue({
 
         setTrainTime() {
             //res为该站时刻表 3s刷新一次
-            // let stationId;
             let data;
             let flag = true;//判断是否要执行第二个getLatestTrainTime ,如果重新加载时刻表，第二个就不用执行
             setInterval(() => {
-                if (this.stationInfo.id == "") {
+
+                if (parseInt(this.stationInfo.id) < 0) {
                     return;
                 }
+
                 //如果站点发生改变则重新加载时刻表
-                if (this.lastStationId != parseInt(this.stationInfo.id)) {
+                // console.log(this.lastStationId != parseInt(this.stationInfo.id));
+                if (this.lastStationId == "" || this.lastStationId != parseInt(this.stationInfo.id)) {
                     this.lastStationId = parseInt(this.stationInfo.id);
                     let stationId = this.lastStationId + 1
                     if (stationId < 10) {
                         stationId = '0' + stationId//5 -> 05
                     }
                     console.log("loading " + this.line + stationId + '.json')
-                    let fileName = './assets/timetable/' + this.line + stationId + '.json';
+                    let fileName = '../assets/timetable/' + this.line + stationId + '.json';
 
                     //由于stationId发生了改变，要赋回原来的值，否则会一直重新加载时刻表
                     // stationId = this.stationInfo.id;
                     flag = false;
                     this.loadTimeTable(fileName).then(res => {
                         data = res;
-                        this.getLatestTrainTime(data, false, 3);
+                        this.getLatestTrainTime(data, this.direction == this.up, 3);
                     });
                 }
 
                 //如果时刻表已加载才会获取列车时间
                 if (flag && typeof (data) != "undefined") {
-                    this.getLatestTrainTime(data, false, 3);
+                    this.getLatestTrainTime(data, this.direction == this.up, 3);
                 } else {
                     flag = true;
                 }
@@ -219,9 +230,23 @@ var app = new Vue({
         // setTrain() {
 
         // }
+        init() {
+            const url = '../assets/lineInfo/' + this.line + '.json';
+            console.log("loading " + url);
+            axios.get(url).then(res => {
+                this.names = res.data.names;
+                this.up = res.data.direction.up;
+                this.down = res.data.direction.down;
+                //设置默认为下行
+                this.direction = this.down;
+            }, () => {
+                console.log('Load ' + url + ' Error!');
+            })
+        }
     },
     created() {
-        this.loadStationNames();
+        // this.loadStationNames();
+        this.init();
         this.setTrainTime();
     }
 })

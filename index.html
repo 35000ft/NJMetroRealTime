@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S8 -> 长江大桥北</title>
+    <title>南京地铁列车实时查询_宁天线S8</title>
     </title>
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -16,9 +16,23 @@
 <body>
     <div id="app" style="width: 1920px;">
         <div style="background-clip:content-box; padding: 10px 5px;">
+            <div class="head-info">
+
+                <img src="./assets/icon/S8_icon.svg" alt="" style="width: 80px; margin-left: 30px; margin-right: 20px;">
+                <h1 style="display: inline-block;">S8号线</h1>
+
+                <h2 style="color: #EA7600; margin-left: 30px;">
+                    <span>开往 {{direction}}</span>
+                    <span style="color: #B3B3B3;" @click="reverseDirection">
+                        <img src="./assets/icon/reversing.svg" style="width: 36px; margin-left: 20px;" alt="">
+                        换向
+                    </span>
+
+                </h2>
+
+            </div>
             <div class="info">
-                <h2 style="color: #EA7600;">开往 长江大桥北</h2>
-                <h3 style="color: #EA7600; margin-left: 30px;" v-show="stationInfo.name">
+                <h3 style="color: #EA7600; margin-left: 45px;" v-show="stationInfo.name">
                     <b>{{stationInfo.name}}</b> 最近列车:
                 </h3>
                 <ul>
