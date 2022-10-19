@@ -67,6 +67,16 @@ var app = new Vue({
             return data;
         },
 
+        getTimeTable(isUp, timetable) {
+            if (this.isWorkDay()) {
+                //工作日 上/下行
+                return isUp ? timetable.up_workday : timetable.down_workday;
+            } else {
+                //休息日 上/下行
+                return isUp ? timetable.up_weekend : timetable.down_weekend;
+            }
+        },
+
         setTrainTime() {
             //res为该站时刻表 3s刷新一次
             let data;
@@ -86,7 +96,7 @@ var app = new Vue({
                         stationId = '0' + stationId//5 -> 05
                     }
                     console.log("loading " + this.line + stationId + '.json')
-                    let fileName = '../assets/timetable/' + this.line + stationId + '.json';
+                    let fileName = './assets/timetable/' + this.line + stationId + '.json';
 
                     //由于stationId发生了改变，要赋回原来的值，否则会一直重新加载时刻表
                     // stationId = this.stationInfo.id;
@@ -109,6 +119,15 @@ var app = new Vue({
         getCurrentIndex(_timetable, _t) {
             let start = 0;
             let end = _timetable.length
+
+            if (_t < _timetable[start]) {
+                //如果当前时间在首班车前
+                return start;
+            } else if (_t > _timetable[end - 1]) {
+                //如果当前时间在末班车后
+                return -1;
+            }
+
             mid = parseInt((start + end) / 2);
             while (mid > start) {
                 if (_t == _timetable[mid]) {
@@ -141,23 +160,28 @@ var app = new Vue({
         },
 
         getLatestTrainTime(timetable, isUp, trainNumber) {
-            let _timetable;
-            if (this.isWorkDay()) {
-                //工作日 上/下行
-                _timetable = isUp ? timetable.up_workday : timetable.down_workday;
-            } else {
-                //休息日 上/下行
-                _timetable = isUp ? timetable.up_weekend : timetable.down_weekend;
-            }
+            let _timetable = this.getTimeTable(isUp, timetable);
+            // if (this.isWorkDay()) {
+            //     //工作日 上/下行
+            //     _timetable = isUp ? timetable.up_workday : timetable.down_workday;
+            // } else {
+            //     //休息日 上/下行
+            //     _timetable = isUp ? timetable.up_weekend : timetable.down_weekend;
+            // }
 
             this.stationInfo.trains = [];
             let _now = this.getFormatTime();
             //获取当前时间在时刻表的位置
             let currentIndex = this.getCurrentIndex(_timetable, _now);
+            if (currentIndex === -1) {
+                train['status'] = "已过末班";
+                train['eta'] = "No Train";
+                return;
+            }
+
 
             for (i = 0; i < trainNumber; i++) {
                 _t = _timetable[currentIndex + i];
-
                 console.log(i + ':' + _t);
                 let train = {}
                 if (typeof (_t) == "undefined") {
@@ -231,7 +255,7 @@ var app = new Vue({
 
         // }
         init() {
-            const url = './assets/lineInfo/' + this.line + '.json';
+            const url = '../assets/lineInfo/' + this.line + '.json';
             console.log("loading " + url);
             axios.get(url).then(res => {
                 this.names = res.data.names;
