@@ -255,7 +255,7 @@ var app = new Vue({
 
         // }
         init() {
-            const url = '../assets/lineInfo/' + this.line + '.json';
+            const url = './assets/lineInfo/' + this.line + '.json';
             console.log("loading " + url);
             axios.get(url).then(res => {
                 this.names = res.data.names;
