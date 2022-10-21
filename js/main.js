@@ -11,7 +11,7 @@ var app = new Vue({
             name: "",   //站名
             trains: []
         },
-        assertsPath: "./assets/"
+        assertsPath: "../assets/"
     },
     methods: {
         resetStation() {
