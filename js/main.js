@@ -2,60 +2,42 @@ var app = new Vue({
     el: '#app',
     data: {
         line: "S8",
-        firstStation: 28,
-        lastStation: 1828,
-        perSegment: 100,    //每站移动100px
         lastStationId: -1,
-        names: [],
-        up: "",
-        down: "",
-        direction: "",
+        stations: [],
+        directionText: "",
+        direction: false,
         stationInfo: {
             id: "",
             name: "",   //站名
             trains: []
-        }
+        },
+        assertsPath: "./assets/"
     },
     methods: {
+        resetStation() {
+            this.stationInfo.id = "";
+            this.stationInfo.name = "";
+            this.stationInfo.trains = [];
+        },
         reverseDirection() {
-            if (this.direction == this.down) {
-                this.direction = this.up;
-            } else {
-                this.direction = this.down;
-            }
+            this.resetStation();
+            this.stations.reverse();
+            // this.direction = this.stations[this.stations.length - 1].name;
+            this.direction = !this.direction;
+            this.directionText = this.stations[this.stations.length - 1].name;
+            window.stationIframe.reverseDirection();
         },
 
-        resetStationStyle() {
-            if (this.stationInfo.id == "") {
-                this.stationInfo.id = 0;
-            }
-            let s = document.getElementById(this.stationInfo.id).firstChild.firstChild;
-            s.setAttribute("fill", "none");
-        },
-        setStationStyle(station) {
-            this.resetStationStyle();
-            let s = station.firstChild.firstChild;
-            s.setAttribute("fill", "#EA7600");
-        },
-
+        //由iframe调用
         getStationInfo(index, lastStationId) {
+            //iframe回传数据
+
             this.lastStationId = lastStationId;
-            // this.setStationStyle(event.currentTarget);
-            // this.stationInfo.id = index;
             this.stationInfo.id = index;
-            this.stationInfo.name = this.names[index];
+
+            this.stationInfo.name = this.stations.find(item => item.index === index).name;
             this.stationInfo.trains = [];
             this.stationInfo.trains.push({ 'status': '加载中...', 'eta': 'Loading...' });
-        },
-
-        async loadStationNames() {
-            const url = './assets/lineInfo/' + this.line + '.json';
-            console.log("loading " + url);
-            this.names = await axios.get(url).then(res => {
-                return res.data.names;
-            }, () => {
-                console.log('Load ' + url + ' Error!');
-            })
         },
 
         async loadTimeTable(url) {
@@ -88,28 +70,26 @@ var app = new Vue({
                 }
 
                 //如果站点发生改变则重新加载时刻表
-                // console.log(this.lastStationId != parseInt(this.stationInfo.id));
-                if (this.lastStationId == "" || this.lastStationId != parseInt(this.stationInfo.id)) {
+                if (this.lastStationId == 0 || this.lastStationId != parseInt(this.stationInfo.id)) {
                     this.lastStationId = parseInt(this.stationInfo.id);
-                    let stationId = this.lastStationId + 1
+                    let stationId = this.lastStationId + 1;
+
                     if (stationId < 10) {
                         stationId = '0' + stationId//5 -> 05
                     }
                     console.log("loading " + this.line + stationId + '.json')
-                    let fileName = './assets/timetable/' + this.line + stationId + '.json';
+                    let fileName = this.assertsPath+'timetable/' + this.line + stationId + '.json';
 
-                    //由于stationId发生了改变，要赋回原来的值，否则会一直重新加载时刻表
-                    // stationId = this.stationInfo.id;
+
                     flag = false;
                     this.loadTimeTable(fileName).then(res => {
-                        data = res;
-                        this.getLatestTrainTime(data, this.direction == this.up, 3);
+                        this.getLatestTrainTime(res, this.direction, 3);
                     });
                 }
 
                 //如果时刻表已加载才会获取列车时间
                 if (flag && typeof (data) != "undefined") {
-                    this.getLatestTrainTime(data, this.direction == this.up, 3);
+                    this.getLatestTrainTime(data, this.direction, 3);
                 } else {
                     flag = true;
                 }
@@ -118,7 +98,7 @@ var app = new Vue({
 
         getCurrentIndex(_timetable, _t) {
             let start = 0;
-            let end = _timetable.length
+            let end = _timetable.length;
 
             if (_t < _timetable[start]) {
                 //如果当前时间在首班车前
@@ -161,34 +141,28 @@ var app = new Vue({
 
         getLatestTrainTime(timetable, isUp, trainNumber) {
             let _timetable = this.getTimeTable(isUp, timetable);
-            // if (this.isWorkDay()) {
-            //     //工作日 上/下行
-            //     _timetable = isUp ? timetable.up_workday : timetable.down_workday;
-            // } else {
-            //     //休息日 上/下行
-            //     _timetable = isUp ? timetable.up_weekend : timetable.down_weekend;
-            // }
-
+            let train = {}
             this.stationInfo.trains = [];
             let _now = this.getFormatTime();
+            console.log('_tt:' + _timetable);
             //获取当前时间在时刻表的位置
             let currentIndex = this.getCurrentIndex(_timetable, _now);
             if (currentIndex === -1) {
                 train['status'] = "已过末班";
                 train['eta'] = "No Train";
+                this.stationInfo.trains.push(train);
                 return;
             }
 
 
             for (i = 0; i < trainNumber; i++) {
                 _t = _timetable[currentIndex + i];
+                train = {};
                 console.log(i + ':' + _t);
-                let train = {}
                 if (typeof (_t) == "undefined") {
                     return;
                 }
                 train['eta'] = _t;
-
                 let nowtime = new Date();
                 let remainMin = this.calcRemainMins(_now, _timetable[currentIndex + i]);
                 if (remainMin == 0) {
@@ -228,47 +202,22 @@ var app = new Vue({
             return true;
         },
 
-        //移动列车
-        //@Param step: 移动像素数
-        //@Param trainId :移动的列车id
-        // move(step, trainId) {
-        //     let train = document.getElementById(trainId);
-        //     let o_left = parseInt(train.style.left);
-        //     if (o_left >= this.lastStation) {
-        //         return;
-        //     }
-        //     let next_left = o_left + step;
-        //     train.style.left = next_left + "px";
-        // },
-
-        // calcStep(preStation, nestStation) {
-
-        // },
-
-        // moveTrain() {
-        //     setInterval(() => {
-        //         this.move(1, "S8-001");
-        //     }, 25);
-        // },
-
-        // setTrain() {
-
-        // }
         init() {
-            const url = '../assets/lineInfo/' + this.line + '.json';
+            const url = this.assertsPath + 'lineInfo/' + this.line + '.json';
             console.log("loading " + url);
             axios.get(url).then(res => {
-                this.names = res.data.names;
-                this.up = res.data.direction.up;
-                this.down = res.data.direction.down;
-                //设置默认为下行
-                this.direction = this.down;
+
+                let names = res.data.names;
+                for (i = 0; i < names.length; i++) {
+                    this.stations.push({ "index": i, "name": names[i] });
+                }
+                this.directionText = this.stations[this.stations.length - 1].name;
 
                 const mapFrame = this.$refs['stationIframe'];
                 mapFrame.onload = (function () {
                     const iframeWin = mapFrame.contentWindow;
-                    iframeWin.postMessage(res.data.names, '*');
-                })
+                    iframeWin.postMessage(res.data, '*');
+                });
             }, () => {
                 console.log('Load ' + url + ' Error!');
             })
@@ -279,6 +228,7 @@ var app = new Vue({
         this.setTrainTime();
     },
     mounted() {
+        window.reverseDirection = this.reverseDirection;
         window.getStationInfo = this.getStationInfo;
     }
 })

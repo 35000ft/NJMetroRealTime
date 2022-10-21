@@ -19,9 +19,9 @@
         <div style="background-clip:content-box;padding-top: 10px;">
             <div class="head-info">
                 <img src="./assets/icon/S8_icon.svg" alt="" style="width: 80px; margin-left: 10px; margin-right: 10px;">
-                <h1 style="display: inline-block; height: 30px; margin-bottom: 0px; padding-bottom: 5px;">S8宁天线</h1>
+                <h1 style="display: inline-block; height: 30px; margin-bottom: 0px; padding-bottom: 5px;">宁天线</h1>
                 <h2 style="color: #EA7600; margin-left: 15px; ">
-                    <span>开往 {{direction}}</span>
+                    <span>开往 {{directionText}}</span>
                     <span style="color: #B3B3B3;" @click="reverseDirection">
                         <img src="./assets/icon/reversing.svg" style="width: 36px; margin-left: 20px;" alt="">
                         换向
@@ -43,27 +43,16 @@
                 </div>
 
             </div>
-            <span class="train" style="left: 28px;" id="S8-001" v-if="false">
-                <svg t="1665664186507" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                    p-id="6025">
-                    <path
-                        d="M343.9 641.3c29.9 1 54.3 26.7 54 57.1-0.3 31.8-27.6 58.4-58.4 56.9-30.5-1.5-54.1-26.7-53.8-57.5 0.2-32.3 26.3-57.6 58.2-56.5zM740.1 697.6c0.2 32-26.1 58.6-57.3 57.7-30.2-0.8-54.3-25.8-54.8-56.7-0.4-30.3 23.8-56.1 53.7-57.3 31.9-1.2 58.2 24.2 58.4 56.3z"
-                        p-id="6026"></path>
-                    <path
-                        d="M861.6 686.8V214.3c0-84.1-68.4-152.5-152.5-152.5H316.9c-84.1 0-152.5 68.4-152.5 152.5v472.5c0 73.8 52.6 135.4 122.3 149.5l-86.3 87.9c-8.4 8.6-8.3 22.4 0.3 30.8 4.2 4.2 9.8 6.2 15.3 6.2 5.6 0 11.3-2.2 15.5-6.5l113.3-115.4H683l110.4 115.8c4.3 4.5 10 6.7 15.8 6.7 5.4 0 10.8-2 15-6 8.7-8.3 9-22.1 0.7-30.8l-84.8-88.9c69.3-14.4 121.5-75.9 121.5-149.3zM818 563.1H208V301.4h610v261.7zM316.9 105.4H709c60.1 0 108.9 48.9 108.9 108.9v43.6H208v-43.6c0-60.1 48.9-108.9 108.9-108.9z m392.2 690.3H316.9c-60.1 0-108.9-48.9-108.9-108.9v-80.2h610v80.2c0 60-48.9 108.9-108.9 108.9z"
-                        p-id="6027" data-spm-anchor-id="a313x.7781069.0.i0"></path>
-                    <path
-                        d="M390.2 206.2h243.7c12 0 21.8-9.8 21.8-21.8s-9.8-21.8-21.8-21.8H390.2c-12 0-21.8 9.8-21.8 21.8s9.7 21.8 21.8 21.8z"
-                        p-id="6028"></path>
-                </svg>
-            </span>
+
             <template>
-                <iframe ref="stationIframe" src="./stations.html" frameborder="0" width="100%" height="280px" style="margin-left: 20px;"></iframe>
+                <iframe name="stationIframe" ref="stationIframe" src="./stations.html" frameborder="0" width="98%"
+                    height="280px" style="margin-left: 20px;"></iframe>
             </template>
 
         </div>
     </div>
 </body>
+
 <script src="./js/axios-0.18.0.js"></script>
 <script src="./js/main.js"></script>
 
