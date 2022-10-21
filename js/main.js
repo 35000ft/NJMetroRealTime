@@ -78,15 +78,13 @@ var app = new Vue({
                         stationId = '0' + stationId//5 -> 05
                     }
                     console.log("loading " + this.line + stationId + '.json')
-                    let fileName = this.assertsPath+'timetable/' + this.line + stationId + '.json';
-
-
+                    let fileName = '../assets/timetable/' + this.line + stationId + '.json';
                     flag = false;
                     this.loadTimeTable(fileName).then(res => {
+                        data = res;
                         this.getLatestTrainTime(res, this.direction, 3);
                     });
                 }
-
                 //如果时刻表已加载才会获取列车时间
                 if (flag && typeof (data) != "undefined") {
                     this.getLatestTrainTime(data, this.direction, 3);
@@ -144,7 +142,6 @@ var app = new Vue({
             let train = {}
             this.stationInfo.trains = [];
             let _now = this.getFormatTime();
-            console.log('_tt:' + _timetable);
             //获取当前时间在时刻表的位置
             let currentIndex = this.getCurrentIndex(_timetable, _now);
             if (currentIndex === -1) {
