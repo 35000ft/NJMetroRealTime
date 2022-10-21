@@ -203,11 +203,7 @@ var app = new Vue({
         },
 
         init() {
-<<<<<<< HEAD
             const url = this.assertsPath + 'lineInfo/' + this.line + '.json';
-=======
-            const url = './assets/lineInfo/' + this.line + '.json';
->>>>>>> 5b884cd5b3e545ed330647624a74c14b9390b6e8
             console.log("loading " + url);
             axios.get(url).then(res => {
 
