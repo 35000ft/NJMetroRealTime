@@ -1,0 +1,28 @@
+.station {
+    width: 30px;
+    height: 40px;
+    display: inline-block;
+
+}
+
+.train {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+.train path {
+    fill: #EA7600;
+}
+
+.station-name {
+    text-align: center;
+    font-weight: bold;
+    color: #EA7600;
+}
+
+.line {
+    width: 70px;
+    height: 30px;
+    display: inline-block;
+}

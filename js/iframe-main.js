@@ -65,9 +65,11 @@ var app2 = new Vue({
                 vm.terminal = e.data.terminal;
                 vm.runtime = e.data.runtime;
                 vm.loadTrain();
-                setInterval(() => {
-                    vm.loadTrain();
-                }, 10000);
+                setTimeout(() => {
+                    setInterval(() => {
+                        vm.loadTrain();
+                    }, 10000);
+                }, (10 - parseInt(new Date().getSeconds() % 10)) * 1000);
             })
         },
         getTimeTable(isUp, type, timetable) {
@@ -113,23 +115,23 @@ var app2 = new Vue({
                     case 1: departTime = this.timeConvertor(departTime, -runtime[this.terminal.short]); break;
                     case 2: departTime = this.timeConvertor(departTime, -runtime[this.terminal.exDepot]); break;
                 }
-                console.log(' down departTime:' + departTime);
+                // console.log(' down departTime:' + departTime);
             }
-            console.log('departTime2:' + departTime);
+            // console.log('departTime2:' + departTime);
             let deviation = this.calcDeviationMins(departTime, this.getFormatTime());
             startPos = this.firstPos;
             if (deviation === runtime[runtime.length - 1]) {
-                console.log('pos1' + startPos + this.perSegment * (runtime.length - 1));
+                // console.log('pos1' + startPos + this.perSegment * (runtime.length - 1));
                 return startPos + this.perSegment * (runtime.length - 1);
             } else if (deviation > runtime[runtime.length - 1]) {
                 return -1;
             }
             for (let i = 0; i < runtime.length - 1; i++) {
                 if (deviation > runtime[i] && deviation < runtime[i + 1]) {
-                    console.log('pos2:' + (startPos + this.perSegment * (i + 0.5)));
+                    // console.log('pos2:' + (startPos + this.perSegment * (i + 0.5)));
                     return startPos + parseInt(this.perSegment * (i + 0.5));
                 } else if (deviation === runtime[i]) {
-                    console.log('pos3:' + (startPos + this.perSegment * i));
+                    // console.log('pos3:' + (startPos + this.perSegment * i));
                     return startPos + this.perSegment * i;
                 }
             }
@@ -163,7 +165,6 @@ var app2 = new Vue({
 
                 let runtime = this.direction ? this.runtime.up : this.runtime.down;
                 let offset = this.getOffset(this.direction, runtime, i);
-                console.log("offset:" + offset);
                 if (currentIndex > -1) {
                     //当前时间在首班车之后
                     let beginIndex = this.getCurrentIndex(timetable, this.timeConvertor(now, offset));
@@ -176,7 +177,7 @@ var app2 = new Vue({
                         currentIndex -= 1;
                     }
                     for (let j = beginIndex; j <= currentIndex; j++) {
-                        console.log('departTime:' + timetable[j]);
+                        // console.log('departTime:' + timetable[j]);
                         this.trains.push(this.setTrain(i,
                             this.calcTrainPosition(i, timetable[j], runtime)));
                     }
@@ -200,7 +201,6 @@ var app2 = new Vue({
         setTrain(type, position) {
             let train = {}
             train['position'] = position + 'px';
-            console.log(type + ':' + train['position']);
             train['type'] = type;
             switch (type) {
                 //全交路车

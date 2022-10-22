@@ -78,7 +78,7 @@ var app = new Vue({
                         stationId = '0' + stationId//5 -> 05
                     }
                     console.log("loading " + this.line + stationId + '.json')
-                    let fileName = '../assets/timetable/' + this.line + stationId + '.json';
+                    let fileName = this.assertsPath + 'timetable/' + this.line + stationId + '.json';
                     flag = false;
                     this.loadTimeTable(fileName).then(res => {
                         data = res;

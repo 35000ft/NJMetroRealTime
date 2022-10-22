@@ -2,55 +2,18 @@ span {
     float: left;
 }
 
-.line {
-    width: 70px;
-    height: 30px;
-    display: inline-block;
+a {
+    text-decoration: none;
+    color: #6495ED;
 }
 
-.head-info {
-    height: 150px;
+a:visited {
+    color: #6495ED;
 }
 
-.station {
-    width: 30px;
-    height: 40px;
-    display: inline-block;
 
-}
-
-.train {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-}
-
-.train path {
-    fill: #EA7600;
-}
-
-.station-name {
-    text-align: center;
-    font-weight: bold;
-    color: #EA7600;
-}
-
-.info {
-    height: 60px;
-}
-
-.info h3 {
-    font-weight: 500;
-}
-
-.train-time {
-    font-size: 14px;
-    margin-left: 3px;
-    margin-right: 3px;
-}
 
 ul {
     list-style: none;
     font-size: 16px;
 }
-
