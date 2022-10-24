@@ -218,9 +218,15 @@ var app = new Vue({
             }, () => {
                 console.log('Load ' + url + ' Error!');
             })
+        },
+        isMobile() {
+            if (navigator.userAgent.match(/(phone|pod|iPhone|iPod|ios|Android|Mobile|BlackBerry|Windows Phone)/i)) {
+                location.href = './mobile-index.html';
+            }
         }
     },
     created() {
+        this.isMobile();
         this.init();
         this.setTrainTime();
     },

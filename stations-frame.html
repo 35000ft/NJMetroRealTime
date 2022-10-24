@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stations</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/station-frame.css">
+</head>
+
+<body style="width: 1920px; height: 280px; overflow:scroll;overflow-y:hidden;" draggable="true">
+    <div id="app_iframe" style="height: 280px;">
+
+        <span v-for="train in trains" class="train" v-if="train.positon!=-1" :style="{left:train.position}">
+            <img :src="'./assets/icon/train/'+line+'.svg'" alt="">
+        </span>
+
+
+        <br>
+        <ul>
+            <li v-for="(station,index) in stations">
+                <span class="station" @click="getStationInfo($event, station.index)" :id="station.index">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                        <circle cx="15" cy="20" r="12" stroke="#EA7600" stroke-width="5" fill="none" />
+                    </svg>
+                    <span class="station-name">{{station.name}}</span>
+                </span>
+                <span class="line" v-show="index!=stations.length-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                        <line x1="0" y1="20" x2="70" y2="20" stroke="#EA7600" stroke-width="4" />
+                    </svg>
+                </span>
+            </li>
+        </ul>
+    </div>
+
+</body>
+<script src="./js/iframe-main.js"></script>
+
+</html>

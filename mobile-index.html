@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- 引入css样式 -->
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main for mobile.css">
 </head>
 
 <body>
@@ -30,24 +30,10 @@
                 </h2>
 
             </div>
-            <div class="info">
-                <h3 style="color: #EA7600; margin-left: 30px; margin-left: 15px; margin-bottom: 0px; margin-top: 5px;"
-                    v-show="stationInfo.name">
-                    <b>{{stationInfo.name}}</b> 最近列车:
-                </h3>
-                <div style="margin: 0; height: 20px; padding: 0;">
-                    <ul>
-                        <li v-for="train in stationInfo.trains" v-if="train.status">
-                            <span class="train-time"><b>{{train.status}}</b>/{{train.eta}}</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
 
             <template>
-                <iframe name="stationIframe" ref="stationIframe" src="./stations-frame.html" frameborder="0" width="98%"
-                    height="280px" style="margin-left: 20px;"></iframe>
+                <iframe name="stationIframe" ref="stationIframe" src="./stations-frame-mobile.html" frameborder="0"
+                    width="100%" height="600px"></iframe>
             </template>
 
             <div class="description">
@@ -132,6 +118,6 @@
 </body>
 
 <script src="./js/axios-0.18.0.js"></script>
-<script src="./js/main.js"></script>
+<script src="./js/main for mobile.js"></script>
 
 </html>
