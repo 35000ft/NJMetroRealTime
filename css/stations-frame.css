@@ -1,0 +1,59 @@
+li {
+    height: 100px;
+    display: block;
+}
+
+.station {
+    width: 20px;
+    height: 20px;
+
+}
+
+.train-time {
+    margin-left: 40px;
+    width: 220px;
+    height: 60px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 3px;
+    padding-left: 10px;
+    padding-bottom: 3px;
+}
+
+.train-time span {
+    display: block;
+}
+
+.train-time table {
+    border-collapse: collapse;
+    color: #575757;
+}
+
+.train-time table .gold {
+    color: gold;
+}
+
+.train {
+    width: 20px;
+    margin-left: 5px;
+    display: block;
+    position: absolute;
+    z-index: 3;
+}
+
+.train path {
+    fill: #EA7600;
+}
+
+.station-name {
+    margin-left: 2px;
+    text-align: center;
+    color: #575757;
+    font-weight: normal;
+    position: absolute;
+}
+
+.line {
+    width: 20px;
+    height: 70px;
+}
