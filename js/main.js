@@ -39,7 +39,7 @@ var app = new Vue({
             console.log("loading " + url);
             axios.get(url).then(res => {
                 this.lineName = res.data.lineName;
-                this.names = [];
+                this.stations = [];
                 this.direction = false;
                 let names = res.data.stations;
                 for (i = 0; i < names.length; i++) {
