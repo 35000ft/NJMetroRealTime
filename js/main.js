@@ -41,6 +41,8 @@ var app = new Vue({
                 this.direction = false;
                 this.stations = []
                 this.lineName = res.data.lineName;
+                this.stations = [];
+                this.direction = false;
                 let names = res.data.stations;
                 for (i = 0; i < names.length; i++) {
                     this.stations.push({ "index": i, "name": names[i] });
