@@ -66,14 +66,16 @@ var app3 = new Vue({
     methods: {
         switchLine(line) {
             this.line = line;
-            this.reload();
+            this.reload(line);
         },
 
-        reload() {
-            const url = this.assertsPath + 'lineInfo/' + this.line + '.json';
+        reload(line) {
+            const url = this.assertsPath + 'lineInfo/' + line + '.json';
+            this.line = line;
             axios.get(url).then(res => {
                 let names = res.data.stations;
-                this.stations = []
+                this.stations = [];
+                this.direction = false;
                 for (i = 0; i < names.length; i++) {
                     this.stations.push({
                         "index": i, "name": names[i], "radius": 5,
@@ -85,6 +87,7 @@ var app3 = new Vue({
                 this.runtime = res.data.runtime;
                 this.color = res.data.color;
                 this.loadTrain();
+                this.initTimeTable();
                 setTimeout(() => {
                     setInterval(() => {
                         this.loadTrain();
@@ -97,25 +100,34 @@ var app3 = new Vue({
         init() {
             let vm = this;
             window.addEventListener('message', function (e) {
-                vm.line = e.data.line;
-                let names = e.data.stations;
-                for (i = 0; i < names.length; i++) {
-                    vm.stations.push({
-                        "index": i, "name": names[i], "radius": 5,
-                        "color": "#FFFFFF", "trains": [], "strokeWidth": 0,
-                        "timetable": undefined
-                    });
-                }
-                vm.route = e.data.route;
-                vm.runtime = e.data.runtime;
-                vm.color = e.data.color;
-                vm.loadTrain();
-                setTimeout(() => {
-                    setInterval(() => {
-                        vm.loadTrain();
-                    }, 10000);
-                }, (10 - parseInt(new Date().getSeconds() % 10)) * 1000);
+                vm.reload(e.data);
+                // vm.line = e.data.line;
+                // let names = e.data.stations;
+                // for (i = 0; i < names.length; i++) {
+                //     vm.stations.push({
+                //         "index": i, "name": names[i], "radius": 5,
+                //         "color": "#FFFFFF", "trains": [], "strokeWidth": 0,
+                //         "timetable": undefined
+                //     });
+                // }
+                // vm.route = e.data.route;
+                // vm.runtime = e.data.runtime;
+                // vm.color = e.data.color;
+                // vm.loadTrain();
+                // vm.initTimeTable();
+                // setTimeout(() => {
+                //     setInterval(() => {
+                //         vm.loadTrain();
+                //     }, 10000);
+                // }, (10 - parseInt(new Date().getSeconds() % 10)) * 1000);
             })
+        },
+
+        async initTimeTable() {
+            for (let i = 0; i < this.stations.length; i++) {
+                let index = this.stations[i]['index'];
+                this.stations[i]['timetable'] = await this.loadTimeTable(index);
+            }
         },
 
         async initDeptTime(route) {
@@ -124,13 +136,10 @@ var app3 = new Vue({
                     continue;
                 }
                 let deptStationId = route[i.toString()][0];//Number
-                console.log('de ' + deptStationId);
 
                 await this.loadTimeTable(deptStationId).then((res) => {
-                    console.log(res);
                     this.stations[deptStationId].timetable = res;
                     this.departTime[i.toString()] = res[i.toString()];
-                    // console.log(this.departTime[i.toString()])
                 });
             }
         },

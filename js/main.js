@@ -38,6 +38,8 @@ var app = new Vue({
             const url = this.assertsPath + 'lineInfo/' + this.line + '.json';
             console.log("loading " + url);
             axios.get(url).then(res => {
+                this.direction = false;
+                this.stations = []
                 this.lineName = res.data.lineName;
                 let names = res.data.stations;
                 for (i = 0; i < names.length; i++) {
@@ -49,7 +51,7 @@ var app = new Vue({
                 const mapFrame = this.$refs['stationIframe'];
                 mapFrame.onload = (function () {
                     const iframeWin = mapFrame.contentWindow;
-                    iframeWin.postMessage(res.data, '*');
+                    iframeWin.postMessage(res.data.line, '*');
                 });
             }, () => {
                 console.log('Load ' + url + ' Error!');
