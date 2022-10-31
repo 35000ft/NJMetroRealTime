@@ -178,9 +178,9 @@ var app3 = new Vue({
             this.setStationStyle(index);
             this.currentStationId = index;
 
-            this.loadTimeTable(this.stations[index]['index']).then(res => {
-                this.stations[index].timetable = res;
-            });
+            if (this.stations[index].trains.length < 1) {
+                this.stations[index].trains = [{ 'status': '加载中...', 'eta': 'Loading...', 'type': '' }];
+            }
         },
 
         setTrainTime() {
@@ -189,13 +189,12 @@ var app3 = new Vue({
                     return;
                 }
                 let index = this.currentStationId;
-                this.stations[index].trains = [];
+                console.log(this.stations[index].trains)
                 if (typeof (this.stations[index].timetable) == "undefined") {
-                    //时刻表未加载
-                } else {
-                    const timetable = this.stations[index].timetable;
-                    this.stations[index].trains = this.getLatestTrainTime(timetable, 3);
+                    return;
                 }
+                const timetable = this.stations[index].timetable;
+                this.stations[index].trains = this.getLatestTrainTime(timetable, 3);
             }, 3000);
         },
 
@@ -248,7 +247,6 @@ var app3 = new Vue({
             if (typeof (timetable) == "undefined") {
                 //未加载本站的时刻表, 则加载时刻表
                 console.log("loading " + this.getStationFileName(index));
-                this.stations[index].trains.push({ 'status': '加载中...', 'eta': 'Loading...' });
                 let data = await axios.get(this.getStationFileName(index)).then(res => {
                     return res.data;
                 })

@@ -29,6 +29,12 @@ li {
     color: #575757;
 }
 
+.train-detail-info {
+    width: 100px;
+    height: 40px;
+    background-color: red;
+}
+
 .train-time table .gold {
     color: gold;
 }
