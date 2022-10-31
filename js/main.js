@@ -27,7 +27,7 @@ var app = new Vue({
             window.stationIframe.reverseDirection();
         },
         async loadConfig() {
-            const url = '../config.json';
+            const url = './config.json';
             console.log("loading " + url);
             axios.get(url).then(res => {
                 this.lines = res.data.lines;
