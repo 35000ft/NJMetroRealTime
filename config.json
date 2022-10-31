@@ -1,0 +1,16 @@
+{
+    "lines": [
+        {
+            "value": "S1",
+            "label": "S1机场线"
+        },
+        {
+            "value": "S8",
+            "label": "S8宁天线"
+        },
+        {
+            "value": "S9",
+            "label": "S9宁高线"
+        }
+    ]
+}

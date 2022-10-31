@@ -68,6 +68,12 @@ var app3 = new Vue({
             this.line = line;
             this.reload(line);
         },
+        showTrainInfo(index) {
+            this.trains[index]['isShowDetail'] = true;
+            setTimeout(() => {
+                this.trains[index]['isShowDetail'] = false;
+            }, 3000);
+        },
 
         reload(line) {
             const url = this.assertsPath + 'lineInfo/' + line + '.json';
@@ -97,29 +103,11 @@ var app3 = new Vue({
                 console.log('Load ' + url + ' Error!');
             })
         },
+
         init() {
             let vm = this;
             window.addEventListener('message', function (e) {
                 vm.reload(e.data);
-                // vm.line = e.data.line;
-                // let names = e.data.stations;
-                // for (i = 0; i < names.length; i++) {
-                //     vm.stations.push({
-                //         "index": i, "name": names[i], "radius": 5,
-                //         "color": "#FFFFFF", "trains": [], "strokeWidth": 0,
-                //         "timetable": undefined
-                //     });
-                // }
-                // vm.route = e.data.route;
-                // vm.runtime = e.data.runtime;
-                // vm.color = e.data.color;
-                // vm.loadTrain();
-                // vm.initTimeTable();
-                // setTimeout(() => {
-                //     setInterval(() => {
-                //         vm.loadTrain();
-                //     }, 10000);
-                // }, (10 - parseInt(new Date().getSeconds() % 10)) * 1000);
             })
         },
 
@@ -279,6 +267,7 @@ var app3 = new Vue({
                 }
                 //想要查看任意时刻修改这条语句，如 this.getFormatTime()改成"15:02"
                 let currentIndex = this.getCurrentIndex(_timetable, this.getFormatTime());
+                // let currentIndex = this.getCurrentIndex(_timetable, "09:32");
                 _t = _timetable.slice(currentIndex, currentIndex + trainNum);
                 if (_t.length < 1) {
                     continue;
@@ -316,7 +305,7 @@ var app3 = new Vue({
         calcTrainPosition(type, departTime, runtime) {
 
             let deviation = this.calcDeviationMins(departTime, this.getFormatTime());
-
+            console.log('dev ' + deviation);
             //列车初始位置
             let startPos = this.calcInitPosition(type);
 
@@ -359,8 +348,6 @@ var app3 = new Vue({
                 this.trains = [];
                 for (let i = this.direction ? 1 : 0; i < 10; i += 2) {
                     let timetable = this.departTime[i.toString()];
-                    // console.log('tt');
-                    // console.log(timetable)
                     let runtime = this.runtime[i.toString()];
                     if (now < timetable[0]) {
                         //首班未发
@@ -388,6 +375,7 @@ var app3 = new Vue({
             let train = {}
             train['position'] = position + 'px';
             train['type'] = this.parseTrainType(type);
+            train['isShowDetail'] = false;
             return train;
         },
 

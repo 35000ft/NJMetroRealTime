@@ -6,7 +6,7 @@
             }
 
             .cls-2 {
-                fill: #00b396;
+                fill: #c98bd1;
             }
 
             .cls-11,
@@ -23,7 +23,7 @@
             }
 
             .cls-3 {
-                stroke: #00b396;
+                stroke: #c98bd1;
             }
 
             .cls-11,
@@ -125,17 +125,9 @@
             .cls-21 {
                 stroke-width: 0.5px;
             }
-
-            .cls-22 {
-                fill: #ededed;
-            }
-
-            .cls-23 {
-                fill: #3c3a39;
-            }
         </style>
     </defs>
-    <title>萝S1车头</title>
+    <title>萝S6车头</title>
     <polygon class="cls-1"
         points="137.17 134.17 136.04 148.49 134.91 152.15 131.81 157.61 128.89 160.58 124.47 163.19 120.39 164.47 100.02 164.6 95.52 164.6 94.64 164 94.64 134.95 45.4 134.95 45.4 158.37 44.94 164.35 20.58 164.35 15.6 163.73 11.8 161.39 7.62 157.28 4.8 151.88 3.45 144.42 1.04 110.48 137.17 108.26 139 108.26 137.17 134.17" />
     <path class="cls-2"
@@ -210,9 +202,14 @@
     <path class="cls-20" d="M102.07,113.05" transform="translate(-95.9 -75.81)" />
     <rect class="cls-8" x="99.54" y="137.51" width="22.29" height="11.07" rx="0.79" />
     <rect class="cls-9" x="99.54" y="137.51" width="22.29" height="11.07" rx="0.79" />
-    <rect class="cls-22" x="42.44" y="12.02" width="9.18" height="6.11" />
-    <circle class="cls-23" cx="48.96" cy="15.07" r="1.77" />
-    <rect class="cls-22" x="185.1" y="87.83" width="9.18" height="6.11"
-        transform="translate(283.48 105.96) rotate(-180)" />
-    <circle class="cls-23" cx="91.86" cy="15.07" r="1.77" />
+    <rect class="cls-10" x="35.36" y="10.3" width="6.66" height="2.32" />
+    <circle class="cls-10" cx="36.87" cy="12.61" r="1.51" />
+    <circle class="cls-10" cx="40.51" cy="12.61" r="1.51" />
+    <circle class="cls-13" cx="40.51" cy="12.61" r="0.85" />
+    <circle class="cls-4" cx="36.87" cy="12.61" r="0.85" />
+    <rect class="cls-10" x="98.34" y="10.3" width="6.66" height="2.32" />
+    <circle class="cls-10" cx="99.84" cy="12.61" r="1.51" />
+    <circle class="cls-10" cx="103.49" cy="12.61" r="1.51" />
+    <circle class="cls-13" cx="103.49" cy="12.61" r="0.85" />
+    <circle class="cls-4" cx="99.84" cy="12.61" r="0.85" />
 </svg>
