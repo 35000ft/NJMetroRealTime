@@ -78,6 +78,7 @@ var app3 = new Vue({
         reload(line) {
             const url = this.assertsPath + 'lineInfo/' + line + '.json';
             this.line = line;
+            this.resetStation();
             axios.get(url).then(res => {
                 let names = res.data.stations;
                 this.stations = [];
@@ -125,9 +126,10 @@ var app3 = new Vue({
                     continue;
                 }
                 let deptStationId = route[i.toString()][0];//Number
+
                 let timetable = this.stations.find(item => item['index'] === deptStationId).timetable;
-                this.departTime = timetable;
-                console.log(this.departTime);
+                this.departTime[i.toString()] = timetable[i.toString()];
+
             }
         },
 
@@ -290,11 +292,10 @@ var app3 = new Vue({
 
         calcInitPosition(type) {
             let startStationId = this.route[type][0];
-            if (!this.direction) {
-                //下行
-                return this.firstPos + startStationId * this.perSegment;
-            } else {
+            if (this.direction) {
                 return this.firstPos + (this.stations.length - startStationId - 1) * this.perSegment;
+            } else {
+                return this.firstPos + startStationId * this.perSegment;
             }
         },
 
@@ -302,7 +303,7 @@ var app3 = new Vue({
         calcTrainPosition(type, departTime, runtime) {
 
             let deviation = this.calcDeviationMins(departTime, this.getFormatTime());
-            console.log('dev ' + deviation);
+            console.log('type:' + type + ' dev:' + deviation);
             //列车初始位置
             let startPos = this.calcInitPosition(type);
 
@@ -342,6 +343,7 @@ var app3 = new Vue({
             console.log('loading tarins...');
             this.initDeptTime(this.route).then(() => {
                 let now = this.getFormatTime();
+                console.log(this.departTime);
                 this.trains = [];
                 for (let i = this.direction ? 1 : 0; i < 10; i += 2) {
                     let timetable = this.departTime[i.toString()];
@@ -372,6 +374,7 @@ var app3 = new Vue({
             let train = {}
             train['position'] = position + 'px';
             train['type'] = this.parseTrainType(type);
+            // train['type'] = type;
             train['isShowDetail'] = false;
             return train;
         },
