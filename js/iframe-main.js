@@ -78,6 +78,7 @@ var app3 = new Vue({
         reload(line) {
             const url = this.assertsPath + 'lineInfo/' + line + '.json';
             this.line = line;
+            this.resetStation();
             axios.get(url).then(res => {
                 let names = res.data.stations;
                 this.stations = [];
