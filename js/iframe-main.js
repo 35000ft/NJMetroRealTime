@@ -92,13 +92,14 @@ var app3 = new Vue({
                 this.route = res.data.route;
                 this.runtime = res.data.runtime;
                 this.color = res.data.color;
-                this.loadTrain();
-                this.initTimeTable();
-                setTimeout(() => {
-                    setInterval(() => {
-                        this.loadTrain();
-                    }, 10000);
-                }, (10 - parseInt(new Date().getSeconds() % 10)) * 1000);
+                this.initTimeTable().then(() => {
+                    this.loadTrain();
+                    setTimeout(() => {
+                        setInterval(() => {
+                            this.loadTrain();
+                        }, 10000);
+                    }, (10 - parseInt(new Date().getSeconds() % 10)) * 1000);
+                });
             }, () => {
                 console.log('Load ' + url + ' Error!');
             })
@@ -124,11 +125,9 @@ var app3 = new Vue({
                     continue;
                 }
                 let deptStationId = route[i.toString()][0];//Number
-
-                await this.loadTimeTable(deptStationId).then((res) => {
-                    this.stations[deptStationId].timetable = res;
-                    this.departTime[i.toString()] = res[i.toString()];
-                });
+                let timetable = this.stations.find(item => item['index'] === deptStationId).timetable;
+                this.departTime = timetable;
+                console.log(this.departTime);
             }
         },
 
