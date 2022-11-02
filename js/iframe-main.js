@@ -215,7 +215,7 @@ var app3 = new Vue({
                 case "5": return "大站快车";
                 case "6":
                 case "7": return "贯通/直达快车";
-                default: return 'To: ' + "普通车";
+                default: return "普通车";
             }
         },
 

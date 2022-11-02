@@ -37,11 +37,11 @@
                 <div class="train-time" :style="{border:color+' solid 2px'}"
                     v-show="currentStationId == index && stations[index].trains.length>0">
                     <table>
-                        <tr v-for="train in stations[index].trains"
-                            :class="{gold: ['4','5','6','7'].includes(train.type)}">
+                        <tr v-for="train in stations[index].trains" :class="{gold: train.type.includes('快车')}">
                             <td>{{train.status}}</td>
                             <td>{{train.eta}}</td>
-                            <td>{{train.type}}</td>
+                            <td>To: {{train.terminal}}</td>
+                            <td v-show="train.type!='普通车'">{{train.type}}</td>
                         </tr>
                     </table>
                 </div>
