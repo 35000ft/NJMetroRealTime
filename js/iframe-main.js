@@ -70,9 +70,19 @@ var app3 = new Vue({
         },
         showTrainInfo(index) {
             this.trains[index]['isShowDetail'] = true;
+            let position = this.trains[index].position;
+            position = parseInt(position.slice(0, position.length - 2));
+            let nextStopId = this.getNextStop(position);
+            if (this.direction) {
+                nextStopId = this.stations.length - 1 - nextStopId;
+            }
+            this.getStationInfo(nextStopId);
+            this.trains[index].nextStop = this.stations[nextStopId].name;
+            this.trains[index].arriveNextTime = this.getArriveNextStopTime(nextStopId);
+
             setTimeout(() => {
                 this.trains[index]['isShowDetail'] = false;
-            }, 3000);
+            }, 5000);
         },
 
         reload(line) {
@@ -200,14 +210,18 @@ var app3 = new Vue({
         },
 
         parseTrainType(_type) {
-            let terminalStation = this.stations.find(item => item['index'] === this.route[_type].slice(-1)[0]);
             switch (_type) {
-                case "4": return "大站快车";
+                case "4":
                 case "5": return "大站快车";
-                case "6": return "贯通/直达快车";
+                case "6":
                 case "7": return "贯通/直达快车";
-                default: return terminalStation['name'];
+                default: return "普通车";
             }
+        },
+
+        parseTrainTerminal(_type) {
+            let terminalStation = this.stations.find(item => item['index'] === this.route[_type].slice(-1)[0]);
+            return terminalStation['name'];
         },
 
         parseTrainStatus(_trainTime) {
@@ -236,6 +250,7 @@ var app3 = new Vue({
                 train['eta'] = trainData["time"];
                 train['status'] = this.parseTrainStatus(trainData['time'])
                 train['type'] = this.parseTrainType(trainData['type']);
+                train['terminal'] = this.parseTrainTerminal(trainData['type']);
                 // console.log(train);
                 trains.push(train);
             })
@@ -301,15 +316,13 @@ var app3 = new Vue({
 
 
         calcTrainPosition(type, departTime, runtime) {
-
             let deviation = this.calcDeviationMins(departTime, this.getFormatTime());
             console.log('type:' + type + ' dev:' + deviation);
             //列车初始位置
             let startPos = this.calcInitPosition(type);
 
             if (deviation == runtime.slice(-1)[0]) {
-                // console.log('pos1' + startPos + this.perSegment * (runtime.length - 1));
-                return startPos + this.perSegment * (runtime.slice(-1)[0]);
+                return startPos + this.perSegment * (this.stations.length - 1);
             } else if (deviation > runtime.slice(-1)[0]) {
                 return -1;
             }
@@ -343,7 +356,6 @@ var app3 = new Vue({
             console.log('loading tarins...');
             this.initDeptTime(this.route).then(() => {
                 let now = this.getFormatTime();
-                console.log(this.departTime);
                 this.trains = [];
                 for (let i = this.direction ? 1 : 0; i < 10; i += 2) {
                     let timetable = this.departTime[i.toString()];
@@ -363,20 +375,44 @@ var app3 = new Vue({
                     }
                     //加载上线列车
                     for (let j = beginIndex; j <= currentIndex; j++) {
+                        let departTime = timetable[j];
                         this.trains.push(this.setTrain(i.toString(),
-                            this.calcTrainPosition(i, timetable[j], runtime)));
+                            this.calcTrainPosition(i, departTime, runtime), departTime));
                     }
                 }
             });
         },
 
-        setTrain(type, position) {
+        setTrain(type, position, departTime) {
             let train = {}
             train['position'] = position + 'px';
             train['type'] = this.parseTrainType(type);
-            // train['type'] = type;
+            train['terminal'] = this.parseTrainTerminal(type);
+            train['terminalTime'] = this.getArriveTerminalTime(departTime, type);
             train['isShowDetail'] = false;
             return train;
+        },
+
+        getNextStop(position) {
+            position -= this.firstPos
+            let remainder = (position) % this.perSegment;
+            if (remainder != 0) {
+                return this.stations[Math.ceil(position / this.perSegment)].index;
+            } else {
+                return this.stations[Math.floor(position / this.perSegment)].index;
+            }
+
+        },
+        getArriveNextStopTime(nextStopId) {
+            while (this.stations[nextStopId].trains.length < 1) {
+            }
+            return this.stations[nextStopId].trains[0].status;
+        },
+
+        getArriveTerminalTime(departTime, type) {
+            let runtime = this.runtime[type].slice(-1)[0];
+            return this.timeConvertor(departTime, runtime);
+            // return departTime;
         },
 
         getFormatTime() {
