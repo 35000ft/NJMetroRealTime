@@ -242,7 +242,7 @@ var app3 = new Vue({
             let trainsData = this.getLatestTrainData(timetable, trainNum);
             if (trainsData.length < 1) {
                 //已过末班
-                return [{ "status": "停止服务", "eta": "Out Of Service", "terminal": "" }];
+                return [{ "status": "停止服务", "eta": "Out Of Service", "terminal": "", "type": "" }];
             }
             let trains = [];
             trainsData.forEach((trainData) => {
