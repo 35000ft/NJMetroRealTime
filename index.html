@@ -33,6 +33,7 @@
                     </div> -->
                     <select @change="switchLine($event)">
                         <option v-for="item in lines" :key="item.value" :value="item.value" :label="item.label">
+                            {{item.label}}
                         </option>
                     </select>
                 </span>
