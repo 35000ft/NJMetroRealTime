@@ -5,6 +5,10 @@
             "label": "S1机场线"
         },
         {
+            "value": "S6",
+            "label": "S6宁句线"
+        },
+        {
             "value": "S8",
             "label": "S8宁天线"
         },
