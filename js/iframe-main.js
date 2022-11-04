@@ -378,7 +378,7 @@ var app3 = new Vue({
                     let runtime = this.runtime[i.toString()];
                     let beginIndex = this.getCurrentIndex(timetable, this.timeConvertor(now, -runtime.slice(-1)[0]));
                     let currentIndex = this.getCurrentIndex(timetable, now);
-                    if (beginIndex >= timetable.length || currentIndex >= timetable.length) {
+                    if (beginIndex >= timetable.length) {
                         //已过末班
                         continue;
                     }
