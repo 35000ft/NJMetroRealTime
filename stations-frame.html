@@ -14,8 +14,50 @@
 <body style="width: 100%; overflow:scroll;overflow-x:hidden;" draggable="true">
     <div id="app_mobile_iframe">
 
-        <span v-for="train in trains" class="train" v-if="train.positon!=-1" :style="{top:train.position}">
-            <img :src="'./assets/icon/train/'+line+'.svg'" alt="">
+        <span v-for="(train,index) in trains" class="train" v-if="train.positon!=-1" :style="{top:train.position}">
+            <img :src="'./assets/icon/train/'+line+'.svg'" alt="" @click="showTrainInfo(index)">
+            <span class="train-detail-info" v-if="train.isShowDetail" @click="displayTrainInfo(index)">
+                <svg version="1.1" id="layer-1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 59.9"
+                    style="enable-background:new 0 0 150 59.9;" xml:space="preserve">
+                    <rect y="0.3" class="st0" width="150" height="59.1" />
+                    <g id="layer-2_1_">
+                        <rect y="57.1" :style="{fill: color}" width="150" height="2.8" />
+                        <rect y="0.3" :style="{fill: color}" width="150" height="2.8" />
+                        <rect y="0.3" :style="{fill: color}" width="2.8" height="59.6" />
+                        <rect x="147.1" y="0.3" :style="{fill: color}" width="2.9" height="59.6" />
+                    </g>
+                    <text transform="matrix(1 0 0 1 10.8027 15.0469)" class="st2 st3 st4 st5">开往</text>
+                    <path id="SVGID_x5F_1_x5F_" class="st6" d="M78.4,18.1H103" />
+                    <text>
+                        <textPath xlink:href="#SVGID_x5F_1_x5F_" startOffset="11.1328%">
+                        </textPath>
+                    </text>
+
+                    <circle :style="{fill: color}" cx="137.6" cy="12.8" r="8" />
+                    <text transform="matrix(1 0 0 1 132.831 16.9685)" class="st0 st7 st4">普</text>
+
+                    <circle style="fill: #FF2A6C" cx="137.6" cy="12.8" r="8"
+                        v-show="['4','5','6','7'].includes(train.type)" />
+                    <text transform="matrix(1 0 0 1 132.831 16.9685)" class="st0 st7 st4">快</text>
+
+                    <text transform="matrix(1 0 0 1 11.3426 30.3043)" class="st2 st3 st4 st5">前方到站</text>
+                    <path id="SVGID_x5F_2_x5F_" class="st6" d="M76.2,34.5h24.6" />
+                    <text>
+                        <textPath xlink:href="#SVGID_x5F_2_x5F_" startOffset="11.1328%">
+                        </textPath>
+                    </text>
+                    <text transform="matrix(1 0 0 1 11.9125 43.8565)" class="st2 st3 st4 st5">到站时间 </text>
+                    <text transform="matrix(0.9848 0 -0.1736 0.9848 78.4148 55.077)" class="st8 st3 st9">抵达终点站时间
+                        {{train.terminalTime}}</text>
+                    <text transform="matrix(0.9848 0 -0.1736 0.9848 62.8132 15.0471)"
+                        class="st2 st3 st10 st5">{{train.terminal}}</text>
+                    <text transform="matrix(0.9848 0 -0.1736 0.9848 63.0751 28.744)"
+                        class="st2 st3 st10 st5">{{train.nextStop}}</text>
+                    <text transform="matrix(0.9848 0 -0.1736 0.9848 61.9414 43.3779)"
+                        class="st2 st3 st10 st5">{{train.arriveNextTime}}</text>
+                </svg>
+            </span>
         </span>
 
         <span style="position:absolute; z-index:1;">
@@ -37,11 +79,12 @@
                 <div class="train-time" :style="{border:color+' solid 2px'}"
                     v-show="currentStationId == index && stations[index].trains.length>0">
                     <table>
-                        <tr v-for="train in stations[index].trains" :class="{gold: train.type.includes('快车')}">
+                        <tr v-for="train in stations[index].trains"
+                            :class="{gold: ['4','5','6','7'].includes(train.type)}">
                             <td>{{train.status}}</td>
                             <td>{{train.eta}}</td>
                             <td>To: {{train.terminal}}</td>
-                            <td v-show="train.type!='普通车'">{{train.type}}</td>
+                            <td v-show="trainType[train.type]!='普通车'">{{trainType[train.type]}}</td>
                         </tr>
                     </table>
                 </div>
