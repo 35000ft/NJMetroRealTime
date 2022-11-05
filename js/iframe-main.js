@@ -65,13 +65,18 @@ var app3 = new Vue({
         },
         firstPos: 15,
         perSegment: 100,
-
+        currentTrain: -1
     },
     created() {
         this.init();
         setInterval(() => {
             this.setTrainTime();
         }, 3000);
+        setInterval(() => {
+            if (this.currentTrain != -1) {
+                this.showTrainInfo(this.currentTrain);
+            }
+        }, 5000);
     },
     mounted() {
         window.reverseDirection = this.reverseDirection;
@@ -83,11 +88,12 @@ var app3 = new Vue({
             this.reload(line);
         },
         showTrainInfo(index) {
+            this.displayTrainInfo(this.currentTrain);
+            this.currentTrain = index;
             this.trains[index]['isShowDetail'] = true;
             let position = this.trains[index].position;
             position = parseInt(position.slice(0, position.length - 2));
             let nextStopId = this.getNextStop(position, this.trains[index].type);
-            // console.log(nextStopId);
             if (this.direction) {
                 nextStopId = this.stations.length - 1 - nextStopId;
             }
@@ -97,8 +103,11 @@ var app3 = new Vue({
                 this.getArriveNextStopTime(nextStopId, this.trains[index].type, this.trains[index].departTime);
         },
         displayTrainInfo(index) {
+            if (index == -1) {
+                return;
+            }
             this.trains[index]['isShowDetail'] = false;
-            console.log(this.trains[index]);
+            this.currentTrain = -1;
         },
 
         reload(line) {
@@ -161,7 +170,6 @@ var app3 = new Vue({
 
                 let timetable = this.stations.find(item => item['index'] === deptStationId).timetable;
                 this.departTime[i.toString()] = timetable[i.toString()];
-
             }
         },
 
