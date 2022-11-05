@@ -105,6 +105,7 @@ var app3 = new Vue({
             const url = this.assertsPath + 'lineInfo/' + line + '.json';
             this.line = line;
             this.resetStation();
+            this.trains = [];
             axios.get(url).then(res => {
                 let names = res.data.stations;
                 this.stations = [];
@@ -131,7 +132,6 @@ var app3 = new Vue({
                         }, 60000);
                     }, (10 - parseInt(new Date().getSeconds() % 10)) * 1000);
                 });
-
 
             }, () => {
                 console.log('Load ' + url + ' Error!');
@@ -392,6 +392,7 @@ var app3 = new Vue({
                             let lastDeptTime = trains.slice(-1)[0].departTime;
                             console.log('i:' + i + ' last:' + lastDeptTime);
                             if (timetable[beginIndex] <= lastDeptTime) {
+                                console.log('ctn');
                                 continue;
                             }
                         }
@@ -418,7 +419,6 @@ var app3 = new Vue({
         },
 
         reloadTrain() {
-            console.log('reloading')
             let nowTime = this.getFormatTime();
             let timeoutTrains = [];
             this.trains.forEach((train, index) => {
