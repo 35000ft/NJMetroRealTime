@@ -106,6 +106,7 @@ var app3 = new Vue({
             if (index == -1) {
                 return;
             }
+            console.log('index ' + index);
             this.trains[index]['isShowDetail'] = false;
             this.currentTrain = -1;
         },
@@ -114,7 +115,7 @@ var app3 = new Vue({
             const url = this.assertsPath + 'lineInfo/' + line + '.json';
             this.line = line;
             this.resetStation();
-            this.trains = [];
+            this.resetTrain();
             axios.get(url).then(res => {
                 let names = res.data.stations;
                 this.stations = [];
@@ -181,6 +182,11 @@ var app3 = new Vue({
             });
         },
 
+        resetTrain() {
+            this.trains = [];
+            this.currentTrain = -1;
+        },
+
         resetStationStyle() {
             if (this.lastStationId == -1) {
                 return;
@@ -193,9 +199,9 @@ var app3 = new Vue({
         reverseDirection() {
             this.resetStationStyle();
             this.resetStation();
+            this.resetTrain();
             this.direction = !this.direction;
             this.stations.reverse();
-            this.trains = [];
             this.loadTrain();
         },
 
@@ -231,7 +237,6 @@ var app3 = new Vue({
                 return;
             }
             let index = this.currentStationId;
-            console.log(this.stations[index].trains)
             if (typeof (this.stations[index].timetable) == "undefined") {
                 return;
             }
@@ -299,9 +304,8 @@ var app3 = new Vue({
                 if (_timetable.length == 0) {
                     continue;
                 }
-                //想要查看任意时刻修改这条语句，如 this.getFormatTime()改成"15:02"
                 let currentIndex = this.getCurrentIndex(_timetable, this.getFormatTime());
-                // let currentIndex = this.getCurrentIndex(_timetable, "09:32");
+                console.log(currentIndex);
                 _t = _timetable.slice(currentIndex, currentIndex + trainNum);
                 if (_t.length < 1) {
                     continue;
@@ -458,10 +462,21 @@ var app3 = new Vue({
                 if (remainder == 0 && typeof (result) != "undefined") {
                     return result;
                 }
-                let remainStations = this.route[type].filter((item) => {
-                    return item > current;
-                });
-                return this.direction ? remainStations.slice(-1)[0] : remainStations[0];
+                let remainStations;
+                if (this.direction) {
+                    current = this.stations.length - 1 - current;
+                    remainStations = this.route[type].filter((item) => {
+                        return item < current;
+                    });
+                } else {
+                    remainStations = this.route[type].filter((item) => {
+                        return item > current;
+                    });
+                }
+
+                console.log('rem');
+                console.log(remainStations);
+                return remainStations[0];
             }
         },
 
@@ -524,6 +539,8 @@ var app3 = new Vue({
             } else if (_t > _timetable[end - 1]) {
                 //如果当前时间在末班车后
                 return _timetable.length;
+            } else if (_t == _timetable[0]) {
+                return 0;
             }
 
             mid = parseInt((start + end) / 2);
