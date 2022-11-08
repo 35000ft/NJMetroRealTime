@@ -106,7 +106,6 @@ var app3 = new Vue({
             if (index == -1) {
                 return;
             }
-            console.log('index ' + index);
             this.trains[index]['isShowDetail'] = false;
             this.currentTrain = -1;
         },
@@ -130,9 +129,9 @@ var app3 = new Vue({
                 this.route = res.data.route;
                 this.runtime = res.data.runtime;
                 this.color = res.data.color;
+                this.resetTrain();
+                this.loadTrain();
                 this.initTimeTable().then(() => {
-                    this.trains = [];
-                    this.loadTrain();
                     setTimeout(() => {
                         setInterval(() => {
                             this.reloadTrain();
@@ -158,7 +157,9 @@ var app3 = new Vue({
         async initTimeTable() {
             for (let i = 0; i < this.stations.length; i++) {
                 let index = this.stations[i]['index'];
-                this.stations[i]['timetable'] = await this.loadTimeTable(index);
+                if (typeof (this.stations[i]['timetable']) == "undefined") {
+                    this.stations[i]['timetable'] = await this.loadTimeTable(index);
+                }
             }
         },
 
@@ -168,10 +169,18 @@ var app3 = new Vue({
                     continue;
                 }
                 let deptStationId = route[i.toString()][0];//Number
-
-                let timetable = this.stations.find(item => item['index'] === deptStationId).timetable;
+                let timetable = await this.getStationTimetable(deptStationId);
                 this.departTime[i.toString()] = timetable[i.toString()];
             }
+        },
+
+        //id: 站点真实id
+        async getStationTimetable(id) {
+            let timetable = this.stations.find(item => item['index'] === id).timetable;
+            if (typeof (timetable) == "undefined") {
+                this.stations.find(item => item['index'] === id).timetable = await this.loadTimeTable(id);
+            }
+            return this.stations.find(item => item['index'] === id).timetable;
         },
 
         resetStation() {
@@ -284,17 +293,11 @@ var app3 = new Vue({
 
         async loadTimeTable(index) {
             //index 车站的真实id
-            let timetable = this.stations.find(item => item['index'] === index).timetable;
-            if (typeof (timetable) == "undefined") {
-                //未加载本站的时刻表, 则加载时刻表
-                console.log("loading " + this.getStationFileName(index));
-                let data = await axios.get(this.getStationFileName(index)).then(res => {
-                    return res.data;
-                })
-                return data;
-            } else {
-                return timetable;
-            }
+            console.log("loading " + this.getStationFileName(index));
+            let data = await axios.get(this.getStationFileName(index)).then(res => {
+                return res.data;
+            });
+            return data;
         },
 
         getLatestTrainData(timetable, trainNum) {
@@ -404,7 +407,6 @@ var app3 = new Vue({
                             let lastDeptTime = trains.slice(-1)[0].departTime;
                             console.log('i:' + i + ' last:' + lastDeptTime);
                             if (timetable[beginIndex] <= lastDeptTime) {
-                                console.log('ctn');
                                 continue;
                             }
                         }
