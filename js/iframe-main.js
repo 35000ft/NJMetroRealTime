@@ -28,8 +28,8 @@ var app3 = new Vue({
             "3": "普通车",
             "4": "大站快车",
             "5": "大站快车",
-            "6": "贯通/直达快车",
-            "7": "贯通/直达快车",
+            "6": "直达快车",
+            "7": "直达快车",
             "8": "普通车",
             "9": "普通车"
         },
@@ -151,14 +151,13 @@ var app3 = new Vue({
             let vm = this;
             window.addEventListener('message', function (e) {
                 vm.reload(e.data);
-            })
+            });
         },
 
         async initTimeTable() {
             for (let i = 0; i < this.stations.length; i++) {
-                let index = this.stations[i]['index'];
-                if (typeof (this.stations[i]['timetable']) == "undefined") {
-                    this.stations[i]['timetable'] = await this.loadTimeTable(index);
+                if (typeof (this.stations.find(item => item.index === i).timetable) == "undefined") {
+                    this.stations.find(item => item.index === i).timetable = await this.loadTimeTable(i);
                 }
             }
         },
@@ -221,7 +220,7 @@ var app3 = new Vue({
         },
 
         getStationFileName(index) {
-            let stationId = this.fillZero(index + 1);
+            let stationId = myTime.fillZero(index + 1);
             let dir = this.assertsPath + 'timetable/' + this.line + '/';
             if (this.isWorkDay()) {
                 return dir + 'workday/' + this.line + stationId + '.json';
@@ -259,7 +258,7 @@ var app3 = new Vue({
         },
 
         parseTrainStatus(_trainTime) {
-            let remainMin = this.calcDeviationMins(this.getFormatTime(), _trainTime);
+            let remainMin = myTime.calcDeviationMins(myTime.getCurrentTime(), _trainTime);
             if (remainMin > 0) {
                 return remainMin + '分钟';
             } else if (remainMin == 0) {
@@ -307,7 +306,7 @@ var app3 = new Vue({
                 if (_timetable.length == 0) {
                     continue;
                 }
-                let currentIndex = this.getCurrentIndex(_timetable, this.getFormatTime());
+                let currentIndex = this.getCurrentTimeIndex(_timetable, myTime.getCurrentTime());
                 console.log(currentIndex);
                 _t = _timetable.slice(currentIndex, currentIndex + trainNum);
                 if (_t.length < 1) {
@@ -344,7 +343,7 @@ var app3 = new Vue({
 
         calcTrainPosition(type, departTime) {
             let runtime = this.runtime[type];//type: "1" "0"
-            let deviation = this.calcDeviationMins(departTime, this.getFormatTime());
+            let deviation = myTime.calcDeviationMins(departTime, myTime.getCurrentTime());
             console.log('type:' + type + ' dev:' + deviation);
             //列车初始位置
             let startPos = this.calcInitPosition(type);
@@ -356,34 +355,17 @@ var app3 = new Vue({
             }
             for (let i = 0; i < runtime.length - 1; i++) {
                 if (deviation > runtime[i] && deviation < runtime[i + 1]) {
-                    // console.log('pos2:' + (startPos + this.perSegment * (i + 0.5)));
                     return startPos + parseInt(this.perSegment * (i + 0.5));
                 } else if (deviation == runtime[i]) {
-                    // console.log('pos3:' + (startPos + this.perSegment * i));
                     return startPos + this.perSegment * i;
                 }
-            }
-        },
-
-        calcDeviationMins(pre, late) {
-            if (typeof (pre) == "undefined" || typeof (late) == "undefined") {
-                return;
-            }
-            h1 = parseInt(pre.split(':')[0]);
-            m1 = parseInt(pre.split(':')[1]);
-            h2 = parseInt(late.split(':')[0]);
-            m2 = parseInt(late.split(':')[1]);
-            if (h1 == h2) {
-                return m2 - m1;
-            } else {
-                return m2 + 60 * (h2 - h1) - m1;
             }
         },
 
         loadTrain() {
             console.log('loading tarins...');
             this.initDeptTime(this.route).then(() => {
-                let now = this.getFormatTime();
+                let now = myTime.getCurrentTime();
                 for (let i = this.direction ? 1 : 0; i < 10; i += 2) {
                     let timetable = this.departTime[i.toString()];
                     if (timetable.length < 1 || now < timetable[0]) {
@@ -391,8 +373,8 @@ var app3 = new Vue({
                         continue;
                     }
                     let runtime = this.runtime[i.toString()];
-                    let beginIndex = this.getCurrentIndex(timetable, this.timeConvertor(now, -runtime.slice(-1)[0]));
-                    let currentIndex = this.getCurrentIndex(timetable, now);
+                    let beginIndex = this.getCurrentTimeIndex(timetable, myTime.timeConvertor(now, -runtime.slice(-1)[0]));
+                    let currentIndex = this.getCurrentTimeIndex(timetable, now);
                     if (beginIndex >= timetable.length) {
                         //已过末班
                         continue;
@@ -433,7 +415,7 @@ var app3 = new Vue({
         },
 
         reloadTrain() {
-            let nowTime = this.getFormatTime();
+            let nowTime = myTime.getCurrentTime();
             let timeoutTrains = [];
             this.trains.forEach((train, index) => {
                 if (nowTime > train.terminalTime) {
@@ -486,81 +468,18 @@ var app3 = new Vue({
             if (this.trainType[type] == "普通车") {
                 return this.stations[nextStopId].trains[0].status;
             } else {
-                let remainMin = this.timeConvertor(departTime, this.runtime[type][nextStopId]);
+                let remainMin = myTime.timeConvertor(departTime, this.runtime[type][nextStopId]);
                 return this.parseTrainStatus(remainMin);
             }
         },
 
         getArriveTerminalTime(departTime, type) {
             let runtime = this.runtime[type].slice(-1)[0];
-            return this.timeConvertor(departTime, runtime);
+            return myTime.timeConvertor(departTime, runtime);
         },
 
-        getFormatTime() {
-            let nowtime = new Date();
-            let _h = nowtime.getHours()
-            let _m = nowtime.getMinutes();
-            if (_h < 10) {
-                _h = '0' + _h;
-            }
-            if (_m < 10) {
-                _m = '0' + _m;
-            }
-            return _h + ':' + _m;
-        },
-
-        //18:31 -> 17:59 offset=-32
-        timeConvertor(_t, offset) {
-            _t = _t.split(':');
-            _h = parseInt(_t[0]);
-            _m = parseInt(_t[1]);
-            //小时需要增减的量 _m + offset超出60的减 小于0的加
-            hour_offset = Math.floor((_m + offset) / 60);
-            _h += hour_offset;
-            if (hour_offset === 0) {
-                _m += offset;
-            } else {
-                _m = _m + offset + 60 * -hour_offset;
-            }
-            return this.fillZero(_h) + ':' + this.fillZero(_m);
-        },
-
-        fillZero(_t) {
-            if (_t < 10) {
-                return '0' + _t;
-            }
-            return _t.toString();
-        },
-        getCurrentIndex(_timetable, _t) {
-            let start = 0;
-            let end = _timetable.length;
-
-            if (_t < _timetable[start]) {
-                //如果当前时间在首班车前
-                return 0;
-            } else if (_t > _timetable[end - 1]) {
-                //如果当前时间在末班车后
-                return _timetable.length;
-            } else if (_t == _timetable[0]) {
-                return 0;
-            }
-
-            mid = parseInt((start + end) / 2);
-            while (mid > start) {
-                if (_t == _timetable[mid]) {
-                    return mid;
-                }
-                else if (_t > _timetable[mid]) {
-                    start = mid;
-                }
-                else {
-                    //15:36 < 16:00
-                    end = mid;
-                }
-                mid = parseInt((start + end) / 2);
-            }
-            //没有找到，返回_t以后的时间(较大的一个)
-            return end;
+        getCurrentTimeIndex(_timetable, _t) {
+            return alg.binarySearch(_timetable, _t);
         }
     }
 })
