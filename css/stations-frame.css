@@ -11,7 +11,7 @@ li {
 
 .train-time {
     margin-left: 35px;
-    width: 250px;
+    width: 270px;
     height: 60px;
     font-size: 14px;
     border-radius: 5px;
@@ -28,7 +28,18 @@ li {
     border-collapse: collapse;
     color: #575757;
 }
-
+.favoured{
+    fill: #ce0000;
+}
+.unFavoured{
+    fill: #e9e9e9;
+}
+.favour {
+    width: 20px;
+    top: 3px;
+    position: relative;
+    display: inline-block;
+}
 
 .train-detail-info {
     width: 150px;

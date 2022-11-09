@@ -1,14 +1,16 @@
-export default {
-    binarySearch(target, array) {
+(function () {
+    function binarySearch(array, target) {
         let start = 0;
         let end = array.length;
 
         if (target < array[start]) {
             //如果当前时间在首班车前
-            return -1;
+            return 0;
         } else if (target > array[end - 1]) {
             //如果当前时间在末班车后
             return array.length;
+        } else if (target == array[0]) {
+            return 0;
         }
 
         mid = parseInt((start + end) / 2);
@@ -28,4 +30,8 @@ export default {
         //没有找到，返回target以后的时间(较大的一个)
         return end;
     }
-}
+
+    window['alg'] = {}
+    window['alg']['binarySearch'] = binarySearch;
+
+})();
