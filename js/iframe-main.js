@@ -101,8 +101,8 @@ var app3 = new Vue({
                 this.runtime = res.data.runtime;
                 this.color = res.data.color;
                 this.resetTrain();
-                this.loadTrain();
                 this.initFavouredStation();
+                this.loadTrain();
                 this.initTimeTable().then(() => {
                     setTimeout(() => {
                         setInterval(() => {
@@ -245,7 +245,6 @@ var app3 = new Vue({
             this.lastStationId = this.currentStationId;
             this.setStationStyle(index);
             this.currentStationId = index;
-
             if (this.stations[index].trains.length < 1) {
                 this.stations[index].trains = [{ 'status': '加载中...', 'eta': 'Loading...', 'type': '' }];
             }
@@ -377,51 +376,54 @@ var app3 = new Vue({
             console.log('loading tarins...');
             this.initDeptTime(this.route).then(() => {
                 let now = myTime.getCurrentTime();
-                for (let i = this.direction ? 1 : 0; i < Object.keys(this.departTime).length; i += 2) {
-                    let timetable = this.departTime[i.toString()];
+                let keys = Object.keys(this.departTime);
+                keys.forEach((key) => {
+                    let timetable = this.departTime[key];
                     if (timetable.length < 1 || now < timetable[0]) {
                         //首班未发
-                        continue;
+                        return;
                     }
-                    let runtime = this.runtime[i.toString()];
+                    let runtime = this.runtime[key];
                     let beginIndex = this.getCurrentTimeIndex(timetable, myTime.timeConvertor(now, -runtime.slice(-1)[0]));
                     let currentIndex = this.getCurrentTimeIndex(timetable, now);
                     if (beginIndex >= timetable.length) {
                         //已过末班
-                        continue;
+                        return;
                     }
 
                     if (this.trains.length > 0) {
                         //已存在列车, 之后监视是否有新发出的列车
                         let trains = this.trains.filter((train) => {
-                            return train.type == i.toString();
+                            return train.type == key;
                         });
                         if (trains.length > 1) {
                             let lastDeptTime = trains.slice(-1)[0].departTime;
-                            console.log('i:' + i + ' last:' + lastDeptTime);
                             if (timetable[beginIndex] <= lastDeptTime) {
-                                continue;
+                                return;
                             }
                         }
                     }
                     if (typeof (timetable[currentIndex]) == "undefined" || now < timetable[currentIndex]) {
                         currentIndex -= 1;
                     }
+
                     //加载上线列车
                     for (let j = beginIndex; j <= currentIndex; j++) {
                         let departTime = timetable[j];
-                        let terminalTime = this.getArriveTerminalTime(departTime, i);
+
+                        let terminalTime = this.getArriveTerminalTime(departTime, key);
                         let train = {
-                            'position': this.calcTrainPosition(i.toString(), departTime) + 'px',
-                            'type': i.toString(),
-                            'terminal': this.parseTrainTerminal(i.toString()),
+                            'position': this.calcTrainPosition(key, departTime) + 'px',
+                            'type': key,
+                            'terminal': this.parseTrainTerminal(key),
                             'terminalTime': terminalTime,
                             'departTime': departTime,
                             'isShowDetail': false
                         }
                         this.trains.push(train);
                     }
-                }
+                })
+
             });
         },
 
