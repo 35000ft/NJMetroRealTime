@@ -295,7 +295,6 @@ var app3 = new Vue({
                 train['status'] = this.parseTrainStatus(trainData['time'])
                 train['type'] = trainData['type'];
                 train['terminal'] = this.parseTrainTerminal(trainData['type']);
-                // console.log(train);
                 trains.push(train);
             })
             return trains;

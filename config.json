@@ -1,6 +1,14 @@
 {
     "lines": [
         {
+            "value": "L1",
+            "label": "1号线"
+        },
+        {
+            "value": "L2",
+            "label": "2号线"
+        },
+        {
             "value": "L3",
             "label": "3号线"
         },

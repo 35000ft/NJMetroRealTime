@@ -26,7 +26,11 @@
         let _h = nowtime.getHours()
         let _m = nowtime.getMinutes();
         if (_h < 10) {
-            _h = '0' + _h;
+            if (_h == 0) {
+                _h = '24';
+            } else {
+                _h = '0' + _h;
+            }
         }
         if (_m < 10) {
             _m = '0' + _m;

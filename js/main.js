@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#app',
     data: {
         lines: [],
-        line: "L3",
+        line: "L1",
         lineName: "",
         color: "",
         stations: [],
