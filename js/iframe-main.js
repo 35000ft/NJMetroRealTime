@@ -22,7 +22,11 @@ var app3 = new Vue({
             "6": "直达快车",
             "7": "直达快车",
             "8": "普通车",
-            "9": "普通车"
+            "9": "普通车",
+            "10": "普通车",
+            "11": "普通车",
+            "12": "普通车",
+            "13": "普通车"
         },
         direction: false,   //是否为上行, 默认为下行
         trains: [],
@@ -171,7 +175,7 @@ var app3 = new Vue({
         },
 
         async initDeptTime(route) {
-            for (let i = this.direction ? 1 : 0; i < 10; i += 2) {
+            for (let i = this.direction ? 1 : 0; i < Object.keys(route).length; i += 2) {
                 if (route[i.toString()].length < 1) {
                     continue;
                 }

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/stations-frame.css">
 </head>
 
-<body style="width: 100%; overflow:scroll;overflow-x:hidden;" >
+<body style="width: 100%; overflow:scroll;overflow-x:hidden;">
     <div id="app_mobile_iframe">
 
         <span v-for="(train,index) in trains" class="train" v-if="train.positon!=-1" :style="{top:train.position}">
@@ -76,7 +76,7 @@
                             :fill="station.color" />
                     </svg>
                 </span>
-                <span class="station-name">{{station.name}}
+                <span class="station-name" :class="{red: station.name.includes('未开通')}">{{station.name}}
                     <span class="favour" @click="favourStation(station.index)">
                         <svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
