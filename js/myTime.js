@@ -22,7 +22,6 @@
     }
 
     function getCurrentTime() {
-        return "21:00";
         let nowtime = new Date();
         let _h = nowtime.getHours()
         let _m = nowtime.getMinutes();
