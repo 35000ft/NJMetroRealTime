@@ -53,6 +53,8 @@ var app3 = new Vue({
                 this.showTrainInfo(this.currentTrain);
             }
         }, 5000);
+        const info = "据@南京地铁，自2022年12月20日起，南京地铁各线路发车间隔有所调整，本时刻表工具暂停服务，恢复时间待定。"
+        alert(info);
     },
     mounted() {
         window.reverseDirection = this.reverseDirection;
