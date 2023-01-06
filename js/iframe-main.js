@@ -9,43 +9,31 @@ var app3 = new Vue({
         assertsPath: "./assets/",
         normalRadius: 6,
         selectedRadius: 8,
+        favouredStation: -1,
         departTime: {
-            "0": [],
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": []
+        },
+        trainType: {
+            "0": "普通车",
+            "1": "普通车",
+            "2": "普通车",
+            "3": "普通车",
+            "4": "大站快车",
+            "5": "大站快车",
+            "6": "直达快车",
+            "7": "直达快车",
+            "8": "普通车",
+            "9": "普通车",
+            "10": "普通车",
+            "11": "普通车",
+            "12": "普通车",
+            "13": "普通车"
         },
         direction: false,   //是否为上行, 默认为下行
-        trains: [],     //列车图标
+        trains: [],
         runtime: {
-            "0": [],
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": []
         },
         route: {
-            "0": [],
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": []
+
         },
         terminal: {
             exDepot: -1,
@@ -53,11 +41,20 @@ var app3 = new Vue({
         },
         firstPos: 15,
         perSegment: 100,
-
+        currentTrain: -1
     },
     created() {
         this.init();
-        this.setTrainTime();
+        setInterval(() => {
+            this.setTrainTime();
+        }, 3000);
+        setInterval(() => {
+            if (this.currentTrain != -1) {
+                this.showTrainInfo(this.currentTrain);
+            }
+        }, 5000);
+        const info = "据@南京地铁，自2022年12月20日起，南京地铁各线路发车间隔有所调整，本时刻表工具暂停服务，恢复时间待定。"
+        alert(info);
     },
     mounted() {
         window.reverseDirection = this.reverseDirection;
@@ -69,20 +66,26 @@ var app3 = new Vue({
             this.reload(line);
         },
         showTrainInfo(index) {
+            this.displayTrainInfo(this.currentTrain);
+            this.currentTrain = index;
             this.trains[index]['isShowDetail'] = true;
             let position = this.trains[index].position;
             position = parseInt(position.slice(0, position.length - 2));
-            let nextStopId = this.getNextStop(position);
+            let nextStopId = this.getNextStop(position, this.trains[index].type);
             if (this.direction) {
                 nextStopId = this.stations.length - 1 - nextStopId;
             }
             this.getStationInfo(nextStopId);
             this.trains[index].nextStop = this.stations[nextStopId].name;
-            this.trains[index].arriveNextTime = this.getArriveNextStopTime(nextStopId);
-
-            setTimeout(() => {
-                this.trains[index]['isShowDetail'] = false;
-            }, 5000);
+            this.trains[index].arriveNextTime =
+                this.getArriveNextStopTime(nextStopId, this.trains[index].type, this.trains[index].departTime);
+        },
+        displayTrainInfo(index) {
+            if (index == -1) {
+                return;
+            }
+            this.trains[index].isShowDetail = false;
+            this.currentTrain = -1;
         },
 
         reload(line) {
@@ -103,14 +106,20 @@ var app3 = new Vue({
                 this.route = res.data.route;
                 this.runtime = res.data.runtime;
                 this.color = res.data.color;
+                this.resetTrain();
+                this.initFavouredStation();
+                this.loadTrain();
                 this.initTimeTable().then(() => {
-                    this.loadTrain();
                     setTimeout(() => {
                         setInterval(() => {
-                            this.loadTrain();
+                            this.reloadTrain();
                         }, 10000);
+                        setInterval(() => {
+                            this.loadTrain();
+                        }, 60000);
                     }, (10 - parseInt(new Date().getSeconds() % 10)) * 1000);
                 });
+
             }, () => {
                 console.log('Load ' + url + ' Error!');
             })
@@ -120,27 +129,71 @@ var app3 = new Vue({
             let vm = this;
             window.addEventListener('message', function (e) {
                 vm.reload(e.data);
-            })
+            });
         },
 
         async initTimeTable() {
             for (let i = 0; i < this.stations.length; i++) {
-                let index = this.stations[i]['index'];
-                this.stations[i]['timetable'] = await this.loadTimeTable(index);
+                if (typeof (this.stations.find(item => item.index === i).timetable) == "undefined") {
+                    this.stations.find(item => item.index === i).timetable = await this.loadTimeTable(i);
+                }
             }
         },
 
+        initFavouredStation() {
+            let station = cookie.getCookie(this.line);
+            if (station == "") {
+                this.favouredStation = -1;
+                return;
+            }
+            this.favouredStation = station;
+            this.scrollToFavouredStation();
+        },
+
+        scrollToFavouredStation() {
+            if (this.favouredStation == -1) {
+                return;
+            }
+            let stationId = this.favouredStation;
+            if (this.direction) {
+                stationId = this.stations.length - 1 - stationId;
+            }
+            this.getStationInfo(stationId);
+            this.$nextTick(() => {
+                let scrollY = stationId * 100;
+                window.scrollTo(0, scrollY);
+            })
+        },
+
+
+        favourStation(stationId) {
+            if (this.favouredStation == stationId) {
+                this.favouredStation = -1;
+                cookie.setCookie(this.line, "", 90);
+                return;
+            }
+            this.favouredStation = stationId;
+            cookie.setCookie(this.line, stationId, 90);
+        },
+
         async initDeptTime(route) {
-            for (let i = this.direction ? 1 : 0; i < 10; i += 2) {
+            for (let i = this.direction ? 1 : 0; i < Object.keys(route).length; i += 2) {
                 if (route[i.toString()].length < 1) {
                     continue;
                 }
                 let deptStationId = route[i.toString()][0];//Number
-
-                let timetable = this.stations.find(item => item['index'] === deptStationId).timetable;
+                let timetable = await this.getStationTimetable(deptStationId);
                 this.departTime[i.toString()] = timetable[i.toString()];
-
             }
+        },
+
+        //id: 站点真实id
+        async getStationTimetable(id) {
+            let timetable = this.stations.find(item => item['index'] === id).timetable;
+            if (typeof (timetable) == "undefined") {
+                this.stations.find(item => item['index'] === id).timetable = await this.loadTimeTable(id);
+            }
+            return this.stations.find(item => item['index'] === id).timetable;
         },
 
         resetStation() {
@@ -149,6 +202,12 @@ var app3 = new Vue({
             this.stations.forEach((station) => {
                 station.trains = [];
             });
+        },
+
+        resetTrain() {
+            this.trains = [];
+            this.currentTrain = -1;
+            this.departTime = {};
         },
 
         resetStationStyle() {
@@ -163,9 +222,13 @@ var app3 = new Vue({
         reverseDirection() {
             this.resetStationStyle();
             this.resetStation();
+            this.resetTrain();
+
             this.direction = !this.direction;
             this.stations.reverse();
+
             this.loadTrain();
+            this.scrollToFavouredStation();
         },
 
         setStationStyle(index) {
@@ -175,7 +238,7 @@ var app3 = new Vue({
         },
 
         getStationFileName(index) {
-            let stationId = this.fillZero(index + 1);
+            let stationId = myTime.fillZero(index + 1);
             let dir = this.assertsPath + 'timetable/' + this.line + '/';
             if (this.isWorkDay()) {
                 return dir + 'workday/' + this.line + stationId + '.json';
@@ -188,35 +251,22 @@ var app3 = new Vue({
             this.lastStationId = this.currentStationId;
             this.setStationStyle(index);
             this.currentStationId = index;
-
             if (this.stations[index].trains.length < 1) {
                 this.stations[index].trains = [{ 'status': '加载中...', 'eta': 'Loading...', 'type': '' }];
             }
+            this.setTrainTime();
         },
 
         setTrainTime() {
-            setInterval(() => {
-                if (this.currentStationId == -1) {
-                    return;
-                }
-                let index = this.currentStationId;
-                console.log(this.stations[index].trains)
-                if (typeof (this.stations[index].timetable) == "undefined") {
-                    return;
-                }
-                const timetable = this.stations[index].timetable;
-                this.stations[index].trains = this.getLatestTrainTime(timetable, 3);
-            }, 3000);
-        },
-
-        parseTrainType(_type) {
-            switch (_type) {
-                case "4":
-                case "5": return "大站快车";
-                case "6":
-                case "7": return "贯通/直达快车";
-                default: return "普通车";
+            if (this.currentStationId == -1) {
+                return;
             }
+            let index = this.currentStationId;
+            if (typeof (this.stations[index].timetable) == "undefined") {
+                return;
+            }
+            const timetable = this.stations[index].timetable;
+            this.stations[index].trains = this.getLatestTrainTime(timetable, 3);
         },
 
         parseTrainTerminal(_type) {
@@ -225,7 +275,7 @@ var app3 = new Vue({
         },
 
         parseTrainStatus(_trainTime) {
-            let remainMin = this.calcDeviationMins(this.getFormatTime(), _trainTime);
+            let remainMin = myTime.calcDeviationMins(myTime.getCurrentTime(), _trainTime);
             if (remainMin > 0) {
                 return remainMin + '分钟';
             } else if (remainMin == 0) {
@@ -249,9 +299,8 @@ var app3 = new Vue({
                 let train = {}
                 train['eta'] = trainData["time"];
                 train['status'] = this.parseTrainStatus(trainData['time'])
-                train['type'] = this.parseTrainType(trainData['type']);
+                train['type'] = trainData['type'];
                 train['terminal'] = this.parseTrainTerminal(trainData['type']);
-                // console.log(train);
                 trains.push(train);
             })
             return trains;
@@ -259,17 +308,11 @@ var app3 = new Vue({
 
         async loadTimeTable(index) {
             //index 车站的真实id
-            let timetable = this.stations.find(item => item['index'] === index).timetable;
-            if (typeof (timetable) == "undefined") {
-                //未加载本站的时刻表, 则加载时刻表
-                console.log("loading " + this.getStationFileName(index));
-                let data = await axios.get(this.getStationFileName(index)).then(res => {
-                    return res.data;
-                })
-                return data;
-            } else {
-                return timetable;
-            }
+            console.log("loading " + this.getStationFileName(index));
+            let data = await axios.get(this.getStationFileName(index)).then(res => {
+                return res.data;
+            });
+            return data;
         },
 
         getLatestTrainData(timetable, trainNum) {
@@ -279,9 +322,7 @@ var app3 = new Vue({
                 if (_timetable.length == 0) {
                     continue;
                 }
-                //想要查看任意时刻修改这条语句，如 this.getFormatTime()改成"15:02"
-                let currentIndex = this.getCurrentIndex(_timetable, this.getFormatTime());
-                // let currentIndex = this.getCurrentIndex(_timetable, "09:32");
+                let currentIndex = this.getCurrentTimeIndex(_timetable, myTime.getCurrentTime());
                 _t = _timetable.slice(currentIndex, currentIndex + trainNum);
                 if (_t.length < 1) {
                     continue;
@@ -315,8 +356,9 @@ var app3 = new Vue({
         },
 
 
-        calcTrainPosition(type, departTime, runtime) {
-            let deviation = this.calcDeviationMins(departTime, this.getFormatTime());
+        calcTrainPosition(type, departTime) {
+            let runtime = this.runtime[type];//type: "1" "0"
+            let deviation = myTime.calcDeviationMins(departTime, myTime.getCurrentTime());
             console.log('type:' + type + ' dev:' + deviation);
             //列车初始位置
             let startPos = this.calcInitPosition(type);
@@ -328,156 +370,134 @@ var app3 = new Vue({
             }
             for (let i = 0; i < runtime.length - 1; i++) {
                 if (deviation > runtime[i] && deviation < runtime[i + 1]) {
-                    // console.log('pos2:' + (startPos + this.perSegment * (i + 0.5)));
                     return startPos + parseInt(this.perSegment * (i + 0.5));
                 } else if (deviation == runtime[i]) {
-                    // console.log('pos3:' + (startPos + this.perSegment * i));
                     return startPos + this.perSegment * i;
                 }
-            }
-        },
-
-        calcDeviationMins(pre, late) {
-            if (typeof (pre) == "undefined" || typeof (late) == "undefined") {
-                return;
-            }
-            h1 = parseInt(pre.split(':')[0]);
-            m1 = parseInt(pre.split(':')[1]);
-            h2 = parseInt(late.split(':')[0]);
-            m2 = parseInt(late.split(':')[1]);
-            if (h1 == h2) {
-                return m2 - m1;
-            } else {
-                return m2 + 60 * (h2 - h1) - m1;
             }
         },
 
         loadTrain() {
             console.log('loading tarins...');
             this.initDeptTime(this.route).then(() => {
-                let now = this.getFormatTime();
-                this.trains = [];
-                for (let i = this.direction ? 1 : 0; i < 10; i += 2) {
-                    let timetable = this.departTime[i.toString()];
-                    let runtime = this.runtime[i.toString()];
-                    if (now < timetable[0]) {
+                let now = myTime.getCurrentTime();
+                let keys = Object.keys(this.departTime);
+                keys.forEach((key) => {
+                    let timetable = this.departTime[key];
+                    if (timetable.length < 1 || now < timetable[0]) {
                         //首班未发
-                        continue;
+                        return;
                     }
-                    let beginIndex = this.getCurrentIndex(timetable, this.timeConvertor(now, -runtime.slice(-1)[0]));
-                    let currentIndex = this.getCurrentIndex(timetable, now);
+                    let runtime = this.runtime[key];
+                    let beginIndex = this.getCurrentTimeIndex(timetable, myTime.timeConvertor(now, -runtime.slice(-1)[0]));
+                    let currentIndex = this.getCurrentTimeIndex(timetable, now);
                     if (beginIndex >= timetable.length) {
                         //已过末班
-                        continue;
+                        return;
+                    }
+
+                    if (this.trains.length > 0) {
+                        //已存在列车, 之后监视是否有新发出的列车
+                        let trains = this.trains.filter((train) => {
+                            return train.type == key;
+                        });
+                        if (trains.length > 1) {
+                            let lastDeptTime = trains.slice(-1)[0].departTime;
+                            if (timetable[beginIndex] <= lastDeptTime) {
+                                return;
+                            }
+                        }
                     }
                     if (typeof (timetable[currentIndex]) == "undefined" || now < timetable[currentIndex]) {
                         currentIndex -= 1;
                     }
+
                     //加载上线列车
                     for (let j = beginIndex; j <= currentIndex; j++) {
                         let departTime = timetable[j];
-                        this.trains.push(this.setTrain(i.toString(),
-                            this.calcTrainPosition(i, departTime, runtime), departTime));
+
+                        let terminalTime = this.getArriveTerminalTime(departTime, key);
+                        let train = {
+                            'position': this.calcTrainPosition(key, departTime) + 'px',
+                            'type': key,
+                            'terminal': this.parseTrainTerminal(key),
+                            'terminalTime': terminalTime,
+                            'departTime': departTime,
+                            'isShowDetail': false
+                        }
+                        this.trains.push(train);
                     }
-                }
+                })
+
             });
         },
 
-        setTrain(type, position, departTime) {
-            let train = {}
-            train['position'] = position + 'px';
-            train['type'] = this.parseTrainType(type);
-            train['terminal'] = this.parseTrainTerminal(type);
-            train['terminalTime'] = this.getArriveTerminalTime(departTime, type);
-            train['isShowDetail'] = false;
-            return train;
+        reloadTrain() {
+            let nowTime = myTime.getCurrentTime();
+            let timeoutTrains = [];
+            this.trains.forEach((train, index) => {
+                if (nowTime > train.terminalTime) {
+                    timeoutTrains.push(index);
+                } else {
+                    train.position = this.calcTrainPosition(train.type, train.departTime) + 'px';
+                    console.log(train.position);
+                }
+            });
+            timeoutTrains.forEach(i => this.trains.splice(i, 1));
         },
 
-        getNextStop(position) {
-            position -= this.firstPos
+        //获取列车的下一站的真实id
+        getNextStop(position, type) {
+            position -= this.firstPos;
             let remainder = (position) % this.perSegment;
-            if (remainder != 0) {
-                return this.stations[Math.ceil(position / this.perSegment)].index;
+            let current = Math.floor(position / this.perSegment);
+            let next = Math.ceil(position / this.perSegment);
+            if (this.trainType[type] == "普通车") {
+                if (remainder != 0) {
+                    return this.stations[next].index;
+                } else {
+                    return this.stations[current].index;
+                }
             } else {
-                return this.stations[Math.floor(position / this.perSegment)].index;
-            }
+                //快车
+                let result = this.route[type].find(item => item === current);
+                if (remainder == 0 && typeof (result) != "undefined") {
+                    return result;
+                }
+                let remainStations;
+                if (this.direction) {
+                    current = this.stations.length - 1 - current;
+                    remainStations = this.route[type].filter((item) => {
+                        return item < current;
+                    });
+                } else {
+                    remainStations = this.route[type].filter((item) => {
+                        return item > current;
+                    });
+                }
 
-        },
-        getArriveNextStopTime(nextStopId) {
-            while (this.stations[nextStopId].trains.length < 1) {
+                console.log('rem');
+                console.log(remainStations);
+                return remainStations[0];
             }
-            return this.stations[nextStopId].trains[0].status;
+        },
+
+        getArriveNextStopTime(nextStopId, type, departTime) {
+            if (this.trainType[type] == "普通车") {
+                return this.stations[nextStopId].trains[0].status;
+            } else {
+                let remainMin = myTime.timeConvertor(departTime, this.runtime[type][nextStopId]);
+                return this.parseTrainStatus(remainMin);
+            }
         },
 
         getArriveTerminalTime(departTime, type) {
             let runtime = this.runtime[type].slice(-1)[0];
-            return this.timeConvertor(departTime, runtime);
-            // return departTime;
+            return myTime.timeConvertor(departTime, runtime);
         },
 
-        getFormatTime() {
-            let nowtime = new Date();
-            let _h = nowtime.getHours()
-            let _m = nowtime.getMinutes();
-            if (_h < 10) {
-                _h = '0' + _h;
-            }
-            if (_m < 10) {
-                _m = '0' + _m;
-            }
-            return _h + ':' + _m;
-        },
-
-        //18:31 -> 17:59 offset=-32
-        timeConvertor(_t, offset) {
-            _t = _t.split(':');
-            _h = parseInt(_t[0]);
-            _m = parseInt(_t[1]);
-            //小时需要增减的量 _m + offset超出60的减 小于0的加
-            hour_offset = Math.floor((_m + offset) / 60);
-            _h += hour_offset;
-            if (hour_offset === 0) {
-                _m += offset;
-            } else {
-                _m = _m + offset + 60 * -hour_offset;
-            }
-            return this.fillZero(_h) + ':' + this.fillZero(_m);
-        },
-
-        fillZero(_t) {
-            if (_t < 10) {
-                return '0' + _t;
-            }
-            return _t.toString();
-        },
-        getCurrentIndex(_timetable, _t) {
-            let start = 0;
-            let end = _timetable.length;
-
-            if (_t < _timetable[start]) {
-                //如果当前时间在首班车前
-                return 0;
-            } else if (_t > _timetable[end - 1]) {
-                //如果当前时间在末班车后
-                return _timetable.length;
-            }
-
-            mid = parseInt((start + end) / 2);
-            while (mid > start) {
-                if (_t == _timetable[mid]) {
-                    return mid;
-                }
-                else if (_t > _timetable[mid]) {
-                    start = mid;
-                }
-                else {
-                    //15:36 < 16:00
-                    end = mid;
-                }
-                mid = parseInt((start + end) / 2);
-            }
-            //没有找到，返回_t以后的时间(较大的一个)
-            return end;
+        getCurrentTimeIndex(_timetable, _t) {
+            return alg.binarySearch(_timetable, _t);
         }
     }
 })

@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>南京地铁列车实时查询</title>
+    <title>南京地铁列车实时查询_v0.8@test</title>
     </title>
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- 引入css样式 -->
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/main.css">
-
+    <link rel="manifest" href="./manifest.webmanifest">
 
 </head>
 
@@ -20,17 +20,12 @@
     <div id="app" style="width: 100%;">
         <div style="background-clip:content-box;padding-top: 10px; margin-left: 15px; margin-right: 15px;">
             <div class="head-info">
+                <button class="add-button" v-show="false"></button>
                 <img :src="'./assets/icon/'+line+'_icon.svg'" alt=""
-                    style="width: 80px; margin-left: 0px; margin-right: 10px;">
+                    style="height: 80px; margin-left: 0px; margin-right: 10px;">
                 <h1 style="display: inline-block; height: 30px; margin-bottom: 0px; padding-bottom: 5px;">{{lineName}}
                 </h1>
-                <span style="margin-left: 30px;">
-                    <!-- <div>
-                        <ul>
-                            <li @click="switchLine(item.value)" v-for="item in lines">{{item.label}}
-                            </li>
-                        </ul>
-                    </div> -->
+                <span style="float: right; margin-top: 60px;">
                     <select @change="switchLine($event)">
                         <option v-for="item in lines" :key="item.value" :value="item.value" :label="item.label">
                             {{item.label}}
@@ -48,9 +43,12 @@
             </div>
 
             <template>
-                <iframe name="stationIframe" ref="stationIframe" src="./stations-frame.html" frameborder="0"
+                <iframe name="stationIframe" ref="stationIframe" v-if="!isLoadL7" src="./stations-frame.html"
+                    frameborder="0" width="100%" height="600px"></iframe>
+                <iframe name="stationIframe" ref="stationIframe" v-if="isLoadL7" src="./L7.html" frameborder="0"
                     width="100%" height="600px"></iframe>
             </template>
+
 
             <div class="description">
                 <h3>说明:</h3>
@@ -65,6 +63,7 @@
                 </p>
                 <p>
                     <span>4. 基础数据来源于</span>
+
                     <a href="https://weibo.com/u/7781185375">
 
                         @纵横金陵</a>, 经推算后得出, 不保证完全准确

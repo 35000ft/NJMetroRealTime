@@ -1,0 +1,15 @@
+{
+    "background_color": "white",
+    "description": "南京地铁列车时刻实时查询",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "./assets/icon/logo.png",
+            "sizes": "200x200",
+            "type": "image/png"
+        }
+    ],
+    "name": "南京地铁列车时刻实时查询",
+    "short_name": "南京地铁时刻查询",
+    "start_url": "./index.html"
+}
