@@ -34,7 +34,6 @@ li {
 }
 
 
-
 .unFavoured {
     fill: #e9e9e9;
 }
@@ -73,7 +72,7 @@ li {
 }
 
 .train-detail-info svg .st5 {
-    letter-spacing: -1;
+    letter-spacing: normal;
 }
 
 .train-detail-info svg .st6 {

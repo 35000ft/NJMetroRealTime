@@ -2,14 +2,13 @@ var app = new Vue({
     el: '#app',
     data: {
         lines: [],
-        line: "L1",
+        line: "L2",
         lineName: "",
         color: "",
         stations: [],
         directionText: "",
         direction: false,
         assertsPath: "./assets/",
-        isLoadL7: false
     },
     methods: {
         switchLine(event) {
@@ -19,7 +18,6 @@ var app = new Vue({
             }
             this.line = line;
             this.init();
-            this.isLoadL7 = line === 'L7';
             window.stationIframe.switchLine(line);
         },
 
@@ -48,12 +46,13 @@ var app = new Vue({
                 this.stations = []
                 this.lineName = res.data.lineName;
                 let names = res.data.stations;
-                for (i = 0; i < names.length; i++) {
-                    this.stations.push({ "index": i, "name": names[i] });
+                for (let i = 0; i < names.length; i++) {
+                    this.stations.push({"index": i, "name": names[i]});
                 }
                 this.directionText = this.stations[this.stations.length - 1].name;
                 this.color = res.data.color;
                 this.line = res.data.line;
+
                 const mapFrame = this.$refs['stationIframe'];
                 mapFrame.onload = (function () {
                     const iframeWin = mapFrame.contentWindow;
@@ -67,7 +66,9 @@ var app = new Vue({
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker
                     .register('./sw.js')
-                    .then(() => { console.log('Service Worker Registered'); });
+                    .then(() => {
+                        console.log('Service Worker Registered');
+                    });
             }
         },
         addToDesktop() {
