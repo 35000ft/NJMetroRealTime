@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#app',
     data: {
         lines: [],
-        line: "L2",
+        line: "L1",
         lineName: "",
         color: "",
         stations: [],
@@ -29,8 +29,9 @@ var app = new Vue({
         async loadConfig() {
             const url = './config.json';
             console.log("loading " + url);
-            axios.get(url).then(res => {
+            await axios.get(url).then(res => {
                 this.lines = res.data.lines;
+                // this.line = res.data.defaultLine
                 console.log("load " + url + " successfully");
             }, () => {
                 console.log('Load ' + url + ' Error!');
@@ -38,29 +39,30 @@ var app = new Vue({
         },
 
         async init() {
-            await this.loadConfig();
-            const url = this.assertsPath + 'lineInfo/' + this.line + '.json';
-            console.log("loading " + url);
-            axios.get(url).then(res => {
-                this.direction = false;
-                this.stations = []
-                this.lineName = res.data.lineName;
-                let names = res.data.stations;
-                for (let i = 0; i < names.length; i++) {
-                    this.stations.push({"index": i, "name": names[i]});
-                }
-                this.directionText = this.stations[this.stations.length - 1].name;
-                this.color = res.data.color;
-                this.line = res.data.line;
+            this.loadConfig().then(() => {
+                const url = this.assertsPath + 'lineInfo/' + this.line + '.json';
+                console.log("loading " + url);
+                axios.get(url).then(res => {
+                    this.direction = false;
+                    this.stations = []
+                    this.lineName = res.data.lineName;
+                    let names = res.data.stations;
+                    for (let i = 0; i < names.length; i++) {
+                        this.stations.push({"index": i, "name": names[i]});
+                    }
+                    this.directionText = this.stations[this.stations.length - 1].name;
+                    this.color = res.data.color;
+                    this.line = res.data.line;
 
-                const mapFrame = this.$refs['stationIframe'];
-                mapFrame.onload = (function () {
-                    const iframeWin = mapFrame.contentWindow;
-                    iframeWin.postMessage(res.data.line, '*');
-                });
-            }, () => {
-                console.log('Load ' + url + ' Error!');
-            })
+                    const mapFrame = this.$refs['stationIframe'];
+                    mapFrame.onload = (function () {
+                        const iframeWin = mapFrame.contentWindow;
+                        iframeWin.postMessage(res.data.line, '*');
+                    });
+                }, () => {
+                    console.log('Load ' + url + ' Error!');
+                })
+            });
         },
         registerServiceWorker() {
             if ('serviceWorker' in navigator) {

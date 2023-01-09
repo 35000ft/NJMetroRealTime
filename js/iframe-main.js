@@ -1,7 +1,7 @@
 var app4 = new Vue({
     el: '#app_mobile_iframe',
     data: {
-        line: "L2",
+        line: "L1",
         color: "",
 
         lastStationId: "-1",
