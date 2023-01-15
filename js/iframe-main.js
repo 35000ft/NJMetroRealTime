@@ -151,8 +151,8 @@ var app4 = new Vue({
         },
 
         getNowTime() {
-            // return new Date().format('HH:mm:ss')
-            return '07:47:00'
+            return new Date().format('HH:mm:ss')
+
         },
 
         loadTrains() {
