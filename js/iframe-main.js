@@ -151,8 +151,8 @@ var app4 = new Vue({
         },
 
         getNowTime() {
-            return new Date().format('HH:mm:ss')
-            // return '07:46:00'
+            // return new Date().format('HH:mm:ss')
+            return '07:47:00'
         },
 
         loadTrains() {
@@ -315,9 +315,18 @@ var app4 = new Vue({
             //暂无列车
             if (trainList.length < TOTAL_DISPLAY_TRAIN_NUMBER) {
                 const futureTrains = this.getScheduleTrains(stationId).slice(0, TOTAL_DISPLAY_TRAIN_NUMBER - trainList.length)
-                console.log('future')
-                console.log(futureTrains)
-                trainList = trainList.concat(futureTrains)
+
+                let trainMap = new Map(trainList.map(e => {
+                    return [e.trainId, e]
+                }))
+                futureTrains.forEach(e => {
+                    if (!trainMap.has(e.trainId)) {
+                        trainMap.set(e.trainId, e)
+                    }
+                })
+
+                trainList = Array.from(trainMap.values())
+
                 let t = {
                     "status": "停止服务",
                     "eta": "Out of service",
@@ -350,7 +359,6 @@ var app4 = new Vue({
                 return Number(sid) === tData.schedule[0].stationId;
             }
             const isFirstStop = judgeFirstStop(stationId, trainData)
-            console.log('是否为始发站' + isFirstStop)
             trainData.eta = this.formatETA(trainData, isFirstStop);
 
             trainData.terminal = this.formatTrainTerminal(trainData).name;
