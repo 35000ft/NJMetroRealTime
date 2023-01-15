@@ -28,7 +28,9 @@ var app4 = new Vue({
         firstPos: 15,
         perSegment: 100,
         currentTrainId: "-1",
-        updatePeriod: 5000
+        updatePeriod: 5000,
+        firstId: 0,
+        lastId: 0
     },
     created() {
         this.init();
@@ -93,6 +95,9 @@ var app4 = new Vue({
             axios.get(url).then(res => {
                 let names = res.data.stations
                 let stationIds = res.data.stationIds
+                this.firstId = stationIds[0]
+                this.lastId = stationIds.slice(-1)[0]
+
                 if (typeof (res.data.trainType) != "undefined") {
                     this.trainType = res.data.trainType
                     console.log(this.trainType)
@@ -301,17 +306,18 @@ var app4 = new Vue({
         },
 
         updateStationSchedule(stationId) {
+            const TOTAL_DISPLAY_TRAIN_NUMBER = 3
             stationId = stationId.toString()
             if (stationId === "-1") {
                 return;
             }
-            let trainList = this.getLatestTrains(stationId, 3);
-
+            let trainList = this.getLatestTrains(stationId, TOTAL_DISPLAY_TRAIN_NUMBER);
             //暂无列车
-            if (trainList.length < 1) {
-                trainList = this.getScheduleTrains(stationId).slice(0, 3)
-                console.log('未来列车')
-                console.log(trainList)
+            if (trainList.length < TOTAL_DISPLAY_TRAIN_NUMBER) {
+                const futureTrains = this.getScheduleTrains(stationId).slice(0, TOTAL_DISPLAY_TRAIN_NUMBER - trainList.length)
+                console.log('future')
+                console.log(futureTrains)
+                trainList = trainList.concat(futureTrains)
                 let t = {
                     "status": "停止服务",
                     "eta": "Out of service",
@@ -324,7 +330,6 @@ var app4 = new Vue({
             }
             //格式化数据
             trainList.forEach(trainData => {
-                console.log('格式化中:' + stationId)
                 this.formatTrainData(trainData, stationId);
             });
             console.log(stationId + '站最近的列车');
@@ -357,6 +362,10 @@ var app4 = new Vue({
             return this.stations.get(terminalId.toString());
         },
         formatTrainStatus(trainData) {
+            if (trainData.arrivalTime === '......') {
+                return '不停站通过'
+            }
+
             let now = this.getNowTime();
             if (now < trainData.arrivalTime) {
                 let d1 = new Date('2023/01/01 ' + now);
@@ -385,9 +394,13 @@ var app4 = new Vue({
             }
         },
         formatETA(trainData, isFirstStop) {
+            if (trainData.arrivalTime === '......') {
+                return 'No stop'
+            }
             if (isFirstStop) {
                 return myTime.formatTime(trainData.departTime);
             }
+
             return myTime.formatTime(trainData.arrivalTime);
         },
 
@@ -414,6 +427,7 @@ var app4 = new Vue({
             const rawStationId = stationId;
             while (trainList.length < number) {
                 stationId = stationId.toString();
+                console.log(stationId)
                 if (this.trainPosition.has(stationId)) {
                     const trains = this.trainPosition.get(stationId);
                     trains.forEach(element => {
@@ -427,7 +441,8 @@ var app4 = new Vue({
 
                 stationId = Number(stationId)
                 stationId += this.direction ? 0.5 : -0.5
-                if (stationId < 0 || stationId > this.stations.size - 1) {
+
+                if (stationId < this.firstId || stationId > this.lastId) {
                     //搜索完该站之前的列车即返回
                     break;
                 }
