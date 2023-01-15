@@ -68,7 +68,7 @@ var app4 = new Vue({
             this.currentTrainId = trainId;
             let trainData = this.trains.get(trainId);
 
-            trainData.type = this.formatTrainDescription(trainData);
+            trainData.type = this.formatTrainType(trainData.level);
             trainData.terminal = this.formatTrainTerminal(trainData).name;
             let terminalInfo = this.getTrainDataOfStation("-1", trainId);
             trainData.terminalTime = myTime.formatTime(terminalInfo.arrivalTime);
@@ -145,6 +145,10 @@ var app4 = new Vue({
             this.trainPosition.get(position).push(trainId);
         },
 
+        getNowTime() {
+            return new Date().format('HH:mm:ss')
+            // return '07:46:00'
+        },
 
         loadTrains() {
             console.log('Loading trains...');
@@ -156,7 +160,7 @@ var app4 = new Vue({
 
             const scheduleArray = Object.values(this.trainSchedules)
 
-            let now = new Date().format('HH:mm:ss');
+            let now = this.getNowTime();
             console.log('now:' + now);
             //当前在线运营的列车：符合 "始发站到达时间 <= 当前时间 <= 终点站离开时间" 条件的列车
             let onServiceTrains = scheduleArray
@@ -193,7 +197,6 @@ var app4 = new Vue({
             this.$forceUpdate();
             console.log('trains loaded.');
         },
-
 
         switchLine(line) {
             this.line = line;
@@ -307,8 +310,8 @@ var app4 = new Vue({
             //暂无列车
             if (trainList.length < 1) {
                 trainList = this.getScheduleTrains(stationId).slice(0, 3)
-                // console.log('未来列车')
-                // console.log(trainList)
+                console.log('未来列车')
+                console.log(trainList)
                 let t = {
                     "status": "停止服务",
                     "eta": "Out of service",
@@ -319,13 +322,14 @@ var app4 = new Vue({
                     trainList.push(t)
                 }
             }
-
+            //格式化数据
+            trainList.forEach(trainData => {
+                console.log('格式化中:' + stationId)
+                this.formatTrainData(trainData, stationId);
+            });
             console.log(stationId + '站最近的列车');
             console.log(trainList);
 
-            trainList.forEach(trainData => {
-                this.formatTrainData(trainData, stationId);
-            });
 
             this.stations.get(stationId.toString()).trains = trainList;
         },
@@ -341,18 +345,19 @@ var app4 = new Vue({
                 return Number(sid) === tData.schedule[0].stationId;
             }
             const isFirstStop = judgeFirstStop(stationId, trainData)
+            console.log('是否为始发站' + isFirstStop)
             trainData.eta = this.formatETA(trainData, isFirstStop);
 
             trainData.terminal = this.formatTrainTerminal(trainData).name;
 
-            trainData.description = this.formatTrainDescription(trainData)
+            trainData.description = this.formatTrainDescription(trainData, isFirstStop)
         },
         formatTrainTerminal(trainData) {
             let terminalId = trainData.schedule.slice(-1)[0].stationId;
             return this.stations.get(terminalId.toString());
         },
         formatTrainStatus(trainData) {
-            let now = new Date().format('HH:mm:ss');
+            let now = this.getNowTime();
             if (now < trainData.arrivalTime) {
                 let d1 = new Date('2023/01/01 ' + now);
                 let d2;
@@ -381,19 +386,25 @@ var app4 = new Vue({
         },
         formatETA(trainData, isFirstStop) {
             if (isFirstStop) {
-                //始发站则显示出发时间
-                trainData.description = '始发'
                 return myTime.formatTime(trainData.departTime);
             }
             return myTime.formatTime(trainData.arrivalTime);
         },
-        formatTrainDescription(trainData) {
-            const trainType = this.trainType[trainData.level.toString()]
 
+        formatTrainDescription(trainData, isFirstStop) {
+            const trainType = this.trainType[trainData.level.toString()]
+            trainData.description = ""
+            if (isFirstStop) {
+                trainData.description = "始发"
+            }
             if (trainType.includes('快')) {
                 return trainType
             }
-            return typeof (trainData.description) == "undefined" ? "" : trainData.description
+            return trainData.description
+        },
+
+        formatTrainType(trainLevel) {
+            return this.trainType[trainLevel.toString()]
         },
 
 
@@ -442,10 +453,6 @@ var app4 = new Vue({
             //对象使用 = 赋值 修改引用会改变原对象
             let trainData = Object.assign({}, this.trainSchedules[trainId]);
             return this.toTrainDataOfStation(stationId, trainData)
-            // const schedule = trainData.schedule.find(element => element.stationId === Number(stationId))
-            // trainData.departTime = schedule.departTime;
-            // trainData.arrivalTime = schedule.arrivalTime;
-            // return trainData;
         },
 
         toTrainDataOfStation(stationId, rawTrainData) {
@@ -462,7 +469,7 @@ var app4 = new Vue({
 
         //计算列车当前所在车站/区间
         calcTrainPosition(train) {
-            let now = new Date().format('HH:mm:ss');
+            let now = this.getNowTime();
             for (let i = 0; i < train.schedule.length - 1; i++) {
                 const departTime = train.schedule[i].departTime
                 const arrivalTime = train.schedule[i].arrivalTime
@@ -534,7 +541,6 @@ var app4 = new Vue({
                         : element.schedule[0].stationId <= stationId
                 })
                 .sort((obj1, obj2) => {
-                    console.log(obj1.schedule[0].departTime)
                     return obj1.schedule[0].departTime.localeCompare(obj2.schedule[0].departTime)
                 })
             trains.forEach(e => this.toTrainDataOfStation(stationId, e))
@@ -563,7 +569,7 @@ var app4 = new Vue({
         },
         //判断time是否在当前之间之前或之后, 并规定凌晨0-2点为较后的时间(00:05:23>23:58:01)
         selectTime(time, isLatter) {
-            let now = new Date().format('HH:mm:ss');
+            let now = this.getNowTime();
             const t = '02:00:00'
             if (time >= t || (time <= t && now <= t)) {
                 //time不在0-2点或now和time都在0-2点, 则直接比较
