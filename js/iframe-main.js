@@ -441,7 +441,7 @@ var app4 = new Vue({
                     trains.forEach(element => {
                         //element: trainId
                         const trainDataOfStation = this.getTrainDataOfStation(rawStationId, element)
-                        if (trainDataOfStation.arrivalTime !== '......') {
+                        if (trainDataOfStation !== undefined && trainDataOfStation.arrivalTime !== '......') {
                             trainList.push(trainDataOfStation);
                         }
                     });
@@ -467,6 +467,7 @@ var app4 = new Vue({
         getTrainDataOfStation(stationId, trainId) {
             if (typeof (this.trainSchedules[trainId]) == "undefined") {
                 console.log('没有' + trainId + '次列车的数据');
+                return undefined
             }
             if (stationId === "-1") {
                 //查询终点站
@@ -480,6 +481,9 @@ var app4 = new Vue({
 
         toTrainDataOfStation(stationId, rawTrainData) {
             const schedule = rawTrainData.schedule.find(element => element.stationId === Number(stationId))
+            if (schedule === undefined) {
+                return
+            }
             rawTrainData.departTime = schedule.departTime;
             rawTrainData.arrivalTime = schedule.arrivalTime;
             return rawTrainData
@@ -567,6 +571,7 @@ var app4 = new Vue({
                     return obj1.schedule[0].departTime.localeCompare(obj2.schedule[0].departTime)
                 })
             trains.forEach(e => this.toTrainDataOfStation(stationId, e))
+            trains = trains.filter(e => e !== undefined)
             return Array.from(trains)
         },
 
