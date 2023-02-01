@@ -180,9 +180,10 @@ var app2 = new Vue({
             //当前在线运营的列车：符合 "始发站到达时间 <= 当前时间 <= 终点站离开时间" 条件的列车
             let onServiceTrains = scheduleArray
                 .filter(element => this.selectDirection(element.direction))
-                .filter(element => now <= element.schedule[element.schedule.length - 1].departTime)
-                .filter(element => now >= element.schedule[0].arrivalTime)
+                .filter(element => this.selectTime(element.schedule[element.schedule.length - 1].departTime, true))
+                .filter(element => this.selectTime(element.schedule[0].arrivalTime, false))
             console.log('当前在线列车:')
+            onServiceTrains.forEach(e => console.log(e.trainId))
             console.log(onServiceTrains)
 
             //记录在线运营列车的车次，用于删除this.trains中过时的列车
@@ -357,7 +358,8 @@ var app2 = new Vue({
             //暂无列车
             if (trainList.length < TOTAL_DISPLAY_TRAIN_NUMBER) {
                 const futureTrains = this.getScheduleTrains(stationId).slice(0, TOTAL_DISPLAY_TRAIN_NUMBER - trainList.length)
-
+                console.log('未来列车')
+                console.log(futureTrains)
                 let trainMap = new Map(trainList.map(e => {
                     return [e.trainId, e]
                 }))
@@ -368,8 +370,6 @@ var app2 = new Vue({
                 })
 
                 trainList = Array.from(trainMap.values())
-                console.log('车站最近列车')
-                console.log(trainList)
                 let t = {
                     "status": "停止服务",
                     "eta": "Out of service",
@@ -634,9 +634,11 @@ var app2 = new Vue({
                 return
             }
             const scheduleArray = Object.values(this.trainSchedules)
-            return scheduleArray
+            let x = scheduleArray
                 .filter(element => this.selectDirection(element.direction))
                 .filter(element => this.selectTime(element.schedule[0].departTime, true))
+            console.log(x)
+            return x
         },
 
         //筛选出上/下行方向的列车
