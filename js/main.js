@@ -18,7 +18,13 @@ var app = new Vue({
             }
             this.line = line;
             this.init();
-            window.stationIframe.switchLine(line);
+            window.stationIframe.switchLine(line)
+        },
+
+        switchLineSelf(line, loadStationId) {
+            this.line = line;
+            this.init();
+            window.stationIframe.switchLine(line, loadStationId)
         },
 
         reverseDirection() {
@@ -109,7 +115,8 @@ var app = new Vue({
         this.registerServiceWorker();
     },
     mounted() {
-        window.switchLine = this.switchLine;
-        window.reverseDirection = this.reverseDirection;
+        window.switchLine = this.switchLine
+        window.reverseDirection = this.reverseDirection
+        window.switchLineSelf = this.switchLineSelf
     }
 })

@@ -76,7 +76,12 @@
                     </svg>
                 </span>
             <span class="station-name">{{station.name}}
-                    <span @click="favourStation(station.stationId)" class="favour">
+                <span class="transferIcon">
+                    <img :src="'./assets/icon/'+ line +'_icon.svg'" @click="switchLineSelf(line,station.stationId)"
+                         alt=""
+                         v-for="line in station.transferLines">
+                </span>
+                <span @click="favourStation(station.stationId)" class="favour">
                         <svg id="收藏图标" style="enable-background:new 0 0 50 50;" version="1.1"
                              viewBox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
@@ -97,7 +102,7 @@
 		c-1.6-0.2-3.6-1.6-4.3-3.1l-3.2-6.5C26,8.9,25.5,8.5,25,8.5L25,8.5z"/>
                             </g>
                         </svg>
-                    </span>
+                </span>
                 </span>
             <div :style="{border:color+' solid 2px'}" class="train-time"
                  v-show="currentStationId === stationId && station.trains.length>0">

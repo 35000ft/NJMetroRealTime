@@ -26,7 +26,10 @@
             </h1>
             <span style="float: right; margin-top: 60px;">
                     <select @change="switchLine($event)">
-                        <option :key="item.value" :label="item.label" :value="item.value" v-for="item in lines">
+                        <option :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                                v-for="item in lines">
                             {{item.label}}
                         </option>
                     </select>
@@ -37,7 +40,7 @@
                 <span @click="reverseDirection" style="color: #B3B3B3; float: right;">
                         <img alt="" src="./assets/icon/reversing.svg" style="width: 36px; margin-left: 20px;">
                         换向
-                    </span>
+                </span>
             </h2>
         </div>
 
@@ -63,9 +66,7 @@
                 <span>4. 数据来源于</span>
 
                 <a href="https://weibo.com/u/7781185375">
-
                     @纵横金陵</a>
-
             </p>
         </div>
 
