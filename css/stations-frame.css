@@ -90,7 +90,7 @@ li {
 }
 
 .train-detail-info svg .st7 {
-    font-family: 'MiSans-Bold';
+    font-family: 'MiSans-Bold', system-ui;
 }
 
 .train-detail-info svg .st8 {
@@ -137,4 +137,24 @@ li {
 .line {
     width: 20px;
     height: 70px;
+}
+
+.station svg .normal {
+    fill: #FFFFFF;
+    stroke-width: 0;
+}
+
+.station svg .passed {
+    fill: #c1091a;
+    stroke-width: 0;
+}
+
+.station svg .waiting {
+    fill: #08c42b;
+    stroke-width: 0;
+}
+
+.station svg .selected {
+    fill: #FFFFFF;
+    stroke-width: 3;
 }

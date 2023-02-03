@@ -69,10 +69,17 @@
         <li @click="showStationInfo(stationId)" style="z-index:2; position: relative;"
             v-for="[stationId,station] in stations">
                 <span class="station">
+<!--                    <svg height="20px" width="20px" xmlns="http://www.w3.org/2000/svg">-->
+                    <!--                        <circle :fill="station.color" :r="station.radius" :stroke="color"-->
+                    <!--                                :stroke-width="station.strokeWidth" cx="10"-->
+                    <!--                                cy="10"/>-->
+                    <!--                    </svg>-->
                     <svg height="20px" width="20px" xmlns="http://www.w3.org/2000/svg">
-                        <circle :fill="station.color" :r="station.radius" :stroke="color"
-                                :stroke-width="station.strokeWidth" cx="10"
-                                cy="10"/>
+                        <circle :class="station.theme" :r="station.radius"
+                                :stroke="color"
+                                cx="10"
+                                cy="10"
+                        />
                     </svg>
                 </span>
             <span class="station-name">{{station.name}}

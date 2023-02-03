@@ -28,6 +28,7 @@ var app2 = new Vue({
         perSegment: 100,
         currentTrainId: "-1",
         updatePeriod: 5000,
+        nextStationIntervalId: undefined,
         firstId: 0,
         lastId: 0
     },
@@ -63,12 +64,19 @@ var app2 = new Vue({
             })
         },
 
+
         showTrainInfo(trainId) {
+            console.log(this.nextStationIntervalId)
+            if (typeof this.nextStationIntervalId != "undefined") {
+                clearInterval(this.nextStationIntervalId)
+            }
+
             //关闭正在展示的详情
             if (this.currentTrainId !== "-1") {
+                this.stations.forEach(e => e.theme = "normal")
                 this.trains.get(this.currentTrainId).isShowDetail = false;
+                this.nextStationIntervalId = undefined
                 this.$forceUpdate()
-                console.log(trainId === this.currentTrainId)
                 if (trainId === this.currentTrainId) {
                     this.currentTrainId = "-1";
                     return;
@@ -85,14 +93,52 @@ var app2 = new Vue({
             let nextInfo = this.getNextStationInfo(trainId)
             console.log('下一站信息')
             console.log(nextInfo)
+
+            let count = 0
+            this.nextStationIntervalId = setInterval(() => {
+                console.log(nextInfo.stationId)
+                if (count % 2 === 0) {
+                    console.log('www')
+                    this.setStationTheme(nextInfo.stationId, "waiting")
+                } else {
+                    console.log('normal')
+                    this.setStationTheme(nextInfo.stationId, "normal")
+                }
+                count++
+            }, 500)
+
             trainData.nextStop = this.stations.get(nextInfo.stationId.toString()).name;
             trainData.arriveNextTime = nextInfo.arrivalTime;
+
+            //stations:列车停靠站点id列表
+            const stations = trainData.route.split('-')
+            for (let i = 0, flag = false; i < stations.length; i++) {
+                const sid = stations[i]
+                if (sid === nextInfo.stationId.toString()) {
+                    flag = true
+                }
+                if (flag) {
+                    this.setStationTheme(sid, "waiting")
+                } else {
+                    this.setStationTheme(sid, "passed")
+                }
+            }
 
             if (typeof (trainData.isShowDetail) == "undefined" || !trainData.isShowDetail) {
                 trainData.isShowDetail = true;
                 this.$forceUpdate()
             }
         },
+
+        setStationTheme(stationId, theme) {
+            stationId = stationId.toString();
+            if (!this.stations.has(stationId)) {
+                console.log('设置车站样式失败，不存在id:' + stationId)
+            }
+            this.stations.get(stationId).theme = theme
+            this.$forceUpdate()
+        },
+
 
         //第一次加载
         async load(line) {
@@ -122,8 +168,7 @@ var app2 = new Vue({
                             "stationId": stationIds[i],
                             "name": names[i],
                             "radius": 5,
-                            "color": "#FFFFFF",
-                            "strokeWidth": 0,
+                            "theme": "normal",
                             "trains": [],
                             "position": i,
                             "transferLines": res.data.transferInfo[stationIds[i] + ""]
@@ -176,7 +221,6 @@ var app2 = new Vue({
 
             const scheduleArray = Object.values(this.trainSchedules)
 
-            let now = this.getNowTime()
             //当前在线运营的列车：符合 "始发站到达时间 <= 当前时间 <= 终点站离开时间" 条件的列车
             let onServiceTrains = scheduleArray
                 .filter(element => this.selectDirection(element.direction))
@@ -284,16 +328,15 @@ var app2 = new Vue({
 
         resetTrains() {
             this.trains = new Map()
-            this.currentTrain = "-1";
+            this.currentTrain = "-1"
             this.trainPosition = new Map()
         },
 
         resetStationStyle() {
             if (this.lastStationId === "-1") {
-                return;
+                return
             }
-            this.stations.get(this.lastStationId).strokeWidth = 0;
-            this.stations.get(this.lastStationId).radius = this.normalRadius;
+            this.stations.get(this.lastStationId).theme = "normal"
         },
 
         //由父页面换向时调用, 实现本页面的切换上下行
@@ -323,7 +366,7 @@ var app2 = new Vue({
             this.resetStationStyle()
             stationId = stationId.toString()
             this.stations.get(stationId).radius = this.selectedRadius;
-            this.stations.get(stationId).strokeWidth = 3;
+            this.stations.get(stationId).theme = "selected"
         },
 
         showStationInfo(stationId) {
