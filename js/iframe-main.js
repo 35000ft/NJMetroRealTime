@@ -73,6 +73,7 @@ var app2 = new Vue({
 
             //关闭正在展示的详情
             if (this.currentTrainId !== "-1") {
+                console.log(this.currentTrainId)
                 this.stations.forEach(e => e.theme = "normal")
                 this.trains.get(this.currentTrainId).isShowDetail = false;
                 this.nextStationIntervalId = undefined
@@ -329,6 +330,7 @@ var app2 = new Vue({
         resetTrains() {
             this.trains = new Map()
             this.currentTrain = "-1"
+            this.currentTrainId = "-1"
             this.trainPosition = new Map()
         },
 
