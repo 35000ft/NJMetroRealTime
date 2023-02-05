@@ -379,11 +379,13 @@ var app2 = new Vue({
         },
 
         updateStationSchedule(stationId) {
+            stationId = stationId.toString()
+
             if (typeof stationId == "undefined" || stationId === "-1") {
                 return
             }
             if (typeof this.trainSchedules === "undefined") {
-                this.stations.get(stationId.toString()).trains = [
+                this.stations.get(stationId).trains = [
                     {
                         "status": "加载中...",
                         "eta": "Loading...",
@@ -395,7 +397,6 @@ var app2 = new Vue({
             }
 
             const TOTAL_DISPLAY_TRAIN_NUMBER = 3
-            stationId = stationId.toString()
             if (stationId === "-1") {
                 return;
             }
@@ -403,6 +404,7 @@ var app2 = new Vue({
             //暂无列车
             if (trainList.length < TOTAL_DISPLAY_TRAIN_NUMBER) {
                 const futureTrains = this.getScheduleTrains(stationId).slice(0, TOTAL_DISPLAY_TRAIN_NUMBER - trainList.length)
+                futureTrains.forEach(e => this.toTrainDataOfStation(stationId, e))
                 console.log('未来列车')
                 console.log(futureTrains)
                 let trainMap = new Map(trainList.map(e => {
@@ -664,12 +666,12 @@ var app2 = new Vue({
          */
         getScheduleTrains(stationId) {
             let trains = Array.from(this.preLoadTrains(stationId))
+                .filter(element => this.selectStation(stationId, element.route))
                 .sort((obj1, obj2) => {
                     return obj1.schedule[0].departTime.localeCompare(obj2.schedule[0].departTime)
                 })
-            console.log(trains)
-            trains.forEach(e => this.toTrainDataOfStation(stationId, e))
-            trains = trains.filter(e => e !== undefined)
+            // trains.forEach(e => this.toTrainDataOfStation(stationId, e))
+            // trains = trains.filter(e => e !== undefined)
             return Array.from(trains)
         },
 
@@ -678,13 +680,18 @@ var app2 = new Vue({
                 console.log('预加载列车失败，时刻表未加载')
                 return
             }
-            const scheduleArray = Object.values(this.trainSchedules)
-            let x = scheduleArray
+            return Object
+                .values(this.trainSchedules)
                 .filter(element => this.selectDirection(element.direction))
                 .filter(element => this.selectTime(element.schedule[0].departTime, true))
-            console.log(x)
-            return x
         },
+
+        selectStation(stationId, route) {
+            stationId = stationId.toString()
+            let pattern = '(' + stationId + '-)|(-' + stationId + ')'
+            return route.match(pattern) != null
+        },
+
 
         //筛选出上/下行方向的列车
         selectDirection(num) {
