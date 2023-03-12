@@ -12,36 +12,36 @@
 </head>
 
 <body style="width: 100%; overflow:scroll;overflow-x:hidden;">
-<div id="app_mobile_iframe">
+    <div id="app_mobile_iframe">
         <span :style="{top:train.positionInView+'px'}" class="train" v-for="[trainId,train] in trains">
             <img :src="'./assets/icon/train/'+line+'.svg'" @click="showTrainInfo(trainId)" alt="">
             <span @click="showTrainInfo(trainId)" class="train-detail-info" v-if="train.isShowDetail">
-                <svg id="layer-1" style="enable-background:new 0 0 150 59.9;" version="1.1"
-                     viewBox="0 0 150 59.9" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                     xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                    <rect class="st0" height="59.1" width="150" y="0.3"/>
+                <svg id="layer-1" style="enable-background:new 0 0 150 59.9;" version="1.1" viewBox="0 0 150 59.9"
+                    x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                    <rect class="st0" height="59.1" width="150" y="0.3" />
                     <g id="layer-2_1_">
-                        <rect :style="{fill: color}" height="2.8" width="150" y="57.1"/>
-                        <rect :style="{fill: color}" height="2.8" width="150" y="0.3"/>
-                        <rect :style="{fill: color}" height="59.6" width="2.8" y="0.3"/>
-                        <rect :style="{fill: color}" height="59.6" width="2.9" x="147.1" y="0.3"/>
+                        <rect :style="{fill: color}" height="2.8" width="150" y="57.1" />
+                        <rect :style="{fill: color}" height="2.8" width="150" y="0.3" />
+                        <rect :style="{fill: color}" height="59.6" width="2.8" y="0.3" />
+                        <rect :style="{fill: color}" height="59.6" width="2.9" x="147.1" y="0.3" />
                     </g>
                     <text class="st2 st3 st4 st5" transform="matrix(1 0 0 1 10.8027 15.0469)">开往</text>
-                    <path class="st6" d="M78.4,18.1H103" id="SVGID_x5F_1_x5F_"/>
+                    <path class="st6" d="M78.4,18.1H103" id="SVGID_x5F_1_x5F_" />
                     <text>
                         <textPath startOffset="11.1328%" xlink:href="#SVGID_x5F_1_x5F_">
                         </textPath>
                     </text>
 
-                    <circle :style="{fill: color}" cx="137.6" cy="12.8" r="8"/>
+                    <circle :style="{fill: color}" cx="137.6" cy="12.8" r="8" />
                     <text class="st0 st7 st4" transform="matrix(1 0 0 1 132.831 16.9685)">普</text>
 
-                    <circle cx="137.6" cy="12.8" r="8" style="fill: #FF2A6C" v-show="train.type.includes('快')"/>
+                    <circle cx="137.6" cy="12.8" r="8" style="fill: #FF2A6C" v-show="train.type.includes('快')" />
                     <text class="st0 st7 st4" transform="matrix(1 0 0 1 132.831 16.9685)"
-                          v-show="train.type.includes('快')">快</text>
+                        v-show="train.type.includes('快')">快</text>
 
                     <text class="st2 st3 st4 st5" transform="matrix(1 0 0 1 11.3426 30.3043)">前方到站</text>
-                    <path class="st6" d="M76.2,34.5h24.6" id="SVGID_x5F_2_x5F_"/>
+                    <path class="st6" d="M76.2,34.5h24.6" id="SVGID_x5F_2_x5F_" />
                     <text>
                         <textPath startOffset="11.1328%" xlink:href="#SVGID_x5F_2_x5F_">
                         </textPath>
@@ -50,81 +50,71 @@
                     <text class="st8 st3 st9" transform="matrix(0.9848 0 -0.1736 0.9848 78.4148 55.077)">抵达终点站时间
                         {{train.terminalTime}}</text>
                     <text class="st2 st3 st10 st5"
-                          transform="matrix(0.9848 0 -0.1736 0.9848 62.8132 15.0471)">{{train.terminal}}</text>
+                        transform="matrix(0.9848 0 -0.1736 0.9848 62.8132 15.0471)">{{train.terminal}}</text>
                     <text class="st2 st3 st10 st5"
-                          transform="matrix(0.9848 0 -0.1736 0.9848 63.0751 28.744)">{{train.nextStop}}</text>
+                        transform="matrix(0.9848 0 -0.1736 0.9848 63.0751 28.744)">{{train.nextStop}}</text>
                     <text class="st2 st3 st10 st5"
-                          transform="matrix(0.9848 0 -0.1736 0.9848 61.9414 43.3779)">{{train.arriveNextTime}}</text>
+                        transform="matrix(0.9848 0 -0.1736 0.9848 61.9414 43.3779)">{{train.arriveNextTime}}</text>
                 </svg>
             </span>
         </span>
 
-    <span style="position:absolute; z-index:1;">
+        <span style="position:absolute; z-index:1;">
             <svg :height="20+100*(stations.size-1)+'px'" width="20px" xmlns="http://www.w3.org/2000/svg">
-                <line :stroke="color" :y2="20+100*(stations.size-1)" stroke-width="12" x1="16" x2="16" y1="0"/>
+                <line :stroke="color" :y2="20+100*(stations.size-1)" stroke-width="12" x1="16" x2="16" y1="0" />
             </svg>
         </span>
 
-    <ul>
-        <li @click="showStationInfo(stationId)" style="z-index:2; position: relative;"
-            v-for="[stationId,station] in stations">
+        <ul>
+            <li @click="showStationInfo(stationId)" style="z-index:2; position: relative;"
+                v-for="[stationId,station] in stations">
                 <span class="station">
-<!--                    <svg height="20px" width="20px" xmlns="http://www.w3.org/2000/svg">-->
-                    <!--                        <circle :fill="station.color" :r="station.radius" :stroke="color"-->
-                    <!--                                :stroke-width="station.strokeWidth" cx="10"-->
-                    <!--                                cy="10"/>-->
-                    <!--                    </svg>-->
                     <svg height="20px" width="20px" xmlns="http://www.w3.org/2000/svg">
-                        <circle :class="station.theme" :r="station.radius"
-                                :stroke="color"
-                                cx="10"
-                                cy="10"
-                        />
+                        <circle :class="station.theme" :r="station.radius" :stroke="color" cx="10" cy="10" />
                     </svg>
                 </span>
-            <span class="station-name">{{station.name}}
-                <span class="transferIcon">
-                    <img :src="'./assets/icon/'+ line +'_icon.svg'" @click="switchLineSelf(line,station.stationId)"
-                         alt=""
-                         v-for="line in station.transferLines">
-                </span>
-                <span @click="favourStation(station.stationId)" class="favour">
-                        <svg id="收藏图标" style="enable-background:new 0 0 50 50;" version="1.1"
-                             viewBox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                             xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                <span class="station-name">{{station.name}}
+                    <span class="transferIcon">
+                        <img :src="'./assets/icon/'+ line +'_icon.svg'" @click="switchLineSelf(line,station.stationId)"
+                            alt="" v-for="line in station.transferLines">
+                    </span>
+                    <span @click="favourStation(station.stationId)" class="favour">
+                        <svg id="收藏图标" style="enable-background:new 0 0 50 50;" version="1.1" viewBox="0 0 50 50"
+                            x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
 
                             <g>
                                 <path
-                                        :class="{favoured: stationId==favouredStation,unFavoured:station.stationId!=favouredStation}"
-                                        d="M35.2,41c-0.1,0-0.3,0-0.6-0.2l-6.4-3.4c-0.8-0.4-2-0.7-3.1-0.7c-1.2,0-2.3,0.2-3.1,0.7l-6.4,3.4
+                                    :class="{favoured: stationId==favouredStation,unFavoured:station.stationId!=favouredStation}"
+                                    d="M35.2,41c-0.1,0-0.3,0-0.6-0.2l-6.4-3.4c-0.8-0.4-2-0.7-3.1-0.7c-1.2,0-2.3,0.2-3.1,0.7l-6.4,3.4
 		C15.1,41,14.9,41,14.8,41c-0.1,0-0.2-0.2-0.1-0.7l1.2-7.2c0.3-1.9-0.5-4.6-1.9-5.9l-5.2-5.1c-0.3-0.3-0.4-0.5-0.4-0.6
 		c0,0,0.2-0.2,0.7-0.2l7.2-1c2-0.3,4.2-1.9,5.1-3.7l3.2-6.5C24.8,9.6,25,9.5,25,9.5c0,0,0.2,0.1,0.4,0.6l3.2,6.5
 		c0.9,1.8,3.1,3.4,5,3.7l7.2,1.1c0.5,0.1,0.6,0.2,0.7,0.2c0,0-0.1,0.2-0.4,0.6L36,27.2c-1.4,1.4-2.3,4-1.9,5.9l1.2,7.2
-		C35.3,40.8,35.2,41,35.2,41L35.2,41z"/>
+		C35.3,40.8,35.2,41,35.2,41L35.2,41z" />
                                 <path d="M25,11.4l2.8,5.6c1,2.1,3.5,3.9,5.8,4.2l6.2,0.9l-4.5,4.3c-1.7,1.6-2.6,4.5-2.2,6.8l1,6.1l-5.5-2.9c-1-0.5-2.3-0.8-3.6-0.8
 		c-1.3,0-2.6,0.3-3.6,0.8l-5.5,2.9l1.1-6.1c0.4-2.3-0.6-5.2-2.2-6.8l-4.5-4.4l6.2-0.9c2.3-0.3,4.8-2.1,5.8-4.2L25,11.4 M25,8.5
 		c-0.5,0-1,0.4-1.3,1.1l-3.2,6.5c-0.7,1.5-2.7,2.9-4.3,3.1l-7.2,1c-1.6,0.2-2,1.4-0.8,2.5l5.2,5.1c1.2,1.2,1.9,3.4,1.6,5.1l-1.2,7.2
 		C13.5,41.3,14,42,14.8,42c0.3,0,0.7-0.1,1.1-0.3l6.4-3.4c0.7-0.4,1.7-0.6,2.6-0.6c1,0,1.9,0.2,2.7,0.6l6.4,3.4
 		c0.4,0.2,0.8,0.3,1.1,0.3c0.8,0,1.3-0.7,1.1-1.9L35,33c-0.3-1.6,0.5-3.9,1.6-5l5.2-5.1c1.2-1.2,0.8-2.3-0.8-2.5l-7.2-1.1
-		c-1.6-0.2-3.6-1.6-4.3-3.1l-3.2-6.5C26,8.9,25.5,8.5,25,8.5L25,8.5z"/>
+		c-1.6-0.2-3.6-1.6-4.3-3.1l-3.2-6.5C26,8.9,25.5,8.5,25,8.5L25,8.5z" />
                             </g>
                         </svg>
+                    </span>
                 </span>
-                </span>
-            <div :style="{border:color+' solid 2px'}" class="train-time"
-                 v-show="currentStationId === stationId && station.trains.length>0">
-                <table>
-                    <tr v-for="train in station.trains">
-                        <td>{{train.status}}</td>
-                        <td>{{train.eta}}</td>
-                        <td>往:{{train.terminal}}</td>
-                        <td>{{train.description}}</td>
-                    </tr>
-                </table>
-            </div>
-        </li>
-    </ul>
-</div>
+                <div :style="{border:color+' solid 2px'}" class="train-time"
+                    v-show="currentStationId === stationId && station.trains.length>0">
+                    <table>
+                        <tr v-for="train in station.trains">
+                            <td>{{train.status}}</td>
+                            <td>{{train.eta}}</td>
+                            <td>往:{{train.terminal}}</td>
+                            <td>{{train.description}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
 
 </body>
 <script src="./js/axios-0.18.0.js"></script>
