@@ -24,7 +24,11 @@
                     style="height: 80px; margin-left: 0px; margin-right: 10px;">
                 <h1 style="display: inline-block; height: 30px; margin-bottom: 0px; padding-bottom: 5px;">{{lineName}}
                 </h1>
-                <span style="float: right; margin-top: 60px;">
+                <span style="float:right; margin-top: 20px;">
+                    <a style="text-decoration: none; color: #ababab; font-size: small;"
+                        href="https://35000ft.github.io/NJMetroRealTimeTest/">尝试新版 / Try A New</a>
+                </span>
+                <span style="float: right;">
                     <select @change="switchLine($event)">
                         <option :key="item.value" :label="item.label" :value="item.value" v-for="item in lines">
                             {{item.label}}
