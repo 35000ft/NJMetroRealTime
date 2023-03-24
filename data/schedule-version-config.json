@@ -1,0 +1,50 @@
+{
+    "L1": {
+        "workday": "Z091",
+        "restday": "T108"
+    },
+    "L2": {
+        "workday": "Z090",
+        "restday": "T105"
+    },
+    "L3": {
+        "workday": "Z041",
+        "restday": "T091"
+    },
+    "L4": {
+        "workday": "Z023",
+        "restday": "Z024"
+    },
+    "L7": {
+        "workday": "Z001",
+        "restday": "Z001"
+    },
+    "L10": {
+        "workday": "Z015",
+        "restday": "Z014"
+    },
+    "S1": {
+        "workday": "T019",
+        "restday": "T020"
+    },
+    "S3": {
+        "workday": "Z018",
+        "restday": "Z019"
+    },
+    "S6": {
+        "workday": "Z004",
+        "restday": "Z003"
+    },
+    "S7": {
+        "workday": "T019",
+        "restday": "T020"
+    },
+    "S8": {
+        "workday": "Z023",
+        "restday": "Z024"
+    },
+    "S9": {
+        "workday": "T019",
+        "restday": "T022"
+    }
+}
