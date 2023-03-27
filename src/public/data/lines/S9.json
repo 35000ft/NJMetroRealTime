@@ -1,0 +1,34 @@
+{
+  "line": "S9",
+  "lineName": "宁高线",
+  "lineColor": "#F1B434",
+  "stationNames": [
+    "翔宇路南",
+    "铜山",
+    "石湫",
+    "明觉",
+    "团结圩",
+    "高淳"
+  ],
+  "stationIds": [
+    128,
+    186,
+    187,
+    188,
+    189,
+    190
+  ],
+  "transferInfo": {
+    "128": [
+      "S1"
+    ]
+  },
+  "lineGraphic": [
+    {
+      "length": 520,
+      "color": "#F1B434"
+    }
+  ],
+  "downHint": "高淳 方面",
+  "upHint": "翔宇路南·市区 方面"
+}

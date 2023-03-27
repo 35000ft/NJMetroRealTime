@@ -1,0 +1,1 @@
+{"name": "南京南站", "id": 21, "lines": [{"code": "L1", "name": "1号线", "color": "#009ACE"}, {"code": "L3", "name": "3号线", "color": "#009A44"}, {"code": "S1", "name": "S1机场线", "color": "#00B2A9"}, {"code": "S3", "name": "S3宁和线", "color": "#B06C96"}], "transferInfo": {}}
