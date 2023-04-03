@@ -1,0 +1,6766 @@
+{
+  "S9-0702": {
+    "trainId": "S9-0702",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "06:00:00",
+        "arrivalTime": "05:57:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "06:04:52",
+        "arrivalTime": "06:04:27"
+      },
+      {
+        "stationId": 188,
+        "departTime": "06:18:52",
+        "arrivalTime": "06:18:27"
+      },
+      {
+        "stationId": 187,
+        "departTime": "06:27:04",
+        "arrivalTime": "06:26:39"
+      },
+      {
+        "stationId": 186,
+        "departTime": "06:32:49",
+        "arrivalTime": "06:32:24"
+      },
+      {
+        "stationId": 128,
+        "departTime": "06:41:06",
+        "arrivalTime": "06:40:21"
+      }
+    ]
+  },
+  "S9-0802": {
+    "trainId": "S9-0802",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "06:09:36",
+        "arrivalTime": "06:07:47"
+      },
+      {
+        "stationId": 189,
+        "departTime": "06:14:28",
+        "arrivalTime": "06:14:03"
+      },
+      {
+        "stationId": 188,
+        "departTime": "06:28:28",
+        "arrivalTime": "06:28:03"
+      },
+      {
+        "stationId": 187,
+        "departTime": "06:36:40",
+        "arrivalTime": "06:36:15"
+      },
+      {
+        "stationId": 186,
+        "departTime": "06:42:25",
+        "arrivalTime": "06:42:00"
+      },
+      {
+        "stationId": 128,
+        "departTime": "06:50:42",
+        "arrivalTime": "06:49:57"
+      }
+    ]
+  },
+  "S9-0902": {
+    "trainId": "S9-0902",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "06:21:20",
+        "arrivalTime": "06:19:00"
+      },
+      {
+        "stationId": 189,
+        "departTime": "06:26:12",
+        "arrivalTime": "06:25:47"
+      },
+      {
+        "stationId": 188,
+        "departTime": "06:40:12",
+        "arrivalTime": "06:39:47"
+      },
+      {
+        "stationId": 187,
+        "departTime": "06:48:24",
+        "arrivalTime": "06:47:59"
+      },
+      {
+        "stationId": 186,
+        "departTime": "06:54:09",
+        "arrivalTime": "06:53:44"
+      },
+      {
+        "stationId": 128,
+        "departTime": "07:02:26",
+        "arrivalTime": "07:01:41"
+      }
+    ]
+  },
+  "S9-0703": {
+    "trainId": "S9-0703",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "06:50:00",
+        "arrivalTime": "06:44:22"
+      },
+      {
+        "stationId": 186,
+        "departTime": "06:57:48",
+        "arrivalTime": "06:57:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:03:32",
+        "arrivalTime": "07:03:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:11:47",
+        "arrivalTime": "07:11:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "07:25:45",
+        "arrivalTime": "07:25:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "07:30:56",
+        "arrivalTime": "07:30:11"
+      }
+    ]
+  },
+  "S9-0603": {
+    "trainId": "S9-0603",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "06:40:00",
+        "arrivalTime": "06:35:32"
+      },
+      {
+        "stationId": 186,
+        "departTime": "06:47:48",
+        "arrivalTime": "06:47:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "06:53:32",
+        "arrivalTime": "06:53:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:01:47",
+        "arrivalTime": "07:01:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "07:15:45",
+        "arrivalTime": "07:15:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "07:20:56",
+        "arrivalTime": "07:20:11"
+      }
+    ]
+  },
+  "S9-0503": {
+    "trainId": "S9-0503",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "06:30:45",
+        "arrivalTime": "06:27:18"
+      },
+      {
+        "stationId": 186,
+        "departTime": "06:38:33",
+        "arrivalTime": "06:38:08"
+      },
+      {
+        "stationId": 187,
+        "departTime": "06:44:17",
+        "arrivalTime": "06:43:52"
+      },
+      {
+        "stationId": 188,
+        "departTime": "06:52:32",
+        "arrivalTime": "06:52:07"
+      },
+      {
+        "stationId": 189,
+        "departTime": "07:06:30",
+        "arrivalTime": "07:06:05"
+      },
+      {
+        "stationId": 190,
+        "departTime": "07:11:41",
+        "arrivalTime": "07:10:56"
+      }
+    ]
+  },
+  "S9-0403": {
+    "trainId": "S9-0403",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "06:19:20",
+        "arrivalTime": "06:18:15"
+      },
+      {
+        "stationId": 186,
+        "departTime": "06:27:08",
+        "arrivalTime": "06:26:43"
+      },
+      {
+        "stationId": 187,
+        "departTime": "06:32:52",
+        "arrivalTime": "06:32:27"
+      },
+      {
+        "stationId": 188,
+        "departTime": "06:41:07",
+        "arrivalTime": "06:40:42"
+      },
+      {
+        "stationId": 189,
+        "departTime": "06:55:05",
+        "arrivalTime": "06:54:40"
+      },
+      {
+        "stationId": 190,
+        "departTime": "07:00:16",
+        "arrivalTime": "06:59:31"
+      }
+    ]
+  },
+  "S9-0103": {
+    "trainId": "S9-0103",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "06:10:00",
+        "arrivalTime": "06:09:15"
+      },
+      {
+        "stationId": 186,
+        "departTime": "06:17:48",
+        "arrivalTime": "06:17:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "06:23:32",
+        "arrivalTime": "06:23:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "06:31:47",
+        "arrivalTime": "06:31:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "06:45:45",
+        "arrivalTime": "06:45:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "06:50:56",
+        "arrivalTime": "06:50:11"
+      }
+    ]
+  },
+  "S9-0203": {
+    "trainId": "S9-0203",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "06:00:00",
+        "arrivalTime": "05:53:46"
+      },
+      {
+        "stationId": 186,
+        "departTime": "06:07:48",
+        "arrivalTime": "06:07:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "06:13:32",
+        "arrivalTime": "06:13:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "06:21:47",
+        "arrivalTime": "06:21:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "06:35:45",
+        "arrivalTime": "06:35:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "06:40:56",
+        "arrivalTime": "06:40:11"
+      }
+    ]
+  },
+  "S9-1002": {
+    "trainId": "S9-1002",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "06:30:14",
+        "arrivalTime": "06:28:12"
+      },
+      {
+        "stationId": 189,
+        "departTime": "06:35:06",
+        "arrivalTime": "06:34:41"
+      },
+      {
+        "stationId": 188,
+        "departTime": "06:49:06",
+        "arrivalTime": "06:48:41"
+      },
+      {
+        "stationId": 187,
+        "departTime": "06:57:18",
+        "arrivalTime": "06:56:53"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:03:03",
+        "arrivalTime": "07:02:38"
+      },
+      {
+        "stationId": 128,
+        "departTime": "07:11:20",
+        "arrivalTime": "07:10:35"
+      }
+    ]
+  },
+  "S9-1102": {
+    "trainId": "S9-1102",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "06:41:55",
+        "arrivalTime": "06:39:19"
+      },
+      {
+        "stationId": 189,
+        "departTime": "06:46:47",
+        "arrivalTime": "06:46:22"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:00:47",
+        "arrivalTime": "07:00:22"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:08:59",
+        "arrivalTime": "07:08:34"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:14:44",
+        "arrivalTime": "07:14:19"
+      },
+      {
+        "stationId": 128,
+        "departTime": "07:23:01",
+        "arrivalTime": "07:22:16"
+      }
+    ]
+  },
+  "S9-0204": {
+    "trainId": "S9-0204",
+    "direction": 1,
+    "route": "190-128",
+    "level": 5,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "06:47:05",
+        "arrivalTime": "06:42:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "06:51:32",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:05:07",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:12:54",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:18:14",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 128,
+        "departTime": "07:26:31",
+        "arrivalTime": "07:25:46"
+      }
+    ]
+  },
+  "S9-0104": {
+    "trainId": "S9-0104",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "06:53:43",
+        "arrivalTime": "06:52:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "06:58:35",
+        "arrivalTime": "06:58:10"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:12:35",
+        "arrivalTime": "07:12:10"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:20:47",
+        "arrivalTime": "07:20:22"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:26:32",
+        "arrivalTime": "07:26:07"
+      },
+      {
+        "stationId": 128,
+        "departTime": "07:34:49",
+        "arrivalTime": "07:34:04"
+      }
+    ]
+  },
+  "S9-0404": {
+    "trainId": "S9-0404",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "07:03:03",
+        "arrivalTime": "07:02:18"
+      },
+      {
+        "stationId": 189,
+        "departTime": "07:07:55",
+        "arrivalTime": "07:07:30"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:21:55",
+        "arrivalTime": "07:21:30"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:30:07",
+        "arrivalTime": "07:29:42"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:35:52",
+        "arrivalTime": "07:35:27"
+      },
+      {
+        "stationId": 128,
+        "departTime": "07:44:09",
+        "arrivalTime": "07:43:24"
+      }
+    ]
+  },
+  "S9-0504": {
+    "trainId": "S9-0504",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "07:14:28",
+        "arrivalTime": "07:13:43"
+      },
+      {
+        "stationId": 189,
+        "departTime": "07:19:20",
+        "arrivalTime": "07:18:55"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:33:20",
+        "arrivalTime": "07:32:55"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:41:32",
+        "arrivalTime": "07:41:07"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:47:17",
+        "arrivalTime": "07:46:52"
+      },
+      {
+        "stationId": 128,
+        "departTime": "07:55:34",
+        "arrivalTime": "07:54:49"
+      }
+    ]
+  },
+  "S9-0604": {
+    "trainId": "S9-0604",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "07:24:40",
+        "arrivalTime": "07:22:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "07:29:32",
+        "arrivalTime": "07:29:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:43:32",
+        "arrivalTime": "07:43:07"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:51:44",
+        "arrivalTime": "07:51:19"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:57:29",
+        "arrivalTime": "07:57:04"
+      },
+      {
+        "stationId": 128,
+        "departTime": "08:05:46",
+        "arrivalTime": "08:05:01"
+      }
+    ]
+  },
+  "S9-0704": {
+    "trainId": "S9-0704",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "07:34:03",
+        "arrivalTime": "07:32:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "07:38:55",
+        "arrivalTime": "07:38:30"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:52:55",
+        "arrivalTime": "07:52:30"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:01:07",
+        "arrivalTime": "08:00:42"
+      },
+      {
+        "stationId": 186,
+        "departTime": "08:06:52",
+        "arrivalTime": "08:06:27"
+      },
+      {
+        "stationId": 128,
+        "departTime": "08:15:09",
+        "arrivalTime": "08:14:24"
+      }
+    ]
+  },
+  "S9-0505": {
+    "trainId": "S9-0505",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "08:11:30",
+        "arrivalTime": "08:02:32"
+      },
+      {
+        "stationId": 186,
+        "departTime": "08:19:18",
+        "arrivalTime": "08:18:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:25:02",
+        "arrivalTime": "08:24:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "08:33:17",
+        "arrivalTime": "08:32:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:47:15",
+        "arrivalTime": "08:46:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "08:52:26",
+        "arrivalTime": "08:51:41"
+      }
+    ]
+  },
+  "S9-0405": {
+    "trainId": "S9-0405",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "08:00:00",
+        "arrivalTime": "07:51:27"
+      },
+      {
+        "stationId": 186,
+        "departTime": "08:07:48",
+        "arrivalTime": "08:07:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:13:32",
+        "arrivalTime": "08:13:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "08:21:47",
+        "arrivalTime": "08:21:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:35:45",
+        "arrivalTime": "08:35:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "08:40:56",
+        "arrivalTime": "08:40:11"
+      }
+    ]
+  },
+  "S9-0105": {
+    "trainId": "S9-0105",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "07:48:52",
+        "arrivalTime": "07:41:00"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:56:40",
+        "arrivalTime": "07:56:15"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:02:24",
+        "arrivalTime": "08:01:59"
+      },
+      {
+        "stationId": 188,
+        "departTime": "08:10:39",
+        "arrivalTime": "08:10:14"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:24:37",
+        "arrivalTime": "08:24:12"
+      },
+      {
+        "stationId": 190,
+        "departTime": "08:29:48",
+        "arrivalTime": "08:29:03"
+      }
+    ]
+  },
+  "S9-0205": {
+    "trainId": "S9-0205",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "07:38:05",
+        "arrivalTime": "07:29:47"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:45:53",
+        "arrivalTime": "07:45:28"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:51:37",
+        "arrivalTime": "07:51:12"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:59:52",
+        "arrivalTime": "07:59:27"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:13:50",
+        "arrivalTime": "08:13:25"
+      },
+      {
+        "stationId": 190,
+        "departTime": "08:19:01",
+        "arrivalTime": "08:18:16"
+      }
+    ]
+  },
+  "S9-1103": {
+    "trainId": "S9-1103",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "07:27:09",
+        "arrivalTime": "07:26:17"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:34:57",
+        "arrivalTime": "07:34:32"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:40:41",
+        "arrivalTime": "07:40:16"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:48:56",
+        "arrivalTime": "07:48:31"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:02:54",
+        "arrivalTime": "08:02:29"
+      },
+      {
+        "stationId": 190,
+        "departTime": "08:08:05",
+        "arrivalTime": "08:07:20"
+      }
+    ]
+  },
+  "S9-1003": {
+    "trainId": "S9-1003",
+    "direction": 0,
+    "route": "128-190",
+    "level": 5,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "07:15:54",
+        "arrivalTime": "07:14:36"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:23:17",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:28:36",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:36:26",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 189,
+        "departTime": "07:49:59",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 190,
+        "departTime": "07:55:55",
+        "arrivalTime": "07:54:25"
+      }
+    ]
+  },
+  "S9-0903": {
+    "trainId": "S9-0903",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "07:12:16",
+        "arrivalTime": "07:05:42"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:20:04",
+        "arrivalTime": "07:19:39"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:25:48",
+        "arrivalTime": "07:25:23"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:34:03",
+        "arrivalTime": "07:33:38"
+      },
+      {
+        "stationId": 189,
+        "departTime": "07:48:01",
+        "arrivalTime": "07:47:36"
+      },
+      {
+        "stationId": 190,
+        "departTime": "07:53:12",
+        "arrivalTime": "07:52:27"
+      }
+    ]
+  },
+  "S9-0803": {
+    "trainId": "S9-0803",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "07:01:42",
+        "arrivalTime": "06:53:58"
+      },
+      {
+        "stationId": 186,
+        "departTime": "07:09:30",
+        "arrivalTime": "07:09:05"
+      },
+      {
+        "stationId": 187,
+        "departTime": "07:15:14",
+        "arrivalTime": "07:14:49"
+      },
+      {
+        "stationId": 188,
+        "departTime": "07:23:29",
+        "arrivalTime": "07:23:04"
+      },
+      {
+        "stationId": 189,
+        "departTime": "07:37:27",
+        "arrivalTime": "07:37:02"
+      },
+      {
+        "stationId": 190,
+        "departTime": "07:42:38",
+        "arrivalTime": "07:41:53"
+      }
+    ]
+  },
+  "S9-0804": {
+    "trainId": "S9-0804",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "07:46:27",
+        "arrivalTime": "07:44:40"
+      },
+      {
+        "stationId": 189,
+        "departTime": "07:51:19",
+        "arrivalTime": "07:50:54"
+      },
+      {
+        "stationId": 188,
+        "departTime": "08:05:19",
+        "arrivalTime": "08:04:54"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:13:31",
+        "arrivalTime": "08:13:06"
+      },
+      {
+        "stationId": 186,
+        "departTime": "08:19:16",
+        "arrivalTime": "08:18:51"
+      },
+      {
+        "stationId": 128,
+        "departTime": "08:27:33",
+        "arrivalTime": "08:26:48"
+      }
+    ]
+  },
+  "S9-0904": {
+    "trainId": "S9-0904",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "07:56:40",
+        "arrivalTime": "07:55:14"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:01:32",
+        "arrivalTime": "08:01:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "08:15:32",
+        "arrivalTime": "08:15:07"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:23:44",
+        "arrivalTime": "08:23:19"
+      },
+      {
+        "stationId": 186,
+        "departTime": "08:29:29",
+        "arrivalTime": "08:29:04"
+      },
+      {
+        "stationId": 128,
+        "departTime": "08:37:46",
+        "arrivalTime": "08:37:01"
+      }
+    ]
+  },
+  "S9-1004": {
+    "trainId": "S9-1004",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "08:07:20",
+        "arrivalTime": "07:58:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:12:12",
+        "arrivalTime": "08:11:47"
+      },
+      {
+        "stationId": 188,
+        "departTime": "08:26:12",
+        "arrivalTime": "08:25:47"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:34:24",
+        "arrivalTime": "08:33:59"
+      },
+      {
+        "stationId": 186,
+        "departTime": "08:40:09",
+        "arrivalTime": "08:39:44"
+      },
+      {
+        "stationId": 128,
+        "departTime": "08:48:26",
+        "arrivalTime": "08:47:41"
+      }
+    ]
+  },
+  "S9-1104": {
+    "trainId": "S9-1104",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "08:16:36",
+        "arrivalTime": "08:10:07"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:21:28",
+        "arrivalTime": "08:21:03"
+      },
+      {
+        "stationId": 188,
+        "departTime": "08:35:28",
+        "arrivalTime": "08:35:03"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:43:40",
+        "arrivalTime": "08:43:15"
+      },
+      {
+        "stationId": 186,
+        "departTime": "08:49:25",
+        "arrivalTime": "08:49:00"
+      },
+      {
+        "stationId": 128,
+        "departTime": "08:57:42",
+        "arrivalTime": "08:56:57"
+      }
+    ]
+  },
+  "S9-0206": {
+    "trainId": "S9-0206",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "08:28:40",
+        "arrivalTime": "08:21:03"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:33:32",
+        "arrivalTime": "08:33:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "08:47:32",
+        "arrivalTime": "08:47:07"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:55:44",
+        "arrivalTime": "08:55:19"
+      },
+      {
+        "stationId": 186,
+        "departTime": "09:01:29",
+        "arrivalTime": "09:01:04"
+      },
+      {
+        "stationId": 128,
+        "departTime": "09:09:46",
+        "arrivalTime": "09:09:01"
+      }
+    ]
+  },
+  "S9-0106": {
+    "trainId": "S9-0106",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "08:39:20",
+        "arrivalTime": "08:31:50"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:44:12",
+        "arrivalTime": "08:43:47"
+      },
+      {
+        "stationId": 188,
+        "departTime": "08:58:12",
+        "arrivalTime": "08:57:47"
+      },
+      {
+        "stationId": 187,
+        "departTime": "09:06:24",
+        "arrivalTime": "09:05:59"
+      },
+      {
+        "stationId": 186,
+        "departTime": "09:12:09",
+        "arrivalTime": "09:11:44"
+      },
+      {
+        "stationId": 128,
+        "departTime": "09:20:26",
+        "arrivalTime": "09:19:41"
+      }
+    ]
+  },
+  "S9-0406": {
+    "trainId": "S9-0406",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "08:50:00",
+        "arrivalTime": "08:42:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:54:52",
+        "arrivalTime": "08:54:27"
+      },
+      {
+        "stationId": 188,
+        "departTime": "09:08:52",
+        "arrivalTime": "09:08:27"
+      },
+      {
+        "stationId": 187,
+        "departTime": "09:17:04",
+        "arrivalTime": "09:16:39"
+      },
+      {
+        "stationId": 186,
+        "departTime": "09:22:49",
+        "arrivalTime": "09:22:24"
+      },
+      {
+        "stationId": 128,
+        "departTime": "09:31:06",
+        "arrivalTime": "09:30:21"
+      }
+    ]
+  },
+  "S9-0506": {
+    "trainId": "S9-0506",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "08:59:56",
+        "arrivalTime": "08:54:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "09:04:48",
+        "arrivalTime": "09:04:23"
+      },
+      {
+        "stationId": 188,
+        "departTime": "09:18:48",
+        "arrivalTime": "09:18:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "09:27:00",
+        "arrivalTime": "09:26:35"
+      },
+      {
+        "stationId": 186,
+        "departTime": "09:32:45",
+        "arrivalTime": "09:32:20"
+      },
+      {
+        "stationId": 128,
+        "departTime": "09:41:02",
+        "arrivalTime": "09:40:17"
+      }
+    ]
+  },
+  "S9-0407": {
+    "trainId": "S9-0407",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "09:35:25",
+        "arrivalTime": "09:34:22"
+      },
+      {
+        "stationId": 186,
+        "departTime": "09:43:13",
+        "arrivalTime": "09:42:48"
+      },
+      {
+        "stationId": 187,
+        "departTime": "09:48:57",
+        "arrivalTime": "09:48:32"
+      },
+      {
+        "stationId": 188,
+        "departTime": "09:57:12",
+        "arrivalTime": "09:56:47"
+      },
+      {
+        "stationId": 189,
+        "departTime": "10:11:10",
+        "arrivalTime": "10:10:45"
+      },
+      {
+        "stationId": 190,
+        "departTime": "10:16:21",
+        "arrivalTime": "10:15:36"
+      }
+    ]
+  },
+  "S9-0207": {
+    "trainId": "S9-0207",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "09:23:50",
+        "arrivalTime": "09:13:53"
+      },
+      {
+        "stationId": 186,
+        "departTime": "09:31:38",
+        "arrivalTime": "09:31:13"
+      },
+      {
+        "stationId": 187,
+        "departTime": "09:37:22",
+        "arrivalTime": "09:36:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "09:45:37",
+        "arrivalTime": "09:45:12"
+      },
+      {
+        "stationId": 189,
+        "departTime": "09:59:35",
+        "arrivalTime": "09:59:10"
+      },
+      {
+        "stationId": 190,
+        "departTime": "10:04:46",
+        "arrivalTime": "10:04:01"
+      }
+    ]
+  },
+  "S9-1105": {
+    "trainId": "S9-1105",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "09:12:05",
+        "arrivalTime": "09:01:40"
+      },
+      {
+        "stationId": 186,
+        "departTime": "09:19:53",
+        "arrivalTime": "09:19:28"
+      },
+      {
+        "stationId": 187,
+        "departTime": "09:25:37",
+        "arrivalTime": "09:25:12"
+      },
+      {
+        "stationId": 188,
+        "departTime": "09:33:52",
+        "arrivalTime": "09:33:27"
+      },
+      {
+        "stationId": 189,
+        "departTime": "09:47:50",
+        "arrivalTime": "09:47:25"
+      },
+      {
+        "stationId": 190,
+        "departTime": "09:53:01",
+        "arrivalTime": "09:52:16"
+      }
+    ]
+  },
+  "S9-1005": {
+    "trainId": "S9-1005",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "09:00:00",
+        "arrivalTime": "08:51:42"
+      },
+      {
+        "stationId": 186,
+        "departTime": "09:07:48",
+        "arrivalTime": "09:07:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "09:13:32",
+        "arrivalTime": "09:13:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "09:21:47",
+        "arrivalTime": "09:21:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "09:35:45",
+        "arrivalTime": "09:35:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "09:40:56",
+        "arrivalTime": "09:40:11"
+      }
+    ]
+  },
+  "S9-0905": {
+    "trainId": "S9-0905",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "08:50:00",
+        "arrivalTime": "08:42:48"
+      },
+      {
+        "stationId": 186,
+        "departTime": "08:57:48",
+        "arrivalTime": "08:57:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "09:03:32",
+        "arrivalTime": "09:03:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "09:11:47",
+        "arrivalTime": "09:11:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "09:25:45",
+        "arrivalTime": "09:25:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "09:30:56",
+        "arrivalTime": "09:30:11"
+      }
+    ]
+  },
+  "S9-0805": {
+    "trainId": "S9-0805",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "08:40:00",
+        "arrivalTime": "08:33:42"
+      },
+      {
+        "stationId": 186,
+        "departTime": "08:47:48",
+        "arrivalTime": "08:47:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:53:32",
+        "arrivalTime": "08:53:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "09:01:47",
+        "arrivalTime": "09:01:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "09:15:45",
+        "arrivalTime": "09:15:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "09:20:51",
+        "arrivalTime": "09:20:11"
+      }
+    ]
+  },
+  "S9-0705": {
+    "trainId": "S9-0705",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "08:31:05",
+        "arrivalTime": "08:21:37"
+      },
+      {
+        "stationId": 186,
+        "departTime": "08:38:53",
+        "arrivalTime": "08:38:28"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:44:37",
+        "arrivalTime": "08:44:12"
+      },
+      {
+        "stationId": 188,
+        "departTime": "08:52:52",
+        "arrivalTime": "08:52:27"
+      },
+      {
+        "stationId": 189,
+        "departTime": "09:06:50",
+        "arrivalTime": "09:06:25"
+      },
+      {
+        "stationId": 190,
+        "departTime": "09:12:01",
+        "arrivalTime": "09:11:16"
+      }
+    ]
+  },
+  "S9-0605": {
+    "trainId": "S9-0605",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "08:20:00",
+        "arrivalTime": "08:13:55"
+      },
+      {
+        "stationId": 186,
+        "departTime": "08:27:48",
+        "arrivalTime": "08:27:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "08:33:32",
+        "arrivalTime": "08:33:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "08:41:47",
+        "arrivalTime": "08:41:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "08:55:45",
+        "arrivalTime": "08:55:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "09:00:56",
+        "arrivalTime": "09:00:11"
+      }
+    ]
+  },
+  "S9-0606": {
+    "trainId": "S9-0606",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "09:12:25",
+        "arrivalTime": "09:02:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "09:17:17",
+        "arrivalTime": "09:16:52"
+      },
+      {
+        "stationId": 188,
+        "departTime": "09:31:17",
+        "arrivalTime": "09:30:52"
+      },
+      {
+        "stationId": 187,
+        "departTime": "09:39:29",
+        "arrivalTime": "09:39:04"
+      },
+      {
+        "stationId": 186,
+        "departTime": "09:45:14",
+        "arrivalTime": "09:44:49"
+      },
+      {
+        "stationId": 128,
+        "departTime": "09:53:31",
+        "arrivalTime": "09:52:46"
+      }
+    ]
+  },
+  "S9-0706": {
+    "trainId": "S9-0706",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "09:23:50",
+        "arrivalTime": "09:14:03"
+      },
+      {
+        "stationId": 189,
+        "departTime": "09:28:42",
+        "arrivalTime": "09:28:17"
+      },
+      {
+        "stationId": 188,
+        "departTime": "09:42:42",
+        "arrivalTime": "09:42:17"
+      },
+      {
+        "stationId": 187,
+        "departTime": "09:50:54",
+        "arrivalTime": "09:50:29"
+      },
+      {
+        "stationId": 186,
+        "departTime": "09:56:39",
+        "arrivalTime": "09:56:14"
+      },
+      {
+        "stationId": 128,
+        "departTime": "10:04:56",
+        "arrivalTime": "10:04:11"
+      }
+    ]
+  },
+  "S9-0906": {
+    "trainId": "S9-0906",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "09:35:45",
+        "arrivalTime": "09:32:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "09:40:37",
+        "arrivalTime": "09:40:12"
+      },
+      {
+        "stationId": 188,
+        "departTime": "09:54:37",
+        "arrivalTime": "09:54:12"
+      },
+      {
+        "stationId": 187,
+        "departTime": "10:02:49",
+        "arrivalTime": "10:02:24"
+      },
+      {
+        "stationId": 186,
+        "departTime": "10:08:34",
+        "arrivalTime": "10:08:09"
+      },
+      {
+        "stationId": 128,
+        "departTime": "10:16:51",
+        "arrivalTime": "10:16:06"
+      }
+    ]
+  },
+  "S9-1006": {
+    "trainId": "S9-1006",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "09:47:40",
+        "arrivalTime": "09:42:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "09:52:32",
+        "arrivalTime": "09:52:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "10:06:32",
+        "arrivalTime": "10:06:07"
+      },
+      {
+        "stationId": 187,
+        "departTime": "10:14:44",
+        "arrivalTime": "10:14:19"
+      },
+      {
+        "stationId": 186,
+        "departTime": "10:20:29",
+        "arrivalTime": "10:20:04"
+      },
+      {
+        "stationId": 128,
+        "departTime": "10:28:46",
+        "arrivalTime": "10:28:01"
+      }
+    ]
+  },
+  "S9-1106": {
+    "trainId": "S9-1106",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "09:59:35",
+        "arrivalTime": "09:55:03"
+      },
+      {
+        "stationId": 189,
+        "departTime": "10:04:27",
+        "arrivalTime": "10:04:02"
+      },
+      {
+        "stationId": 188,
+        "departTime": "10:18:27",
+        "arrivalTime": "10:18:02"
+      },
+      {
+        "stationId": 187,
+        "departTime": "10:26:39",
+        "arrivalTime": "10:26:14"
+      },
+      {
+        "stationId": 186,
+        "departTime": "10:32:24",
+        "arrivalTime": "10:31:59"
+      },
+      {
+        "stationId": 128,
+        "departTime": "10:40:41",
+        "arrivalTime": "10:39:56"
+      }
+    ]
+  },
+  "S9-0208": {
+    "trainId": "S9-0208",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "10:11:30",
+        "arrivalTime": "10:06:48"
+      },
+      {
+        "stationId": 189,
+        "departTime": "10:16:22",
+        "arrivalTime": "10:15:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "10:30:22",
+        "arrivalTime": "10:29:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "10:38:34",
+        "arrivalTime": "10:38:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "10:44:19",
+        "arrivalTime": "10:43:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "10:52:36",
+        "arrivalTime": "10:51:51"
+      }
+    ]
+  },
+  "S9-0408": {
+    "trainId": "S9-0408",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "10:23:01",
+        "arrivalTime": "10:18:23"
+      },
+      {
+        "stationId": 189,
+        "departTime": "10:27:53",
+        "arrivalTime": "10:27:28"
+      },
+      {
+        "stationId": 188,
+        "departTime": "10:41:53",
+        "arrivalTime": "10:41:28"
+      },
+      {
+        "stationId": 187,
+        "departTime": "10:50:05",
+        "arrivalTime": "10:49:40"
+      },
+      {
+        "stationId": 186,
+        "departTime": "10:55:50",
+        "arrivalTime": "10:55:25"
+      },
+      {
+        "stationId": 128,
+        "departTime": "11:04:07",
+        "arrivalTime": "11:03:22"
+      }
+    ]
+  },
+  "S9-0409": {
+    "trainId": "S9-0409",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "11:11:05",
+        "arrivalTime": "11:07:23"
+      },
+      {
+        "stationId": 186,
+        "departTime": "11:18:53",
+        "arrivalTime": "11:18:28"
+      },
+      {
+        "stationId": 187,
+        "departTime": "11:24:37",
+        "arrivalTime": "11:24:12"
+      },
+      {
+        "stationId": 188,
+        "departTime": "11:32:52",
+        "arrivalTime": "11:32:27"
+      },
+      {
+        "stationId": 189,
+        "departTime": "11:46:50",
+        "arrivalTime": "11:46:25"
+      },
+      {
+        "stationId": 190,
+        "departTime": "11:52:01",
+        "arrivalTime": "11:51:16"
+      }
+    ]
+  },
+  "S9-0209": {
+    "trainId": "S9-0209",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "10:59:10",
+        "arrivalTime": "10:55:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "11:06:58",
+        "arrivalTime": "11:06:33"
+      },
+      {
+        "stationId": 187,
+        "departTime": "11:12:42",
+        "arrivalTime": "11:12:17"
+      },
+      {
+        "stationId": 188,
+        "departTime": "11:20:57",
+        "arrivalTime": "11:20:32"
+      },
+      {
+        "stationId": 189,
+        "departTime": "11:34:55",
+        "arrivalTime": "11:34:30"
+      },
+      {
+        "stationId": 190,
+        "departTime": "11:40:06",
+        "arrivalTime": "11:39:21"
+      }
+    ]
+  },
+  "S9-1107": {
+    "trainId": "S9-1107",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "10:47:15",
+        "arrivalTime": "10:43:57"
+      },
+      {
+        "stationId": 186,
+        "departTime": "10:55:03",
+        "arrivalTime": "10:54:38"
+      },
+      {
+        "stationId": 187,
+        "departTime": "11:00:47",
+        "arrivalTime": "11:00:22"
+      },
+      {
+        "stationId": 188,
+        "departTime": "11:09:02",
+        "arrivalTime": "11:08:37"
+      },
+      {
+        "stationId": 189,
+        "departTime": "11:23:00",
+        "arrivalTime": "11:22:35"
+      },
+      {
+        "stationId": 190,
+        "departTime": "11:28:11",
+        "arrivalTime": "11:27:26"
+      }
+    ]
+  },
+  "S9-1007": {
+    "trainId": "S9-1007",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "10:34:45",
+        "arrivalTime": "10:32:02"
+      },
+      {
+        "stationId": 186,
+        "departTime": "10:42:33",
+        "arrivalTime": "10:42:08"
+      },
+      {
+        "stationId": 187,
+        "departTime": "10:48:17",
+        "arrivalTime": "10:47:52"
+      },
+      {
+        "stationId": 188,
+        "departTime": "10:56:32",
+        "arrivalTime": "10:56:07"
+      },
+      {
+        "stationId": 189,
+        "departTime": "11:10:30",
+        "arrivalTime": "11:10:05"
+      },
+      {
+        "stationId": 190,
+        "departTime": "11:15:41",
+        "arrivalTime": "11:14:56"
+      }
+    ]
+  },
+  "S9-0907": {
+    "trainId": "S9-0907",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "10:23:25",
+        "arrivalTime": "10:20:07"
+      },
+      {
+        "stationId": 186,
+        "departTime": "10:31:13",
+        "arrivalTime": "10:30:48"
+      },
+      {
+        "stationId": 187,
+        "departTime": "10:36:57",
+        "arrivalTime": "10:36:32"
+      },
+      {
+        "stationId": 188,
+        "departTime": "10:45:12",
+        "arrivalTime": "10:44:47"
+      },
+      {
+        "stationId": 189,
+        "departTime": "10:59:10",
+        "arrivalTime": "10:58:45"
+      },
+      {
+        "stationId": 190,
+        "departTime": "11:04:21",
+        "arrivalTime": "11:03:36"
+      }
+    ]
+  },
+  "S9-0707": {
+    "trainId": "S9-0707",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "10:11:30",
+        "arrivalTime": "10:08:12"
+      },
+      {
+        "stationId": 186,
+        "departTime": "10:19:18",
+        "arrivalTime": "10:18:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "10:25:02",
+        "arrivalTime": "10:24:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "10:33:17",
+        "arrivalTime": "10:32:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "10:47:15",
+        "arrivalTime": "10:46:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "10:52:26",
+        "arrivalTime": "10:51:41"
+      }
+    ]
+  },
+  "S9-0607": {
+    "trainId": "S9-0607",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "09:59:35",
+        "arrivalTime": "09:56:47"
+      },
+      {
+        "stationId": 186,
+        "departTime": "10:07:23",
+        "arrivalTime": "10:06:58"
+      },
+      {
+        "stationId": 187,
+        "departTime": "10:13:07",
+        "arrivalTime": "10:12:42"
+      },
+      {
+        "stationId": 188,
+        "departTime": "10:21:22",
+        "arrivalTime": "10:20:57"
+      },
+      {
+        "stationId": 189,
+        "departTime": "10:35:20",
+        "arrivalTime": "10:34:55"
+      },
+      {
+        "stationId": 190,
+        "departTime": "10:40:31",
+        "arrivalTime": "10:39:46"
+      }
+    ]
+  },
+  "S9-0507": {
+    "trainId": "S9-0507",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "09:47:40",
+        "arrivalTime": "09:44:18"
+      },
+      {
+        "stationId": 186,
+        "departTime": "09:55:28",
+        "arrivalTime": "09:55:03"
+      },
+      {
+        "stationId": 187,
+        "departTime": "10:01:12",
+        "arrivalTime": "10:00:47"
+      },
+      {
+        "stationId": 188,
+        "departTime": "10:09:27",
+        "arrivalTime": "10:09:02"
+      },
+      {
+        "stationId": 189,
+        "departTime": "10:23:25",
+        "arrivalTime": "10:23:00"
+      },
+      {
+        "stationId": 190,
+        "departTime": "10:28:36",
+        "arrivalTime": "10:27:51"
+      }
+    ]
+  },
+  "S9-0508": {
+    "trainId": "S9-0508",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "10:35:55",
+        "arrivalTime": "10:30:38"
+      },
+      {
+        "stationId": 189,
+        "departTime": "10:40:47",
+        "arrivalTime": "10:40:22"
+      },
+      {
+        "stationId": 188,
+        "departTime": "10:54:47",
+        "arrivalTime": "10:54:22"
+      },
+      {
+        "stationId": 187,
+        "departTime": "11:02:59",
+        "arrivalTime": "11:02:34"
+      },
+      {
+        "stationId": 186,
+        "departTime": "11:08:44",
+        "arrivalTime": "11:08:19"
+      },
+      {
+        "stationId": 128,
+        "departTime": "11:17:01",
+        "arrivalTime": "11:16:16"
+      }
+    ]
+  },
+  "S9-0608": {
+    "trainId": "S9-0608",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "10:47:25",
+        "arrivalTime": "10:42:33"
+      },
+      {
+        "stationId": 189,
+        "departTime": "10:52:17",
+        "arrivalTime": "10:51:52"
+      },
+      {
+        "stationId": 188,
+        "departTime": "11:06:17",
+        "arrivalTime": "11:05:52"
+      },
+      {
+        "stationId": 187,
+        "departTime": "11:14:29",
+        "arrivalTime": "11:14:04"
+      },
+      {
+        "stationId": 186,
+        "departTime": "11:20:14",
+        "arrivalTime": "11:19:49"
+      },
+      {
+        "stationId": 128,
+        "departTime": "11:28:31",
+        "arrivalTime": "11:27:46"
+      }
+    ]
+  },
+  "S9-0708": {
+    "trainId": "S9-0708",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "10:59:10",
+        "arrivalTime": "10:54:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "11:04:02",
+        "arrivalTime": "11:03:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "11:18:02",
+        "arrivalTime": "11:17:37"
+      },
+      {
+        "stationId": 187,
+        "departTime": "11:26:14",
+        "arrivalTime": "11:25:49"
+      },
+      {
+        "stationId": 186,
+        "departTime": "11:31:59",
+        "arrivalTime": "11:31:34"
+      },
+      {
+        "stationId": 128,
+        "departTime": "11:40:16",
+        "arrivalTime": "11:39:31"
+      }
+    ]
+  },
+  "S9-0908": {
+    "trainId": "S9-0908",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "11:11:05",
+        "arrivalTime": "11:06:23"
+      },
+      {
+        "stationId": 189,
+        "departTime": "11:15:57",
+        "arrivalTime": "11:15:32"
+      },
+      {
+        "stationId": 188,
+        "departTime": "11:29:57",
+        "arrivalTime": "11:29:32"
+      },
+      {
+        "stationId": 187,
+        "departTime": "11:38:09",
+        "arrivalTime": "11:37:44"
+      },
+      {
+        "stationId": 186,
+        "departTime": "11:43:54",
+        "arrivalTime": "11:43:29"
+      },
+      {
+        "stationId": 128,
+        "departTime": "11:52:11",
+        "arrivalTime": "11:51:26"
+      }
+    ]
+  },
+  "S9-1008": {
+    "trainId": "S9-1008",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "11:23:00",
+        "arrivalTime": "11:17:43"
+      },
+      {
+        "stationId": 189,
+        "departTime": "11:27:52",
+        "arrivalTime": "11:27:27"
+      },
+      {
+        "stationId": 188,
+        "departTime": "11:41:52",
+        "arrivalTime": "11:41:27"
+      },
+      {
+        "stationId": 187,
+        "departTime": "11:50:04",
+        "arrivalTime": "11:49:39"
+      },
+      {
+        "stationId": 186,
+        "departTime": "11:55:49",
+        "arrivalTime": "11:55:24"
+      },
+      {
+        "stationId": 128,
+        "departTime": "12:04:06",
+        "arrivalTime": "12:03:21"
+      }
+    ]
+  },
+  "S9-1108": {
+    "trainId": "S9-1108",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "11:34:55",
+        "arrivalTime": "11:30:13"
+      },
+      {
+        "stationId": 189,
+        "departTime": "11:39:47",
+        "arrivalTime": "11:39:22"
+      },
+      {
+        "stationId": 188,
+        "departTime": "11:53:47",
+        "arrivalTime": "11:53:22"
+      },
+      {
+        "stationId": 187,
+        "departTime": "12:01:59",
+        "arrivalTime": "12:01:34"
+      },
+      {
+        "stationId": 186,
+        "departTime": "12:07:44",
+        "arrivalTime": "12:07:19"
+      },
+      {
+        "stationId": 128,
+        "departTime": "12:16:01",
+        "arrivalTime": "12:15:16"
+      }
+    ]
+  },
+  "S9-0210": {
+    "trainId": "S9-0210",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "11:46:50",
+        "arrivalTime": "11:42:08"
+      },
+      {
+        "stationId": 189,
+        "departTime": "11:51:42",
+        "arrivalTime": "11:51:17"
+      },
+      {
+        "stationId": 188,
+        "departTime": "12:05:42",
+        "arrivalTime": "12:05:17"
+      },
+      {
+        "stationId": 187,
+        "departTime": "12:13:54",
+        "arrivalTime": "12:13:29"
+      },
+      {
+        "stationId": 186,
+        "departTime": "12:19:39",
+        "arrivalTime": "12:19:14"
+      },
+      {
+        "stationId": 128,
+        "departTime": "12:27:56",
+        "arrivalTime": "12:27:11"
+      }
+    ]
+  },
+  "S9-0410": {
+    "trainId": "S9-0410",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "11:58:45",
+        "arrivalTime": "11:54:03"
+      },
+      {
+        "stationId": 189,
+        "departTime": "12:03:37",
+        "arrivalTime": "12:03:12"
+      },
+      {
+        "stationId": 188,
+        "departTime": "12:17:37",
+        "arrivalTime": "12:17:12"
+      },
+      {
+        "stationId": 187,
+        "departTime": "12:25:49",
+        "arrivalTime": "12:25:24"
+      },
+      {
+        "stationId": 186,
+        "departTime": "12:31:34",
+        "arrivalTime": "12:31:09"
+      },
+      {
+        "stationId": 128,
+        "departTime": "12:39:51",
+        "arrivalTime": "12:39:06"
+      }
+    ]
+  },
+  "S9-0411": {
+    "trainId": "S9-0411",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "12:46:25",
+        "arrivalTime": "12:43:07"
+      },
+      {
+        "stationId": 186,
+        "departTime": "12:54:13",
+        "arrivalTime": "12:53:48"
+      },
+      {
+        "stationId": 187,
+        "departTime": "12:59:57",
+        "arrivalTime": "12:59:32"
+      },
+      {
+        "stationId": 188,
+        "departTime": "13:08:12",
+        "arrivalTime": "13:07:47"
+      },
+      {
+        "stationId": 189,
+        "departTime": "13:22:10",
+        "arrivalTime": "13:21:45"
+      },
+      {
+        "stationId": 190,
+        "departTime": "13:27:21",
+        "arrivalTime": "13:26:36"
+      }
+    ]
+  },
+  "S9-0211": {
+    "trainId": "S9-0211",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "12:34:30",
+        "arrivalTime": "12:31:12"
+      },
+      {
+        "stationId": 186,
+        "departTime": "12:42:18",
+        "arrivalTime": "12:41:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "12:48:02",
+        "arrivalTime": "12:47:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "12:56:17",
+        "arrivalTime": "12:55:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "13:10:15",
+        "arrivalTime": "13:09:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "13:15:26",
+        "arrivalTime": "13:14:41"
+      }
+    ]
+  },
+  "S9-1109": {
+    "trainId": "S9-1109",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "12:22:35",
+        "arrivalTime": "12:19:17"
+      },
+      {
+        "stationId": 186,
+        "departTime": "12:30:23",
+        "arrivalTime": "12:29:58"
+      },
+      {
+        "stationId": 187,
+        "departTime": "12:36:07",
+        "arrivalTime": "12:35:42"
+      },
+      {
+        "stationId": 188,
+        "departTime": "12:44:22",
+        "arrivalTime": "12:43:57"
+      },
+      {
+        "stationId": 189,
+        "departTime": "12:58:20",
+        "arrivalTime": "12:57:55"
+      },
+      {
+        "stationId": 190,
+        "departTime": "13:03:31",
+        "arrivalTime": "13:02:46"
+      }
+    ]
+  },
+  "S9-1009": {
+    "trainId": "S9-1009",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "12:10:40",
+        "arrivalTime": "12:07:22"
+      },
+      {
+        "stationId": 186,
+        "departTime": "12:18:28",
+        "arrivalTime": "12:18:03"
+      },
+      {
+        "stationId": 187,
+        "departTime": "12:24:12",
+        "arrivalTime": "12:23:47"
+      },
+      {
+        "stationId": 188,
+        "departTime": "12:32:27",
+        "arrivalTime": "12:32:02"
+      },
+      {
+        "stationId": 189,
+        "departTime": "12:46:25",
+        "arrivalTime": "12:46:00"
+      },
+      {
+        "stationId": 190,
+        "departTime": "12:51:36",
+        "arrivalTime": "12:50:51"
+      }
+    ]
+  },
+  "S9-0909": {
+    "trainId": "S9-0909",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "11:58:45",
+        "arrivalTime": "11:55:27"
+      },
+      {
+        "stationId": 186,
+        "departTime": "12:06:33",
+        "arrivalTime": "12:06:08"
+      },
+      {
+        "stationId": 187,
+        "departTime": "12:12:17",
+        "arrivalTime": "12:11:52"
+      },
+      {
+        "stationId": 188,
+        "departTime": "12:20:32",
+        "arrivalTime": "12:20:07"
+      },
+      {
+        "stationId": 189,
+        "departTime": "12:34:30",
+        "arrivalTime": "12:34:05"
+      },
+      {
+        "stationId": 190,
+        "departTime": "12:39:41",
+        "arrivalTime": "12:38:56"
+      }
+    ]
+  },
+  "S9-0709": {
+    "trainId": "S9-0709",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "11:47:45",
+        "arrivalTime": "11:43:32"
+      },
+      {
+        "stationId": 186,
+        "departTime": "11:55:33",
+        "arrivalTime": "11:55:08"
+      },
+      {
+        "stationId": 187,
+        "departTime": "12:01:17",
+        "arrivalTime": "12:00:52"
+      },
+      {
+        "stationId": 188,
+        "departTime": "12:09:32",
+        "arrivalTime": "12:09:07"
+      },
+      {
+        "stationId": 189,
+        "departTime": "12:23:30",
+        "arrivalTime": "12:23:05"
+      },
+      {
+        "stationId": 190,
+        "departTime": "12:28:41",
+        "arrivalTime": "12:27:56"
+      }
+    ]
+  },
+  "S9-0609": {
+    "trainId": "S9-0609",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "11:33:55",
+        "arrivalTime": "11:31:47"
+      },
+      {
+        "stationId": 186,
+        "departTime": "11:41:43",
+        "arrivalTime": "11:41:18"
+      },
+      {
+        "stationId": 187,
+        "departTime": "11:47:27",
+        "arrivalTime": "11:47:02"
+      },
+      {
+        "stationId": 188,
+        "departTime": "11:55:42",
+        "arrivalTime": "11:55:17"
+      },
+      {
+        "stationId": 189,
+        "departTime": "12:09:40",
+        "arrivalTime": "12:09:15"
+      },
+      {
+        "stationId": 190,
+        "departTime": "12:14:51",
+        "arrivalTime": "12:14:06"
+      }
+    ]
+  },
+  "S9-0509": {
+    "trainId": "S9-0509",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "11:23:00",
+        "arrivalTime": "11:20:17"
+      },
+      {
+        "stationId": 186,
+        "departTime": "11:30:48",
+        "arrivalTime": "11:30:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "11:36:32",
+        "arrivalTime": "11:36:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "11:44:47",
+        "arrivalTime": "11:44:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "11:58:45",
+        "arrivalTime": "11:58:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "12:03:56",
+        "arrivalTime": "12:03:11"
+      }
+    ]
+  },
+  "S9-0510": {
+    "trainId": "S9-0510",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "12:09:11",
+        "arrivalTime": "12:05:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "12:14:03",
+        "arrivalTime": "12:13:38"
+      },
+      {
+        "stationId": 188,
+        "departTime": "12:28:03",
+        "arrivalTime": "12:27:38"
+      },
+      {
+        "stationId": 187,
+        "departTime": "12:36:15",
+        "arrivalTime": "12:35:50"
+      },
+      {
+        "stationId": 186,
+        "departTime": "12:42:00",
+        "arrivalTime": "12:41:35"
+      },
+      {
+        "stationId": 128,
+        "departTime": "12:50:17",
+        "arrivalTime": "12:49:32"
+      }
+    ]
+  },
+  "S9-0610": {
+    "trainId": "S9-0610",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "12:23:26",
+        "arrivalTime": "12:16:53"
+      },
+      {
+        "stationId": 189,
+        "departTime": "12:28:18",
+        "arrivalTime": "12:27:53"
+      },
+      {
+        "stationId": 188,
+        "departTime": "12:42:18",
+        "arrivalTime": "12:41:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "12:50:30",
+        "arrivalTime": "12:50:05"
+      },
+      {
+        "stationId": 186,
+        "departTime": "12:56:15",
+        "arrivalTime": "12:55:50"
+      },
+      {
+        "stationId": 128,
+        "departTime": "13:04:32",
+        "arrivalTime": "13:03:47"
+      }
+    ]
+  },
+  "S9-0710": {
+    "trainId": "S9-0710",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "12:34:30",
+        "arrivalTime": "12:30:43"
+      },
+      {
+        "stationId": 189,
+        "departTime": "12:39:22",
+        "arrivalTime": "12:38:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "12:53:22",
+        "arrivalTime": "12:52:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "13:01:34",
+        "arrivalTime": "13:01:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "13:07:19",
+        "arrivalTime": "13:06:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "13:15:36",
+        "arrivalTime": "13:14:51"
+      }
+    ]
+  },
+  "S9-0910": {
+    "trainId": "S9-0910",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "12:46:25",
+        "arrivalTime": "12:41:43"
+      },
+      {
+        "stationId": 189,
+        "departTime": "12:51:17",
+        "arrivalTime": "12:50:52"
+      },
+      {
+        "stationId": 188,
+        "departTime": "13:05:17",
+        "arrivalTime": "13:04:52"
+      },
+      {
+        "stationId": 187,
+        "departTime": "13:13:29",
+        "arrivalTime": "13:13:04"
+      },
+      {
+        "stationId": 186,
+        "departTime": "13:19:14",
+        "arrivalTime": "13:18:49"
+      },
+      {
+        "stationId": 128,
+        "departTime": "13:27:31",
+        "arrivalTime": "13:26:46"
+      }
+    ]
+  },
+  "S9-1010": {
+    "trainId": "S9-1010",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "12:58:20",
+        "arrivalTime": "12:53:38"
+      },
+      {
+        "stationId": 189,
+        "departTime": "13:03:12",
+        "arrivalTime": "13:02:47"
+      },
+      {
+        "stationId": 188,
+        "departTime": "13:17:12",
+        "arrivalTime": "13:16:47"
+      },
+      {
+        "stationId": 187,
+        "departTime": "13:25:24",
+        "arrivalTime": "13:24:59"
+      },
+      {
+        "stationId": 186,
+        "departTime": "13:31:09",
+        "arrivalTime": "13:30:44"
+      },
+      {
+        "stationId": 128,
+        "departTime": "13:39:26",
+        "arrivalTime": "13:38:41"
+      }
+    ]
+  },
+  "S9-1110": {
+    "trainId": "S9-1110",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "13:10:15",
+        "arrivalTime": "13:05:33"
+      },
+      {
+        "stationId": 189,
+        "departTime": "13:15:07",
+        "arrivalTime": "13:14:42"
+      },
+      {
+        "stationId": 188,
+        "departTime": "13:29:07",
+        "arrivalTime": "13:28:42"
+      },
+      {
+        "stationId": 187,
+        "departTime": "13:37:19",
+        "arrivalTime": "13:36:54"
+      },
+      {
+        "stationId": 186,
+        "departTime": "13:43:04",
+        "arrivalTime": "13:42:39"
+      },
+      {
+        "stationId": 128,
+        "departTime": "13:51:21",
+        "arrivalTime": "13:50:36"
+      }
+    ]
+  },
+  "S9-0212": {
+    "trainId": "S9-0212",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "13:22:10",
+        "arrivalTime": "13:17:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "13:27:02",
+        "arrivalTime": "13:26:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "13:41:02",
+        "arrivalTime": "13:40:37"
+      },
+      {
+        "stationId": 187,
+        "departTime": "13:49:14",
+        "arrivalTime": "13:48:49"
+      },
+      {
+        "stationId": 186,
+        "departTime": "13:54:59",
+        "arrivalTime": "13:54:34"
+      },
+      {
+        "stationId": 128,
+        "departTime": "14:03:16",
+        "arrivalTime": "14:02:31"
+      }
+    ]
+  },
+  "S9-0412": {
+    "trainId": "S9-0412",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "13:34:05",
+        "arrivalTime": "13:29:23"
+      },
+      {
+        "stationId": 189,
+        "departTime": "13:38:57",
+        "arrivalTime": "13:38:32"
+      },
+      {
+        "stationId": 188,
+        "departTime": "13:52:57",
+        "arrivalTime": "13:52:32"
+      },
+      {
+        "stationId": 187,
+        "departTime": "14:01:09",
+        "arrivalTime": "14:00:44"
+      },
+      {
+        "stationId": 186,
+        "departTime": "14:06:54",
+        "arrivalTime": "14:06:29"
+      },
+      {
+        "stationId": 128,
+        "departTime": "14:15:11",
+        "arrivalTime": "14:14:26"
+      }
+    ]
+  },
+  "S9-0413": {
+    "trainId": "S9-0413",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "14:21:45",
+        "arrivalTime": "14:18:27"
+      },
+      {
+        "stationId": 186,
+        "departTime": "14:29:33",
+        "arrivalTime": "14:29:08"
+      },
+      {
+        "stationId": 187,
+        "departTime": "14:35:17",
+        "arrivalTime": "14:34:52"
+      },
+      {
+        "stationId": 188,
+        "departTime": "14:43:32",
+        "arrivalTime": "14:43:07"
+      },
+      {
+        "stationId": 189,
+        "departTime": "14:57:30",
+        "arrivalTime": "14:57:05"
+      },
+      {
+        "stationId": 190,
+        "departTime": "15:02:41",
+        "arrivalTime": "15:01:56"
+      }
+    ]
+  },
+  "S9-0213": {
+    "trainId": "S9-0213",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "14:09:50",
+        "arrivalTime": "14:06:32"
+      },
+      {
+        "stationId": 186,
+        "departTime": "14:17:38",
+        "arrivalTime": "14:17:13"
+      },
+      {
+        "stationId": 187,
+        "departTime": "14:23:22",
+        "arrivalTime": "14:22:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "14:31:37",
+        "arrivalTime": "14:31:12"
+      },
+      {
+        "stationId": 189,
+        "departTime": "14:45:35",
+        "arrivalTime": "14:45:10"
+      },
+      {
+        "stationId": 190,
+        "departTime": "14:50:46",
+        "arrivalTime": "14:50:01"
+      }
+    ]
+  },
+  "S9-1111": {
+    "trainId": "S9-1111",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "13:57:55",
+        "arrivalTime": "13:54:37"
+      },
+      {
+        "stationId": 186,
+        "departTime": "14:05:43",
+        "arrivalTime": "14:05:18"
+      },
+      {
+        "stationId": 187,
+        "departTime": "14:11:27",
+        "arrivalTime": "14:11:02"
+      },
+      {
+        "stationId": 188,
+        "departTime": "14:19:42",
+        "arrivalTime": "14:19:17"
+      },
+      {
+        "stationId": 189,
+        "departTime": "14:33:40",
+        "arrivalTime": "14:33:15"
+      },
+      {
+        "stationId": 190,
+        "departTime": "14:38:51",
+        "arrivalTime": "14:38:06"
+      }
+    ]
+  },
+  "S9-1011": {
+    "trainId": "S9-1011",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "13:46:00",
+        "arrivalTime": "13:42:42"
+      },
+      {
+        "stationId": 186,
+        "departTime": "13:53:48",
+        "arrivalTime": "13:53:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "13:59:32",
+        "arrivalTime": "13:59:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "14:07:47",
+        "arrivalTime": "14:07:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "14:21:45",
+        "arrivalTime": "14:21:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "14:26:56",
+        "arrivalTime": "14:26:11"
+      }
+    ]
+  },
+  "S9-0911": {
+    "trainId": "S9-0911",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "13:34:25",
+        "arrivalTime": "13:30:47"
+      },
+      {
+        "stationId": 186,
+        "departTime": "13:42:13",
+        "arrivalTime": "13:41:48"
+      },
+      {
+        "stationId": 187,
+        "departTime": "13:47:57",
+        "arrivalTime": "13:47:32"
+      },
+      {
+        "stationId": 188,
+        "departTime": "13:56:12",
+        "arrivalTime": "13:55:47"
+      },
+      {
+        "stationId": 189,
+        "departTime": "14:10:10",
+        "arrivalTime": "14:09:45"
+      },
+      {
+        "stationId": 190,
+        "departTime": "14:15:21",
+        "arrivalTime": "14:14:36"
+      }
+    ]
+  },
+  "S9-0711": {
+    "trainId": "S9-0711",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "13:23:45",
+        "arrivalTime": "13:18:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "13:31:33",
+        "arrivalTime": "13:31:08"
+      },
+      {
+        "stationId": 187,
+        "departTime": "13:37:17",
+        "arrivalTime": "13:36:52"
+      },
+      {
+        "stationId": 188,
+        "departTime": "13:45:32",
+        "arrivalTime": "13:45:07"
+      },
+      {
+        "stationId": 189,
+        "departTime": "13:59:30",
+        "arrivalTime": "13:59:05"
+      },
+      {
+        "stationId": 190,
+        "departTime": "14:04:41",
+        "arrivalTime": "14:03:56"
+      }
+    ]
+  },
+  "S9-0611": {
+    "trainId": "S9-0611",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "13:09:55",
+        "arrivalTime": "13:07:48"
+      },
+      {
+        "stationId": 186,
+        "departTime": "13:17:43",
+        "arrivalTime": "13:17:18"
+      },
+      {
+        "stationId": 187,
+        "departTime": "13:23:27",
+        "arrivalTime": "13:23:02"
+      },
+      {
+        "stationId": 188,
+        "departTime": "13:31:42",
+        "arrivalTime": "13:31:17"
+      },
+      {
+        "stationId": 189,
+        "departTime": "13:45:40",
+        "arrivalTime": "13:45:15"
+      },
+      {
+        "stationId": 190,
+        "departTime": "13:50:51",
+        "arrivalTime": "13:50:06"
+      }
+    ]
+  },
+  "S9-0511": {
+    "trainId": "S9-0511",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "12:58:20",
+        "arrivalTime": "12:53:33"
+      },
+      {
+        "stationId": 186,
+        "departTime": "13:06:08",
+        "arrivalTime": "13:05:43"
+      },
+      {
+        "stationId": 187,
+        "departTime": "13:11:52",
+        "arrivalTime": "13:11:27"
+      },
+      {
+        "stationId": 188,
+        "departTime": "13:20:07",
+        "arrivalTime": "13:19:42"
+      },
+      {
+        "stationId": 189,
+        "departTime": "13:34:05",
+        "arrivalTime": "13:33:40"
+      },
+      {
+        "stationId": 190,
+        "departTime": "13:39:16",
+        "arrivalTime": "13:38:31"
+      }
+    ]
+  },
+  "S9-0512": {
+    "trainId": "S9-0512",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "13:44:51",
+        "arrivalTime": "13:41:18"
+      },
+      {
+        "stationId": 189,
+        "departTime": "13:49:43",
+        "arrivalTime": "13:49:18"
+      },
+      {
+        "stationId": 188,
+        "departTime": "14:03:43",
+        "arrivalTime": "14:03:18"
+      },
+      {
+        "stationId": 187,
+        "departTime": "14:11:55",
+        "arrivalTime": "14:11:30"
+      },
+      {
+        "stationId": 186,
+        "departTime": "14:17:40",
+        "arrivalTime": "14:17:15"
+      },
+      {
+        "stationId": 128,
+        "departTime": "14:25:57",
+        "arrivalTime": "14:25:12"
+      }
+    ]
+  },
+  "S9-0612": {
+    "trainId": "S9-0612",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "13:58:56",
+        "arrivalTime": "13:52:53"
+      },
+      {
+        "stationId": 189,
+        "departTime": "14:03:48",
+        "arrivalTime": "14:03:23"
+      },
+      {
+        "stationId": 188,
+        "departTime": "14:17:48",
+        "arrivalTime": "14:17:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "14:26:00",
+        "arrivalTime": "14:25:35"
+      },
+      {
+        "stationId": 186,
+        "departTime": "14:31:45",
+        "arrivalTime": "14:31:20"
+      },
+      {
+        "stationId": 128,
+        "departTime": "14:40:02",
+        "arrivalTime": "14:39:17"
+      }
+    ]
+  },
+  "S9-0712": {
+    "trainId": "S9-0712",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "14:09:50",
+        "arrivalTime": "14:06:43"
+      },
+      {
+        "stationId": 189,
+        "departTime": "14:14:42",
+        "arrivalTime": "14:14:17"
+      },
+      {
+        "stationId": 188,
+        "departTime": "14:28:42",
+        "arrivalTime": "14:28:17"
+      },
+      {
+        "stationId": 187,
+        "departTime": "14:36:54",
+        "arrivalTime": "14:36:29"
+      },
+      {
+        "stationId": 186,
+        "departTime": "14:42:39",
+        "arrivalTime": "14:42:14"
+      },
+      {
+        "stationId": 128,
+        "departTime": "14:50:56",
+        "arrivalTime": "14:50:11"
+      }
+    ]
+  },
+  "S9-0912": {
+    "trainId": "S9-0912",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "14:21:45",
+        "arrivalTime": "14:17:23"
+      },
+      {
+        "stationId": 189,
+        "departTime": "14:26:37",
+        "arrivalTime": "14:26:12"
+      },
+      {
+        "stationId": 188,
+        "departTime": "14:40:37",
+        "arrivalTime": "14:40:12"
+      },
+      {
+        "stationId": 187,
+        "departTime": "14:48:49",
+        "arrivalTime": "14:48:24"
+      },
+      {
+        "stationId": 186,
+        "departTime": "14:54:34",
+        "arrivalTime": "14:54:09"
+      },
+      {
+        "stationId": 128,
+        "departTime": "15:02:51",
+        "arrivalTime": "15:02:06"
+      }
+    ]
+  },
+  "S9-1012": {
+    "trainId": "S9-1012",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "14:33:40",
+        "arrivalTime": "14:28:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "14:38:32",
+        "arrivalTime": "14:38:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "14:52:32",
+        "arrivalTime": "14:52:07"
+      },
+      {
+        "stationId": 187,
+        "departTime": "15:00:44",
+        "arrivalTime": "15:00:19"
+      },
+      {
+        "stationId": 186,
+        "departTime": "15:06:29",
+        "arrivalTime": "15:06:04"
+      },
+      {
+        "stationId": 128,
+        "departTime": "15:14:46",
+        "arrivalTime": "15:14:01"
+      }
+    ]
+  },
+  "S9-1112": {
+    "trainId": "S9-1112",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "14:45:35",
+        "arrivalTime": "14:40:53"
+      },
+      {
+        "stationId": 189,
+        "departTime": "14:50:27",
+        "arrivalTime": "14:50:02"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:04:27",
+        "arrivalTime": "15:04:02"
+      },
+      {
+        "stationId": 187,
+        "departTime": "15:12:39",
+        "arrivalTime": "15:12:14"
+      },
+      {
+        "stationId": 186,
+        "departTime": "15:18:24",
+        "arrivalTime": "15:17:59"
+      },
+      {
+        "stationId": 128,
+        "departTime": "15:26:41",
+        "arrivalTime": "15:25:56"
+      }
+    ]
+  },
+  "S9-0214": {
+    "trainId": "S9-0214",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "14:57:30",
+        "arrivalTime": "14:52:48"
+      },
+      {
+        "stationId": 189,
+        "departTime": "15:02:22",
+        "arrivalTime": "15:01:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:16:22",
+        "arrivalTime": "15:15:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "15:24:34",
+        "arrivalTime": "15:24:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "15:30:19",
+        "arrivalTime": "15:29:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "15:38:36",
+        "arrivalTime": "15:37:51"
+      }
+    ]
+  },
+  "S9-0414": {
+    "trainId": "S9-0414",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "15:07:30",
+        "arrivalTime": "15:04:43"
+      },
+      {
+        "stationId": 189,
+        "departTime": "15:12:22",
+        "arrivalTime": "15:11:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:26:22",
+        "arrivalTime": "15:25:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "15:34:34",
+        "arrivalTime": "15:34:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "15:40:19",
+        "arrivalTime": "15:39:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "15:48:36",
+        "arrivalTime": "15:47:51"
+      }
+    ]
+  },
+  "S9-1113": {
+    "trainId": "S9-1113",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "15:37:30",
+        "arrivalTime": "15:29:57"
+      },
+      {
+        "stationId": 186,
+        "departTime": "15:45:18",
+        "arrivalTime": "15:44:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "15:51:02",
+        "arrivalTime": "15:50:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:59:17",
+        "arrivalTime": "15:58:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:13:15",
+        "arrivalTime": "16:12:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "16:18:26",
+        "arrivalTime": "16:17:41"
+      }
+    ]
+  },
+  "S9-1013": {
+    "trainId": "S9-1013",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "15:28:28",
+        "arrivalTime": "15:22:16"
+      },
+      {
+        "stationId": 186,
+        "departTime": "15:36:16",
+        "arrivalTime": "15:35:51"
+      },
+      {
+        "stationId": 187,
+        "departTime": "15:42:00",
+        "arrivalTime": "15:41:35"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:50:15",
+        "arrivalTime": "15:49:50"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:04:13",
+        "arrivalTime": "16:03:48"
+      },
+      {
+        "stationId": 190,
+        "departTime": "16:09:24",
+        "arrivalTime": "16:08:39"
+      }
+    ]
+  },
+  "S9-1201": {
+    "trainId": "S9-1201",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "15:18:17",
+        "arrivalTime": "15:13:42"
+      },
+      {
+        "stationId": 186,
+        "departTime": "15:26:05",
+        "arrivalTime": "15:25:40"
+      },
+      {
+        "stationId": 187,
+        "departTime": "15:31:49",
+        "arrivalTime": "15:31:24"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:40:04",
+        "arrivalTime": "15:39:39"
+      },
+      {
+        "stationId": 189,
+        "departTime": "15:54:02",
+        "arrivalTime": "15:53:37"
+      },
+      {
+        "stationId": 190,
+        "departTime": "15:59:13",
+        "arrivalTime": "15:58:28"
+      }
+    ]
+  },
+  "S9-0913": {
+    "trainId": "S9-0913",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "15:07:20",
+        "arrivalTime": "15:06:07"
+      },
+      {
+        "stationId": 186,
+        "departTime": "15:15:08",
+        "arrivalTime": "15:14:43"
+      },
+      {
+        "stationId": 187,
+        "departTime": "15:20:52",
+        "arrivalTime": "15:20:27"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:29:07",
+        "arrivalTime": "15:28:42"
+      },
+      {
+        "stationId": 189,
+        "departTime": "15:43:05",
+        "arrivalTime": "15:42:40"
+      },
+      {
+        "stationId": 190,
+        "departTime": "15:48:16",
+        "arrivalTime": "15:47:31"
+      }
+    ]
+  },
+  "S9-0713": {
+    "trainId": "S9-0713",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "14:56:40",
+        "arrivalTime": "14:54:12"
+      },
+      {
+        "stationId": 186,
+        "departTime": "15:04:28",
+        "arrivalTime": "15:04:03"
+      },
+      {
+        "stationId": 187,
+        "departTime": "15:10:12",
+        "arrivalTime": "15:09:47"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:18:27",
+        "arrivalTime": "15:18:02"
+      },
+      {
+        "stationId": 189,
+        "departTime": "15:32:25",
+        "arrivalTime": "15:32:00"
+      },
+      {
+        "stationId": 190,
+        "departTime": "15:37:36",
+        "arrivalTime": "15:36:51"
+      }
+    ]
+  },
+  "S9-0613": {
+    "trainId": "S9-0613",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "14:45:35",
+        "arrivalTime": "14:43:18"
+      },
+      {
+        "stationId": 186,
+        "departTime": "14:53:23",
+        "arrivalTime": "14:52:58"
+      },
+      {
+        "stationId": 187,
+        "departTime": "14:59:07",
+        "arrivalTime": "14:58:42"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:07:22",
+        "arrivalTime": "15:06:57"
+      },
+      {
+        "stationId": 189,
+        "departTime": "15:21:20",
+        "arrivalTime": "15:20:55"
+      },
+      {
+        "stationId": 190,
+        "departTime": "15:26:31",
+        "arrivalTime": "15:25:46"
+      }
+    ]
+  },
+  "S9-0513": {
+    "trainId": "S9-0513",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "14:33:40",
+        "arrivalTime": "14:29:13"
+      },
+      {
+        "stationId": 186,
+        "departTime": "14:41:28",
+        "arrivalTime": "14:41:03"
+      },
+      {
+        "stationId": 187,
+        "departTime": "14:47:12",
+        "arrivalTime": "14:46:47"
+      },
+      {
+        "stationId": 188,
+        "departTime": "14:55:27",
+        "arrivalTime": "14:55:02"
+      },
+      {
+        "stationId": 189,
+        "departTime": "15:09:25",
+        "arrivalTime": "15:09:00"
+      },
+      {
+        "stationId": 190,
+        "departTime": "15:14:36",
+        "arrivalTime": "15:13:51"
+      }
+    ]
+  },
+  "S9-1302": {
+    "trainId": "S9-1302",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "15:17:30",
+        "arrivalTime": "15:15:43"
+      },
+      {
+        "stationId": 189,
+        "departTime": "15:22:22",
+        "arrivalTime": "15:21:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:36:22",
+        "arrivalTime": "15:35:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "15:44:34",
+        "arrivalTime": "15:44:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "15:50:19",
+        "arrivalTime": "15:49:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "15:58:36",
+        "arrivalTime": "15:57:51"
+      }
+    ]
+  },
+  "S9-0514": {
+    "trainId": "S9-0514",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "15:27:30",
+        "arrivalTime": "15:22:23"
+      },
+      {
+        "stationId": 189,
+        "departTime": "15:32:22",
+        "arrivalTime": "15:31:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:46:22",
+        "arrivalTime": "15:45:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "15:54:34",
+        "arrivalTime": "15:54:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:00:19",
+        "arrivalTime": "15:59:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "16:08:36",
+        "arrivalTime": "16:07:51"
+      }
+    ]
+  },
+  "S9-0614": {
+    "trainId": "S9-0614",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "15:37:30",
+        "arrivalTime": "15:28:33"
+      },
+      {
+        "stationId": 189,
+        "departTime": "15:42:22",
+        "arrivalTime": "15:41:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "15:56:22",
+        "arrivalTime": "15:55:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:04:34",
+        "arrivalTime": "16:04:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:10:19",
+        "arrivalTime": "16:09:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "16:18:36",
+        "arrivalTime": "16:17:51"
+      }
+    ]
+  },
+  "S9-0714": {
+    "trainId": "S9-0714",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "15:47:30",
+        "arrivalTime": "15:39:38"
+      },
+      {
+        "stationId": 189,
+        "departTime": "15:52:22",
+        "arrivalTime": "15:51:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:06:22",
+        "arrivalTime": "16:05:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:14:34",
+        "arrivalTime": "16:14:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:20:19",
+        "arrivalTime": "16:19:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "16:28:36",
+        "arrivalTime": "16:27:51"
+      }
+    ]
+  },
+  "S9-0914": {
+    "trainId": "S9-0914",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "15:57:30",
+        "arrivalTime": "15:50:18"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:02:22",
+        "arrivalTime": "16:01:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:16:22",
+        "arrivalTime": "16:15:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:24:34",
+        "arrivalTime": "16:24:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:30:19",
+        "arrivalTime": "16:29:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "16:38:36",
+        "arrivalTime": "16:37:51"
+      }
+    ]
+  },
+  "S9-1202": {
+    "trainId": "S9-1202",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "16:07:30",
+        "arrivalTime": "16:01:15"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:12:22",
+        "arrivalTime": "16:11:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:26:22",
+        "arrivalTime": "16:25:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:34:34",
+        "arrivalTime": "16:34:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:40:19",
+        "arrivalTime": "16:39:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "16:48:36",
+        "arrivalTime": "16:47:51"
+      }
+    ]
+  },
+  "S9-1014": {
+    "trainId": "S9-1014",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "16:17:30",
+        "arrivalTime": "16:11:26"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:22:22",
+        "arrivalTime": "16:21:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:36:22",
+        "arrivalTime": "16:35:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:44:34",
+        "arrivalTime": "16:44:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:50:19",
+        "arrivalTime": "16:49:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "16:58:36",
+        "arrivalTime": "16:57:51"
+      }
+    ]
+  },
+  "S9-1114": {
+    "trainId": "S9-1114",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "16:27:30",
+        "arrivalTime": "16:20:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:32:22",
+        "arrivalTime": "16:31:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:46:22",
+        "arrivalTime": "16:45:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:54:34",
+        "arrivalTime": "16:54:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:00:19",
+        "arrivalTime": "16:59:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "17:08:36",
+        "arrivalTime": "17:07:51"
+      }
+    ]
+  },
+  "S9-1203": {
+    "trainId": "S9-1203",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "16:59:05",
+        "arrivalTime": "16:51:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:06:53",
+        "arrivalTime": "17:06:28"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:12:37",
+        "arrivalTime": "17:12:12"
+      },
+      {
+        "stationId": 188,
+        "departTime": "17:20:52",
+        "arrivalTime": "17:20:27"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:34:50",
+        "arrivalTime": "17:34:25"
+      },
+      {
+        "stationId": 190,
+        "departTime": "17:40:01",
+        "arrivalTime": "17:39:16"
+      }
+    ]
+  },
+  "S9-0915": {
+    "trainId": "S9-0915",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "16:47:30",
+        "arrivalTime": "16:41:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:55:18",
+        "arrivalTime": "16:54:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:01:02",
+        "arrivalTime": "17:00:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "17:09:17",
+        "arrivalTime": "17:08:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:23:15",
+        "arrivalTime": "17:22:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "17:28:26",
+        "arrivalTime": "17:27:41"
+      }
+    ]
+  },
+  "S9-0715": {
+    "trainId": "S9-0715",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "16:37:30",
+        "arrivalTime": "16:31:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:45:18",
+        "arrivalTime": "16:44:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:51:02",
+        "arrivalTime": "16:50:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:59:17",
+        "arrivalTime": "16:58:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:13:15",
+        "arrivalTime": "17:12:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "17:18:26",
+        "arrivalTime": "17:17:41"
+      }
+    ]
+  },
+  "S9-0615": {
+    "trainId": "S9-0615",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "16:27:30",
+        "arrivalTime": "16:21:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:35:18",
+        "arrivalTime": "16:34:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:41:02",
+        "arrivalTime": "16:40:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:49:17",
+        "arrivalTime": "16:48:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:03:15",
+        "arrivalTime": "17:02:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "17:08:26",
+        "arrivalTime": "17:07:41"
+      }
+    ]
+  },
+  "S9-0515": {
+    "trainId": "S9-0515",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "16:17:30",
+        "arrivalTime": "16:11:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:25:18",
+        "arrivalTime": "16:24:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:31:02",
+        "arrivalTime": "16:30:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:39:17",
+        "arrivalTime": "16:38:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:53:15",
+        "arrivalTime": "16:52:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "16:58:26",
+        "arrivalTime": "16:57:41"
+      }
+    ]
+  },
+  "S9-1303": {
+    "trainId": "S9-1303",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "16:07:30",
+        "arrivalTime": "16:01:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:15:18",
+        "arrivalTime": "16:14:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:21:02",
+        "arrivalTime": "16:20:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:29:17",
+        "arrivalTime": "16:28:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:43:15",
+        "arrivalTime": "16:42:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "16:48:26",
+        "arrivalTime": "16:47:41"
+      }
+    ]
+  },
+  "S9-0415": {
+    "trainId": "S9-0415",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "15:57:30",
+        "arrivalTime": "15:51:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "16:05:18",
+        "arrivalTime": "16:04:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:11:02",
+        "arrivalTime": "16:10:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:19:17",
+        "arrivalTime": "16:18:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:33:15",
+        "arrivalTime": "16:32:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "16:38:26",
+        "arrivalTime": "16:37:41"
+      }
+    ]
+  },
+  "S9-0215": {
+    "trainId": "S9-0215",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "15:47:30",
+        "arrivalTime": "15:41:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "15:55:18",
+        "arrivalTime": "15:54:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "16:01:02",
+        "arrivalTime": "16:00:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:09:17",
+        "arrivalTime": "16:08:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:23:15",
+        "arrivalTime": "16:22:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "16:28:26",
+        "arrivalTime": "16:27:41"
+      }
+    ]
+  },
+  "S9-0216": {
+    "trainId": "S9-0216",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "16:37:30",
+        "arrivalTime": "16:30:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:42:22",
+        "arrivalTime": "16:41:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "16:56:22",
+        "arrivalTime": "16:55:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:04:34",
+        "arrivalTime": "17:04:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:10:19",
+        "arrivalTime": "17:09:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "17:18:36",
+        "arrivalTime": "17:17:51"
+      }
+    ]
+  },
+  "S9-0416": {
+    "trainId": "S9-0416",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "16:46:56",
+        "arrivalTime": "16:40:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "16:51:48",
+        "arrivalTime": "16:51:23"
+      },
+      {
+        "stationId": 188,
+        "departTime": "17:05:48",
+        "arrivalTime": "17:05:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:14:00",
+        "arrivalTime": "17:13:35"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:19:45",
+        "arrivalTime": "17:19:20"
+      },
+      {
+        "stationId": 128,
+        "departTime": "17:28:02",
+        "arrivalTime": "17:27:17"
+      }
+    ]
+  },
+  "S9-1304": {
+    "trainId": "S9-1304",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "16:58:35",
+        "arrivalTime": "16:50:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:03:27",
+        "arrivalTime": "17:03:02"
+      },
+      {
+        "stationId": 188,
+        "departTime": "17:17:27",
+        "arrivalTime": "17:17:02"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:25:39",
+        "arrivalTime": "17:25:14"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:31:24",
+        "arrivalTime": "17:30:59"
+      },
+      {
+        "stationId": 128,
+        "departTime": "17:39:41",
+        "arrivalTime": "17:38:56"
+      }
+    ]
+  },
+  "S9-0516": {
+    "trainId": "S9-0516",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "17:08:36",
+        "arrivalTime": "17:00:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:13:28",
+        "arrivalTime": "17:13:03"
+      },
+      {
+        "stationId": 188,
+        "departTime": "17:27:28",
+        "arrivalTime": "17:27:03"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:35:40",
+        "arrivalTime": "17:35:15"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:41:25",
+        "arrivalTime": "17:41:00"
+      },
+      {
+        "stationId": 128,
+        "departTime": "17:49:42",
+        "arrivalTime": "17:48:57"
+      }
+    ]
+  },
+  "S9-0616": {
+    "trainId": "S9-0616",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "17:17:30",
+        "arrivalTime": "17:10:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:22:22",
+        "arrivalTime": "17:21:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "17:36:22",
+        "arrivalTime": "17:35:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:44:34",
+        "arrivalTime": "17:44:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:50:19",
+        "arrivalTime": "17:49:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "17:58:36",
+        "arrivalTime": "17:57:51"
+      }
+    ]
+  },
+  "S9-0716": {
+    "trainId": "S9-0716",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "17:27:30",
+        "arrivalTime": "17:20:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:32:22",
+        "arrivalTime": "17:31:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "17:46:22",
+        "arrivalTime": "17:45:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:54:34",
+        "arrivalTime": "17:54:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:00:19",
+        "arrivalTime": "17:59:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "18:08:36",
+        "arrivalTime": "18:07:51"
+      }
+    ]
+  },
+  "S9-0916": {
+    "trainId": "S9-0916",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "17:36:56",
+        "arrivalTime": "17:30:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:41:48",
+        "arrivalTime": "17:41:23"
+      },
+      {
+        "stationId": 188,
+        "departTime": "17:55:48",
+        "arrivalTime": "17:55:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:04:00",
+        "arrivalTime": "18:03:35"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:09:45",
+        "arrivalTime": "18:09:20"
+      },
+      {
+        "stationId": 128,
+        "departTime": "18:18:02",
+        "arrivalTime": "18:17:17"
+      }
+    ]
+  },
+  "S9-1204": {
+    "trainId": "S9-1204",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "17:45:59",
+        "arrivalTime": "17:42:03"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:50:51",
+        "arrivalTime": "17:50:26"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:04:51",
+        "arrivalTime": "18:04:26"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:13:03",
+        "arrivalTime": "18:12:38"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:18:48",
+        "arrivalTime": "18:18:23"
+      },
+      {
+        "stationId": 128,
+        "departTime": "18:27:05",
+        "arrivalTime": "18:26:20"
+      }
+    ]
+  },
+  "S9-0717": {
+    "trainId": "S9-0717",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "18:23:25",
+        "arrivalTime": "18:14:13"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:31:13",
+        "arrivalTime": "18:30:48"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:36:57",
+        "arrivalTime": "18:36:32"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:45:12",
+        "arrivalTime": "18:44:47"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:59:10",
+        "arrivalTime": "18:58:45"
+      },
+      {
+        "stationId": 190,
+        "departTime": "19:04:21",
+        "arrivalTime": "19:03:36"
+      }
+    ]
+  },
+  "S9-0617": {
+    "trainId": "S9-0617",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "18:11:40",
+        "arrivalTime": "18:01:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:19:28",
+        "arrivalTime": "18:19:03"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:25:12",
+        "arrivalTime": "18:24:47"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:33:27",
+        "arrivalTime": "18:33:02"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:47:25",
+        "arrivalTime": "18:47:00"
+      },
+      {
+        "stationId": 190,
+        "departTime": "18:52:36",
+        "arrivalTime": "18:51:51"
+      }
+    ]
+  },
+  "S9-0517": {
+    "trainId": "S9-0517",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "18:01:00",
+        "arrivalTime": "17:52:58"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:08:48",
+        "arrivalTime": "18:08:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:14:32",
+        "arrivalTime": "18:14:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:22:47",
+        "arrivalTime": "18:22:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:36:45",
+        "arrivalTime": "18:36:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "18:41:56",
+        "arrivalTime": "18:41:11"
+      }
+    ]
+  },
+  "S9-1305": {
+    "trainId": "S9-1305",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "17:50:20",
+        "arrivalTime": "17:42:57"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:58:08",
+        "arrivalTime": "17:57:43"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:03:52",
+        "arrivalTime": "18:03:27"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:12:07",
+        "arrivalTime": "18:11:42"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:26:05",
+        "arrivalTime": "18:25:40"
+      },
+      {
+        "stationId": 190,
+        "departTime": "18:31:16",
+        "arrivalTime": "18:30:31"
+      }
+    ]
+  },
+  "S9-0417": {
+    "trainId": "S9-0417",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "17:38:40",
+        "arrivalTime": "17:31:18"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:46:28",
+        "arrivalTime": "17:46:03"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:52:12",
+        "arrivalTime": "17:51:47"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:00:27",
+        "arrivalTime": "18:00:02"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:14:25",
+        "arrivalTime": "18:14:00"
+      },
+      {
+        "stationId": 190,
+        "departTime": "18:19:36",
+        "arrivalTime": "18:18:51"
+      }
+    ]
+  },
+  "S9-0217": {
+    "trainId": "S9-0217",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "17:27:00",
+        "arrivalTime": "17:21:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:34:48",
+        "arrivalTime": "17:34:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:40:32",
+        "arrivalTime": "17:40:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "17:48:47",
+        "arrivalTime": "17:48:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:02:45",
+        "arrivalTime": "18:02:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "18:07:56",
+        "arrivalTime": "18:07:11"
+      }
+    ]
+  },
+  "S9-1115": {
+    "trainId": "S9-1115",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "17:17:30",
+        "arrivalTime": "17:11:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:25:18",
+        "arrivalTime": "17:24:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:31:02",
+        "arrivalTime": "17:30:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "17:39:17",
+        "arrivalTime": "17:38:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:53:15",
+        "arrivalTime": "17:52:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "17:58:26",
+        "arrivalTime": "17:57:41"
+      }
+    ]
+  },
+  "S9-1015": {
+    "trainId": "S9-1015",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "17:08:05",
+        "arrivalTime": "17:01:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "17:15:53",
+        "arrivalTime": "17:15:28"
+      },
+      {
+        "stationId": 187,
+        "departTime": "17:21:37",
+        "arrivalTime": "17:21:12"
+      },
+      {
+        "stationId": 188,
+        "departTime": "17:29:52",
+        "arrivalTime": "17:29:27"
+      },
+      {
+        "stationId": 189,
+        "departTime": "17:43:50",
+        "arrivalTime": "17:43:25"
+      },
+      {
+        "stationId": 190,
+        "departTime": "17:49:01",
+        "arrivalTime": "17:48:16"
+      }
+    ]
+  },
+  "S9-1016": {
+    "trainId": "S9-1016",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "17:58:23",
+        "arrivalTime": "17:51:03"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:03:15",
+        "arrivalTime": "18:02:50"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:17:15",
+        "arrivalTime": "18:16:50"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:25:27",
+        "arrivalTime": "18:25:02"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:31:12",
+        "arrivalTime": "18:30:47"
+      },
+      {
+        "stationId": 128,
+        "departTime": "18:39:29",
+        "arrivalTime": "18:38:44"
+      }
+    ]
+  },
+  "S9-1116": {
+    "trainId": "S9-1116",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "18:09:03",
+        "arrivalTime": "18:00:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:13:55",
+        "arrivalTime": "18:13:30"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:27:55",
+        "arrivalTime": "18:27:30"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:36:07",
+        "arrivalTime": "18:35:42"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:41:52",
+        "arrivalTime": "18:41:27"
+      },
+      {
+        "stationId": 128,
+        "departTime": "18:50:09",
+        "arrivalTime": "18:49:24"
+      }
+    ]
+  },
+  "S9-0218": {
+    "trainId": "S9-0218",
+    "direction": 1,
+    "route": "190-128",
+    "level": 5,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "18:13:19",
+        "arrivalTime": "18:09:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:17:46",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:31:21",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:39:08",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:44:28",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 128,
+        "departTime": "18:54:13",
+        "arrivalTime": "18:52:00"
+      }
+    ]
+  },
+  "S9-0418": {
+    "trainId": "S9-0418",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "18:22:23",
+        "arrivalTime": "18:21:38"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:27:15",
+        "arrivalTime": "18:26:50"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:41:15",
+        "arrivalTime": "18:40:50"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:49:27",
+        "arrivalTime": "18:49:02"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:55:12",
+        "arrivalTime": "18:54:47"
+      },
+      {
+        "stationId": 128,
+        "departTime": "19:03:29",
+        "arrivalTime": "19:02:44"
+      }
+    ]
+  },
+  "S9-1306": {
+    "trainId": "S9-1306",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "18:34:03",
+        "arrivalTime": "18:33:18"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:38:55",
+        "arrivalTime": "18:38:30"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:52:55",
+        "arrivalTime": "18:52:30"
+      },
+      {
+        "stationId": 187,
+        "departTime": "19:01:07",
+        "arrivalTime": "19:00:42"
+      },
+      {
+        "stationId": 186,
+        "departTime": "19:06:52",
+        "arrivalTime": "19:06:27"
+      },
+      {
+        "stationId": 128,
+        "departTime": "19:15:09",
+        "arrivalTime": "19:14:24"
+      }
+    ]
+  },
+  "S9-0518": {
+    "trainId": "S9-0518",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "18:45:33",
+        "arrivalTime": "18:43:58"
+      },
+      {
+        "stationId": 189,
+        "departTime": "18:50:25",
+        "arrivalTime": "18:50:00"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:04:25",
+        "arrivalTime": "19:04:00"
+      },
+      {
+        "stationId": 187,
+        "departTime": "19:12:37",
+        "arrivalTime": "19:12:12"
+      },
+      {
+        "stationId": 186,
+        "departTime": "19:18:22",
+        "arrivalTime": "19:17:57"
+      },
+      {
+        "stationId": 128,
+        "departTime": "19:26:39",
+        "arrivalTime": "19:25:54"
+      }
+    ]
+  },
+  "S9-0618": {
+    "trainId": "S9-0618",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "18:56:23",
+        "arrivalTime": "18:54:38"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:01:15",
+        "arrivalTime": "19:00:50"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:15:15",
+        "arrivalTime": "19:14:50"
+      },
+      {
+        "stationId": 187,
+        "departTime": "19:23:27",
+        "arrivalTime": "19:23:02"
+      },
+      {
+        "stationId": 186,
+        "departTime": "19:29:12",
+        "arrivalTime": "19:28:47"
+      },
+      {
+        "stationId": 128,
+        "departTime": "19:37:29",
+        "arrivalTime": "19:36:44"
+      }
+    ]
+  },
+  "S9-0718": {
+    "trainId": "S9-0718",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "19:07:17",
+        "arrivalTime": "19:06:31"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:12:09",
+        "arrivalTime": "19:11:44"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:26:09",
+        "arrivalTime": "19:25:44"
+      },
+      {
+        "stationId": 187,
+        "departTime": "19:34:21",
+        "arrivalTime": "19:33:56"
+      },
+      {
+        "stationId": 186,
+        "departTime": "19:40:06",
+        "arrivalTime": "19:39:41"
+      },
+      {
+        "stationId": 128,
+        "departTime": "19:48:23",
+        "arrivalTime": "19:47:38"
+      }
+    ]
+  },
+  "S9-0519": {
+    "trainId": "S9-0519",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "19:36:50",
+        "arrivalTime": "19:29:55"
+      },
+      {
+        "stationId": 186,
+        "departTime": "19:44:38",
+        "arrivalTime": "19:44:13"
+      },
+      {
+        "stationId": 187,
+        "departTime": "19:50:22",
+        "arrivalTime": "19:49:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:58:37",
+        "arrivalTime": "19:58:12"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:12:35",
+        "arrivalTime": "20:12:10"
+      },
+      {
+        "stationId": 190,
+        "departTime": "20:17:46",
+        "arrivalTime": "20:17:01"
+      }
+    ]
+  },
+  "S9-1307": {
+    "trainId": "S9-1307",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "19:26:59",
+        "arrivalTime": "19:18:25"
+      },
+      {
+        "stationId": 186,
+        "departTime": "19:34:47",
+        "arrivalTime": "19:34:22"
+      },
+      {
+        "stationId": 187,
+        "departTime": "19:40:31",
+        "arrivalTime": "19:40:06"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:48:46",
+        "arrivalTime": "19:48:21"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:02:44",
+        "arrivalTime": "20:02:19"
+      },
+      {
+        "stationId": 190,
+        "departTime": "20:07:55",
+        "arrivalTime": "20:07:10"
+      }
+    ]
+  },
+  "S9-0419": {
+    "trainId": "S9-0419",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "19:15:10",
+        "arrivalTime": "19:06:45"
+      },
+      {
+        "stationId": 186,
+        "departTime": "19:22:58",
+        "arrivalTime": "19:22:33"
+      },
+      {
+        "stationId": 187,
+        "departTime": "19:28:42",
+        "arrivalTime": "19:28:17"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:36:57",
+        "arrivalTime": "19:36:32"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:50:55",
+        "arrivalTime": "19:50:30"
+      },
+      {
+        "stationId": 190,
+        "departTime": "19:56:06",
+        "arrivalTime": "19:55:21"
+      }
+    ]
+  },
+  "S9-0219": {
+    "trainId": "S9-0219",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "19:04:50",
+        "arrivalTime": "18:59:22"
+      },
+      {
+        "stationId": 186,
+        "departTime": "19:12:38",
+        "arrivalTime": "19:12:13"
+      },
+      {
+        "stationId": 187,
+        "departTime": "19:18:22",
+        "arrivalTime": "19:17:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:26:37",
+        "arrivalTime": "19:26:12"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:40:35",
+        "arrivalTime": "19:40:10"
+      },
+      {
+        "stationId": 190,
+        "departTime": "19:45:46",
+        "arrivalTime": "19:45:01"
+      }
+    ]
+  },
+  "S9-1117": {
+    "trainId": "S9-1117",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "18:54:33",
+        "arrivalTime": "18:53:25"
+      },
+      {
+        "stationId": 186,
+        "departTime": "19:02:21",
+        "arrivalTime": "19:01:56"
+      },
+      {
+        "stationId": 187,
+        "departTime": "19:08:05",
+        "arrivalTime": "19:07:40"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:16:20",
+        "arrivalTime": "19:15:55"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:30:18",
+        "arrivalTime": "19:29:53"
+      },
+      {
+        "stationId": 190,
+        "departTime": "19:35:29",
+        "arrivalTime": "19:34:44"
+      }
+    ]
+  },
+  "S9-1017": {
+    "trainId": "S9-1017",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "18:45:07",
+        "arrivalTime": "18:42:45"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:52:55",
+        "arrivalTime": "18:52:30"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:58:39",
+        "arrivalTime": "18:58:14"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:06:54",
+        "arrivalTime": "19:06:29"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:20:52",
+        "arrivalTime": "19:20:27"
+      },
+      {
+        "stationId": 190,
+        "departTime": "19:26:03",
+        "arrivalTime": "19:25:18"
+      }
+    ]
+  },
+  "S9-1205": {
+    "trainId": "S9-1205",
+    "direction": 0,
+    "route": "128-190",
+    "level": 5,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "18:39:10",
+        "arrivalTime": "18:33:59"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:46:33",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:51:52",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:59:42",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:13:15",
+        "arrivalTime": "......"
+      },
+      {
+        "stationId": 190,
+        "departTime": "19:18:26",
+        "arrivalTime": "19:17:41"
+      }
+    ]
+  },
+  "S9-0917": {
+    "trainId": "S9-0917",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "18:32:42",
+        "arrivalTime": "18:24:49"
+      },
+      {
+        "stationId": 186,
+        "departTime": "18:40:30",
+        "arrivalTime": "18:40:05"
+      },
+      {
+        "stationId": 187,
+        "departTime": "18:46:14",
+        "arrivalTime": "18:45:49"
+      },
+      {
+        "stationId": 188,
+        "departTime": "18:54:29",
+        "arrivalTime": "18:54:04"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:08:27",
+        "arrivalTime": "19:08:02"
+      },
+      {
+        "stationId": 190,
+        "departTime": "19:14:06",
+        "arrivalTime": "19:12:53"
+      }
+    ]
+  },
+  "S9-0918": {
+    "trainId": "S9-0918",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "19:17:30",
+        "arrivalTime": "19:16:14"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:22:22",
+        "arrivalTime": "19:21:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:36:22",
+        "arrivalTime": "19:35:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "19:44:34",
+        "arrivalTime": "19:44:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "19:50:19",
+        "arrivalTime": "19:49:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "19:58:36",
+        "arrivalTime": "19:57:51"
+      }
+    ]
+  },
+  "S9-1206": {
+    "trainId": "S9-1206",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "19:27:30",
+        "arrivalTime": "19:20:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:32:22",
+        "arrivalTime": "19:31:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:46:22",
+        "arrivalTime": "19:45:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "19:54:34",
+        "arrivalTime": "19:54:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:00:19",
+        "arrivalTime": "19:59:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "20:08:36",
+        "arrivalTime": "20:07:51"
+      }
+    ]
+  },
+  "S9-1018": {
+    "trainId": "S9-1018",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "19:37:30",
+        "arrivalTime": "19:31:13"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:42:22",
+        "arrivalTime": "19:41:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "19:56:22",
+        "arrivalTime": "19:55:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:04:34",
+        "arrivalTime": "20:04:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:10:19",
+        "arrivalTime": "20:09:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "20:18:36",
+        "arrivalTime": "20:17:51"
+      }
+    ]
+  },
+  "S9-1118": {
+    "trainId": "S9-1118",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "19:47:30",
+        "arrivalTime": "19:40:38"
+      },
+      {
+        "stationId": 189,
+        "departTime": "19:52:22",
+        "arrivalTime": "19:51:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:06:22",
+        "arrivalTime": "20:05:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:14:34",
+        "arrivalTime": "20:14:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:20:19",
+        "arrivalTime": "20:19:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "20:28:36",
+        "arrivalTime": "20:27:51"
+      }
+    ]
+  },
+  "S9-0220": {
+    "trainId": "S9-0220",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "19:57:30",
+        "arrivalTime": "19:50:19"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:02:22",
+        "arrivalTime": "20:01:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:16:22",
+        "arrivalTime": "20:15:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:24:34",
+        "arrivalTime": "20:24:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:30:19",
+        "arrivalTime": "20:29:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "20:38:36",
+        "arrivalTime": "20:37:51"
+      }
+    ]
+  },
+  "S9-0420": {
+    "trainId": "S9-0420",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "20:07:30",
+        "arrivalTime": "20:00:38"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:12:22",
+        "arrivalTime": "20:11:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:26:22",
+        "arrivalTime": "20:25:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:34:34",
+        "arrivalTime": "20:34:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:40:19",
+        "arrivalTime": "20:39:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "20:48:36",
+        "arrivalTime": "20:47:51"
+      }
+    ]
+  },
+  "S9-1308": {
+    "trainId": "S9-1308",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "20:17:30",
+        "arrivalTime": "20:09:57"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:22:22",
+        "arrivalTime": "20:21:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:36:22",
+        "arrivalTime": "20:35:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:44:34",
+        "arrivalTime": "20:44:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:50:19",
+        "arrivalTime": "20:49:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "20:58:36",
+        "arrivalTime": "20:57:51"
+      }
+    ]
+  },
+  "S9-0520": {
+    "trainId": "S9-0520",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "20:27:30",
+        "arrivalTime": "20:19:48"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:32:22",
+        "arrivalTime": "20:31:57"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:46:22",
+        "arrivalTime": "20:45:57"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:54:34",
+        "arrivalTime": "20:54:09"
+      },
+      {
+        "stationId": 186,
+        "departTime": "21:00:19",
+        "arrivalTime": "20:59:54"
+      },
+      {
+        "stationId": 128,
+        "departTime": "21:08:36",
+        "arrivalTime": "21:07:51"
+      }
+    ]
+  },
+  "S9-0421": {
+    "trainId": "S9-0421",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "20:59:49",
+        "arrivalTime": "20:51:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "21:07:37",
+        "arrivalTime": "21:07:12"
+      },
+      {
+        "stationId": 187,
+        "departTime": "21:13:21",
+        "arrivalTime": "21:12:56"
+      },
+      {
+        "stationId": 188,
+        "departTime": "21:21:36",
+        "arrivalTime": "21:21:11"
+      },
+      {
+        "stationId": 189,
+        "departTime": "21:35:34",
+        "arrivalTime": "21:35:09"
+      },
+      {
+        "stationId": 190,
+        "departTime": "21:40:45",
+        "arrivalTime": "21:40:00"
+      }
+    ]
+  },
+  "S9-0221": {
+    "trainId": "S9-0221",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "20:47:30",
+        "arrivalTime": "20:41:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:55:18",
+        "arrivalTime": "20:54:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "21:01:02",
+        "arrivalTime": "21:00:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "21:09:17",
+        "arrivalTime": "21:08:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "21:23:15",
+        "arrivalTime": "21:22:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "21:28:21",
+        "arrivalTime": "21:27:41"
+      }
+    ]
+  },
+  "S9-1119": {
+    "trainId": "S9-1119",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "20:37:30",
+        "arrivalTime": "20:31:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:45:18",
+        "arrivalTime": "20:44:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:51:02",
+        "arrivalTime": "20:50:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:59:17",
+        "arrivalTime": "20:58:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "21:13:15",
+        "arrivalTime": "21:12:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "21:18:26",
+        "arrivalTime": "21:17:41"
+      }
+    ]
+  },
+  "S9-1019": {
+    "trainId": "S9-1019",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "20:27:30",
+        "arrivalTime": "20:21:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:35:18",
+        "arrivalTime": "20:34:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:41:02",
+        "arrivalTime": "20:40:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:49:17",
+        "arrivalTime": "20:48:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "21:03:15",
+        "arrivalTime": "21:02:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "21:08:26",
+        "arrivalTime": "21:07:41"
+      }
+    ]
+  },
+  "S9-1207": {
+    "trainId": "S9-1207",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "20:16:52",
+        "arrivalTime": "20:11:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:24:40",
+        "arrivalTime": "20:24:15"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:30:24",
+        "arrivalTime": "20:29:59"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:38:39",
+        "arrivalTime": "20:38:14"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:52:37",
+        "arrivalTime": "20:52:12"
+      },
+      {
+        "stationId": 190,
+        "departTime": "20:57:48",
+        "arrivalTime": "20:57:03"
+      }
+    ]
+  },
+  "S9-0919": {
+    "trainId": "S9-0919",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "20:07:35",
+        "arrivalTime": "20:01:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:15:23",
+        "arrivalTime": "20:14:58"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:21:07",
+        "arrivalTime": "20:20:42"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:29:22",
+        "arrivalTime": "20:28:57"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:43:20",
+        "arrivalTime": "20:42:55"
+      },
+      {
+        "stationId": 190,
+        "departTime": "20:48:31",
+        "arrivalTime": "20:47:46"
+      }
+    ]
+  },
+  "S9-0719": {
+    "trainId": "S9-0719",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "19:59:05",
+        "arrivalTime": "19:51:39"
+      },
+      {
+        "stationId": 186,
+        "departTime": "20:06:53",
+        "arrivalTime": "20:06:28"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:12:37",
+        "arrivalTime": "20:12:12"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:20:52",
+        "arrivalTime": "20:20:27"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:34:50",
+        "arrivalTime": "20:34:25"
+      },
+      {
+        "stationId": 190,
+        "departTime": "20:40:01",
+        "arrivalTime": "20:39:16"
+      }
+    ]
+  },
+  "S9-0619": {
+    "trainId": "S9-0619",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "19:47:30",
+        "arrivalTime": "19:40:45"
+      },
+      {
+        "stationId": 186,
+        "departTime": "19:55:18",
+        "arrivalTime": "19:54:53"
+      },
+      {
+        "stationId": 187,
+        "departTime": "20:01:02",
+        "arrivalTime": "20:00:37"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:09:17",
+        "arrivalTime": "20:08:52"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:23:15",
+        "arrivalTime": "20:22:50"
+      },
+      {
+        "stationId": 190,
+        "departTime": "20:28:26",
+        "arrivalTime": "20:27:41"
+      }
+    ]
+  },
+  "S9-0620": {
+    "trainId": "S9-0620",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "20:38:40",
+        "arrivalTime": "20:30:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:43:32",
+        "arrivalTime": "20:43:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "20:57:32",
+        "arrivalTime": "20:57:07"
+      },
+      {
+        "stationId": 187,
+        "departTime": "21:05:44",
+        "arrivalTime": "21:05:19"
+      },
+      {
+        "stationId": 186,
+        "departTime": "21:11:29",
+        "arrivalTime": "21:11:04"
+      },
+      {
+        "stationId": 128,
+        "departTime": "21:19:46",
+        "arrivalTime": "21:19:01"
+      }
+    ]
+  },
+  "S9-0720": {
+    "trainId": "S9-0720",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "20:50:11",
+        "arrivalTime": "20:42:03"
+      },
+      {
+        "stationId": 189,
+        "departTime": "20:55:03",
+        "arrivalTime": "20:54:38"
+      },
+      {
+        "stationId": 188,
+        "departTime": "21:09:03",
+        "arrivalTime": "21:08:38"
+      },
+      {
+        "stationId": 187,
+        "departTime": "21:17:15",
+        "arrivalTime": "21:16:50"
+      },
+      {
+        "stationId": 186,
+        "departTime": "21:23:00",
+        "arrivalTime": "21:22:35"
+      },
+      {
+        "stationId": 128,
+        "departTime": "21:31:17",
+        "arrivalTime": "21:30:32"
+      }
+    ]
+  },
+  "S9-0920": {
+    "trainId": "S9-0920",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "20:59:24",
+        "arrivalTime": "20:50:33"
+      },
+      {
+        "stationId": 189,
+        "departTime": "21:04:16",
+        "arrivalTime": "21:03:51"
+      },
+      {
+        "stationId": 188,
+        "departTime": "21:18:16",
+        "arrivalTime": "21:17:51"
+      },
+      {
+        "stationId": 187,
+        "departTime": "21:26:28",
+        "arrivalTime": "21:26:03"
+      },
+      {
+        "stationId": 186,
+        "departTime": "21:32:13",
+        "arrivalTime": "21:31:48"
+      },
+      {
+        "stationId": 128,
+        "departTime": "21:40:30",
+        "arrivalTime": "21:39:45"
+      }
+    ]
+  },
+  "S9-1020": {
+    "trainId": "S9-1020",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "21:15:12",
+        "arrivalTime": "21:10:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "21:20:04",
+        "arrivalTime": "21:19:39"
+      },
+      {
+        "stationId": 188,
+        "departTime": "21:34:04",
+        "arrivalTime": "21:33:39"
+      },
+      {
+        "stationId": 187,
+        "departTime": "21:42:16",
+        "arrivalTime": "21:41:51"
+      },
+      {
+        "stationId": 186,
+        "departTime": "21:48:01",
+        "arrivalTime": "21:47:36"
+      },
+      {
+        "stationId": 128,
+        "departTime": "21:56:18",
+        "arrivalTime": "21:55:33"
+      }
+    ]
+  },
+  "S9-1120": {
+    "trainId": "S9-1120",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "21:30:00",
+        "arrivalTime": "21:20:28"
+      },
+      {
+        "stationId": 189,
+        "departTime": "21:34:52",
+        "arrivalTime": "21:34:27"
+      },
+      {
+        "stationId": 188,
+        "departTime": "21:48:52",
+        "arrivalTime": "21:48:27"
+      },
+      {
+        "stationId": 187,
+        "departTime": "21:57:04",
+        "arrivalTime": "21:56:39"
+      },
+      {
+        "stationId": 186,
+        "departTime": "22:02:49",
+        "arrivalTime": "22:02:24"
+      },
+      {
+        "stationId": 128,
+        "departTime": "22:11:06",
+        "arrivalTime": "22:10:21"
+      }
+    ]
+  },
+  "S9-0422": {
+    "trainId": "S9-0422",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "21:45:00",
+        "arrivalTime": "21:42:47"
+      },
+      {
+        "stationId": 189,
+        "departTime": "21:49:52",
+        "arrivalTime": "21:49:27"
+      },
+      {
+        "stationId": 188,
+        "departTime": "22:03:52",
+        "arrivalTime": "22:03:27"
+      },
+      {
+        "stationId": 187,
+        "departTime": "22:12:04",
+        "arrivalTime": "22:11:39"
+      },
+      {
+        "stationId": 186,
+        "departTime": "22:17:49",
+        "arrivalTime": "22:17:24"
+      },
+      {
+        "stationId": 128,
+        "departTime": "22:26:06",
+        "arrivalTime": "22:25:21"
+      }
+    ]
+  },
+  "S9-1310": {
+    "trainId": "S9-1310",
+    "direction": 1,
+    "route": "190-189-188-187-186-128",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 190,
+        "departTime": "22:00:00",
+        "arrivalTime": "21:58:09"
+      },
+      {
+        "stationId": 189,
+        "departTime": "22:04:52",
+        "arrivalTime": "22:04:27"
+      },
+      {
+        "stationId": 188,
+        "departTime": "22:18:52",
+        "arrivalTime": "22:18:27"
+      },
+      {
+        "stationId": 187,
+        "departTime": "22:27:04",
+        "arrivalTime": "22:26:39"
+      },
+      {
+        "stationId": 186,
+        "departTime": "22:32:49",
+        "arrivalTime": "22:32:24"
+      },
+      {
+        "stationId": 128,
+        "departTime": "22:41:06",
+        "arrivalTime": "22:40:21"
+      }
+    ]
+  },
+  "S9-0921": {
+    "trainId": "S9-0921",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "22:00:00",
+        "arrivalTime": "21:51:04"
+      },
+      {
+        "stationId": 186,
+        "departTime": "22:07:48",
+        "arrivalTime": "22:07:23"
+      },
+      {
+        "stationId": 187,
+        "departTime": "22:13:32",
+        "arrivalTime": "22:13:07"
+      },
+      {
+        "stationId": 188,
+        "departTime": "22:21:47",
+        "arrivalTime": "22:21:22"
+      },
+      {
+        "stationId": 189,
+        "departTime": "22:35:45",
+        "arrivalTime": "22:35:20"
+      },
+      {
+        "stationId": 190,
+        "departTime": "22:40:51",
+        "arrivalTime": "22:40:11"
+      }
+    ]
+  },
+  "S9-0721": {
+    "trainId": "S9-0721",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "21:45:11",
+        "arrivalTime": "21:34:33"
+      },
+      {
+        "stationId": 186,
+        "departTime": "21:52:59",
+        "arrivalTime": "21:52:34"
+      },
+      {
+        "stationId": 187,
+        "departTime": "21:58:43",
+        "arrivalTime": "21:58:18"
+      },
+      {
+        "stationId": 188,
+        "departTime": "22:06:58",
+        "arrivalTime": "22:06:33"
+      },
+      {
+        "stationId": 189,
+        "departTime": "22:20:56",
+        "arrivalTime": "22:20:31"
+      },
+      {
+        "stationId": 190,
+        "departTime": "22:26:02",
+        "arrivalTime": "22:25:22"
+      }
+    ]
+  },
+  "S9-0621": {
+    "trainId": "S9-0621",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "21:29:55",
+        "arrivalTime": "21:23:02"
+      },
+      {
+        "stationId": 186,
+        "departTime": "21:37:43",
+        "arrivalTime": "21:37:18"
+      },
+      {
+        "stationId": 187,
+        "departTime": "21:43:27",
+        "arrivalTime": "21:43:02"
+      },
+      {
+        "stationId": 188,
+        "departTime": "21:51:42",
+        "arrivalTime": "21:51:17"
+      },
+      {
+        "stationId": 189,
+        "departTime": "22:05:40",
+        "arrivalTime": "22:05:15"
+      },
+      {
+        "stationId": 190,
+        "departTime": "22:10:46",
+        "arrivalTime": "22:10:06"
+      }
+    ]
+  },
+  "S9-1309": {
+    "trainId": "S9-1309",
+    "direction": 0,
+    "route": "128-186-187-188-189-190",
+    "level": 0,
+    "schedule": [
+      {
+        "stationId": 128,
+        "departTime": "21:15:11",
+        "arrivalTime": "21:01:52"
+      },
+      {
+        "stationId": 186,
+        "departTime": "21:22:59",
+        "arrivalTime": "21:22:34"
+      },
+      {
+        "stationId": 187,
+        "departTime": "21:28:43",
+        "arrivalTime": "21:28:18"
+      },
+      {
+        "stationId": 188,
+        "departTime": "21:36:58",
+        "arrivalTime": "21:36:33"
+      },
+      {
+        "stationId": 189,
+        "departTime": "21:50:56",
+        "arrivalTime": "21:50:31"
+      },
+      {
+        "stationId": 190,
+        "departTime": "21:56:07",
+        "arrivalTime": "21:55:22"
+      }
+    ]
+  }
+}

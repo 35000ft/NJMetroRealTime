@@ -24,11 +24,11 @@
         "restday": "Z014"
     },
     "S1": {
-        "workday": "T019",
+        "workday": "T023",
         "restday": "T020"
     },
     "S3": {
-        "workday": "Z018",
+        "workday": "Z020",
         "restday": "Z019"
     },
     "S6": {
@@ -36,7 +36,7 @@
         "restday": "Z003"
     },
     "S7": {
-        "workday": "T019",
+        "workday": "T023",
         "restday": "T020"
     },
     "S8": {
@@ -44,7 +44,7 @@
         "restday": "Z024"
     },
     "S9": {
-        "workday": "T019",
+        "workday": "T024",
         "restday": "T022"
     }
 }
